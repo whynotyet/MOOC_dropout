@@ -1,0 +1,267 @@
+\documentclass{sigchi}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+% Use this command to override the default ACM copyright statement (e.g. for preprints). 
+% Consult the conference website for the camera-ready copyright statement.
+
+
+%% EXAMPLE BEGIN -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
+\toappear{Permission to make digital or hard copies of all or part of this work for personal or classroom use is 	granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. \\
+{\emph{L@S'15}}, March 14--15, 2015, Vancouver, Canada. \\
+Copyright \copyright~2015 ACM ISBN/14/04...\$15.00. \\
+DOI string from ACM form confirmation}
+%% EXAMPLE END -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
+
+
+% Arabic page numbers for submission. 
+% Remove this line to eliminate page numbers for the camera ready copy
+\pagenumbering{arabic}
+
+
+% Load basic packages
+\usepackage{balance}  % to better equalize the last page
+\usepackage{graphics} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
+\makeatother
+\urlstyle{leo}
+
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, 
+% to give it a fighting chance of not being over-written, 
+% since its job is to redefine many LaTeX commands.
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+pdftitle={SIGCHI Conference Proceedings Format},
+pdfauthor={LaTeX},
+pdfkeywords={SIGCHI, proceedings, archival format},
+bookmarksnumbered,
+pdfstartview={FitH},
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black,
+breaklinks=true,
+}
+
+% create a shortcut to typeset table headings
+\newcommand\tabhead[1]{\small\textbf{#1}}
+
+
+% End of preamble. Here it comes the document.
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+\title{Attrition in Online Learning: Understanding Persistence and Dropout in Massive Open Online Courses}
+
+\numberofauthors{2}
+\author{
+  \alignauthor Omitted for blind review\\
+  \affaddr{Institution}\\
+  \affaddr{Address}\\
+  \email{Email}\\
+%   \alignauthor Sherif Halawa\\
+%     \affaddr{Department of Electrical Engineering}\\
+%     \affaddr{Stanford University}\\
+%     \email{halawa@stanford.edu}\\
+%   \alignauthor Ren\'{e} Kizilcec\\
+%     \affaddr{Department of Communication}\\
+%     \affaddr{Stanford University}\\
+%     \email{kizilcec@stanford.edu}\\
+}
+
+\maketitle
+
+\begin{abstract}
+Persistence and attrition in MOOCs are systematically analyzed using self-report and behavioral data collected from [N] online learners in [M] courses. Study 1 offers insights into reasons for disengaging from MOOCs and explores relationships with prior behavior and reported intentions. Study 2 is a case study to develop a deeper understanding of attrition in MOOCs by conducting a case study. Targeting online learners who were predicted likely dropouts in a particular course were invited to provide feedback via a survey. 
+\end{abstract}
+
+\keywords{Online learning, persistence, attrition, dropout, disengagement, massive open online courses, MOOC, psychological factors}
+
+\category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
+\category{K.3.1.}{Computers and Education}{Computer Uses in Education}
+
+\section{Introduction}
+
+Educational environments has become increasingly diverse. Traditional schools and universities have a characteristically rigid structure, including instructor-defined---even nationally agreed---syllabi, fixed time schedules, entry requirements, and material costs to enter and exit. Novel institutional structures have been developed to overcome particular constraints. Community colleges, for instance, were created in an attempt to democratize education by offering instruction at a lower cost and by accomodating people with less flexibile schedules \cite{goldrick2010challenges}. Distance learning programs intended to deliver education in remote parts of the world and for people who simply could not attend in-person classes. Course materials, including assessments, were delivered through mail (``correspondence education''), radio, television, and eventually the Internet, thereby addressing geographical and time related constraints of traditional instruction \cite{moore1996distance}.
+
+The latest generation of online learning environments, characterized by massive open online courses (MOOCs), has pushed the boundary on the scale of education \cite{waldrop2013campus}. By design, MOOCs provide course materials to millions of people worldwide. This scale could be achieved by pre-recording lectures, designing assessments that can be graded automatically, and by leveraging the momentum of the number of poeple invovled (e.g., to facilitate peer learning or peer grading \cite{kulkarni2013peer,cambre2014talkabout}). Maybe by virtue of their large scale, their prominent instructors, or their adherence to contemporary interface designs, MOOCs rapidly became an online media phenomenon. People would sign up weeks in advance of the course launch date, many of whom would never even enter the course site. And among those who enroll and enter the site, a large proportion tends to only ``sample'' some content and leave again \cite{kizilcec2013deconstructing}. Many of the prototypical behaviors observed in MOOCs \cite{kizilcec2013deconstructing,breslow2013studying} (other?) resemble those on online media platforms, such as YouTube or tumblr. This trend has also been reflected in the diversity of MOOC learners' motivations for enrolling \cite{kizilcec2015motivation}.
+
+Shortly after the first wave of courses had finished, extensive media coverage led to MOOCs becoming associated with high attrition rates \cite{lewin2013after,parr2013mooc,guthrie2013moocs}. Early MOOC research cautioned against dichotomizing learners into sucesses and failures based on course completion \cite{kizilcec2013deconstructing,rivard2013measuring}. Instead, more nuanced categorizations based on learner behavior \cite{kizilcec2013deconstructing,clow2013moocs} (other?), motivations \cite{kizilcec2015motivation}, or intentions \cite{wilkowski2014student} have been suggested. Ultimately, perspectives on persistence and attrition in MOOCs depend on how MOOCs have been conceptualized. Kizilcec and Schneider \citeyear{kizilcec2015motivation} proposed that MOOCs have bridged two different world: one world is governed by the user-centric norms of online media, where everyone is encouraged to be as active as they wish; the other world adheres to the ``grammar of schooling'', which presupposes instructor-defined goals that students strive to achieve \cite{tyack1994grammar}. Viewing MOOC participation as bridging these two worlds undoubtedly adds a layer of complexity to interpretations of attrition.
+
+This paper presents a systematic investigation into attrition in MOOCs, based on self-report and behavioral data collected from [N] online learners in [M] courses. We begin by briefly reviewing the large literature on attrition in educational environments with a focus on important developments in understanding its causes. Building on this foundation of prior work, Study 1 offers insights into reasons for disengaging from MOOCs and explores relationships with prior behavior and reported intentions. In Study 2, we sought to develop a deeper understanding of attrition in MOOCs by conducting a case study. Targeting online learners who were predicted likely dropouts in a particular course were invited to provide feedback via a survey. 
+TODO: complete paragraph based on what we actually do in Study 2.
+
+
+\section{Related Work}
+
+Research and theorizing on attrition in education has a rich history. This review is intended to serve as a foundation to build on with the current research. The focus of this breif review is on how ways of thinking about attrition have developed over the last decades.
+
+\subsection{In-person Education}
+
+The majority of early work on attrition centered around theoretical models of students' decision to persist or dopout of a traditional higher education setting. An early model suggested that students' presistence is largely driven by their prior behavior, attitudes, adn norms \cite{fishbein1975belief}. The psychological processes involved in turning an intent to learn into the decision to persist were thought to be mediated by volition, i.e., the extent to which the student engages in goal-direct behaviors in the face of distraction \cite{corno1993role}. Hence, motivation alone is necessary but not sufficient for persistence. Students may fail to sustain efforts in the absence of strong self-regulatory skills.
+
+The next generation of psychological models, which were highly influential in the literature, emphasized the critical role of students' ``fit'' in the institution. Tinto's \citeyear{tinto1975dropout} student integration model 
+
+
+\subsection{Distance Education and e-Learning}
+
+
+
+\subsection{MOOCs}
+
+
+
+
+\section{Study 1: Reasons for Disengaging}
+
+\subsection{Methods}
+
+TODO: Outline different courses and go through variabels in the course info table.
+
+Table:  course name; enrollment; pre-survey response rate; prop. demographics (age, gender, educ); who intended to do all; post-survey response rate; self-identified dropout rate
+
+
+\subsection{Results}
+
+Table: proportions for each dropout reason for each course
+
+Table: correlations between reasons and one with cors between reasons and intentions
+
+Plot: ecdf curves for proportion videos watched for each disengagement reason
+
+
+\subsection{Discussion}
+
+
+\section{Study 2: Understanding Disengagement}
+
+To gain a better understanding of the attrition patterns identified in Study 1, we designed a smaller but more focused follow-up study. In Study 2, we reached out to learners who were likely to drop out of a course and asked them to provide feedback. Identifying learners who were likely to drop out was achieved with machine learning.
+
+\subsection{Methods}
+
+The particular MOOC under observation was an undergraduate level course on an advanced topic in computer science. It was offered in 2014 through Coursera. There were [N1] enrolled learners; [N2] watched more than one video, and [N3] attempted more than one assignment.
+
+\subsubsection{Predicting Disengagement}
+
+TODO: Details of the prediction algorithm.
+
+\subsubsection{Feedback Survey}
+
+Every learner who was predicted to disengage from the course was sent an email kindly requesting their help: ``You are enrolled in [course name], but you've been less active recently. Could you help us understand why?'' A very low response rate was expected, given that this subpopulation was defined by low engagement. 535 out of 6,050 learners started the survey (8.8\% response rate), and 499 completed it (8.2\% completion rate).
+
+Learners were asked to report how satisfied they were with their progress in the course, and whether they were using the course materials more, less, or exactly as much as they would have liked. In addition, they reported intentions for engaging with each week's course content. Then, they were asked to openly report ``what challenges, inside or outside of the course, [they] experienced while [they were] taking this course, if any?'' The instructions encouraged them to list all challenges they could think of. This question was deliberately asked prior to any survey questions that could suggest particular reasons for disengagement.
+
+Two research assistants independently developed a codebook for the resulting 435 non-empty open responses. Their codebooks were consolidated and applied on Mechanical Turk, where 4 `classification experts' independently coded all 200 randomly selected responses. Specific updates to the initial codebook were informed by category frequency, category correlations, and inter-coder agreement. The updated codebook was then applied by 4 Mechanical Turk `classification experts' to the 235 remaining open responses.
+
+Following the open resposne question, learners reported the difficulty of the course material and the extent to which their progress was hindred by a number of obstacles (see Table [XX]). The survey also included a measure of learners' sense of social and academic fit \cite{walton2007question} (17 items, $M=4.67, SD=0.72, \alpha=0.87$); mindset (4 items on the nature of intelligence and talent\footnote{Items were adpated from the mindset questionnaire available at \url{http://mindsetonline.com/testyourmindset/}.}; $M=2.45, SD=0.90, \alpha=0.78$), and goal striving (5 items on motivation, perceived importance, committment, confidence, and distractions; $M=3.08, SD=0.83, \alpha=0.76$).
+
+TODO: update numbers once finalized, explain use of imputation
+
+\subsection{Results}
+
+TODO: Add results of prediction. How well did the prediction work? And who took the survey; how sure was the model that those who took the survey would actually drop out, relative to those who didn't take the survey?
+
+TODO: Write up results of diagnostic survey, keeping it simple for now.
+
+
+\subsection{Discussion}
+
+
+\section{General Discussion}
+
+
+\section{Conclusion}
+
+
+\section{Acknowledgments}
+% We thank Elise Ogle and Ruth Bram for helping with the development of the codebook. 
+Omitted for blind review.
+
+% Balancing columns in a ref list is a bit of a pain because you
+% either use a hack like flushend or balance, or manually insert
+% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
+% multicols doesn't work because we're already in two-column mode,
+% and flushend isn't awesome, so I choose balance.  See this
+% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
+%
+% Note that in a perfect world balance wants to be in the first
+% column of the last page.
+%
+% If balance doesn't work for you, you can remove that and
+% hard-code a column break into the bbl file right before you
+% submit:
+%
+% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
+% in-an-ieee-paper-if-using-bibtex
+%
+% Or, just remove \balance and give up on balancing the last page.
+%
+\balance
+
+\bibliographystyle{acm-sigchi}
+\bibliography{dropout.bib}
+\end{document}
