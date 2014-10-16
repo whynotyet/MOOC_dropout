@@ -128,6 +128,19 @@ The next generation of psychological models, which were highly influential in th
 
 \section{Study 1: Reasons for Disengaging}
 
+TODO: develop
+
+\begin{description}
+  \item[RQ1] Why do people who drop out report they drop out?
+  \item[RQ2] Who is most likely to drop out in terms of demographics, intentions/motivations, geo location, prior experience with online courses?
+  \item[RQ3] What reasons do people from different subgroups (demographic, intention, etc.) report for dropping out?
+  \item[RQ4] What proportion of people who dropped out were satisfied with what they got out of the course?
+  \item[RQ5] What behaviors do people with different dropout reasons exhibit?
+  \item[H1] prior experience -- technical difficulties
+  \item[H2] demographics (education) -- course difficulty
+\end{description}
+
+
 \subsection{Methods}
 
 TODO: Outline different courses and go through variabels in the course info table.
@@ -151,6 +164,12 @@ Plot: ecdf curves for proportion videos watched for each disengagement reason
 
 To gain a better understanding of the attrition patterns identified in Study 1, we designed a smaller but more focused follow-up study. In Study 2, we reached out to learners who were likely to drop out of a course and asked them to provide feedback. Identifying learners who were likely to drop out was achieved with machine learning.
 
+TODO: develop
+
+H1: People who report `not enough time' can be split into those who have external constraints and those who have low volition.
+
+H2: people who report external committments (family, school), are more likely to specify the reason than people who have `no time' because they have low volition
+
 \subsection{Methods}
 
 The particular MOOC under observation was an undergraduate level course on an advanced topic in computer science. It was offered in 2014 through Coursera. There were [N1] enrolled learners; [N2] watched more than one video, and [N3] attempted more than one assignment.
@@ -172,6 +191,10 @@ Following the open resposne question, learners reported the difficulty of the co
 TODO: update numbers once finalized, explain use of imputation
 
 \subsection{Results}
+
+
+
+
 
 TODO: Add results of prediction. How well did the prediction work? And who took the survey; how sure was the model that those who took the survey would actually drop out, relative to those who didn't take the survey?
 
