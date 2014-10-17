@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{balakrishnan2013predicting}
+Balakrishnan, G., and Coetzee, D.
+\newblock Predicting student retention in massive open online courses using
+  hidden markov models, 2013.
+
 \bibitem{bean1985conceptual}
 Bean, J.~P., and Metzner, B.~S.
 \newblock A conceptual model of nontraditional undergraduate student attrition.
@@ -52,10 +57,23 @@ Guthrie, D.
 \newblock Moocs are toast or at least should be.
 \newblock {\em Forbes\/} (2013, July).
 
+\bibitem{gutl2014attrition}
+G{\"u}tl, C., Rizzardini, R.~H., Chang, V., and Morales, M.
+\newblock Attrition in mooc: Lessons learned from drop-out students.
+\newblock In {\em Learning Technology for Education in Cloud. MOOC and Big
+  Data}. Springer, 2014, 37--48.
+
 \bibitem{kember1989longitudinal}
 Kember, D.
 \newblock A longitudinal-process model of drop-out from distance education.
 \newblock {\em The Journal of Higher Education\/} (1989), 278--301.
+
+\bibitem{khalil2014moocs}
+Khalil, H., and Ebner, M.
+\newblock Moocs completion rates and possible methods to improve retention-a
+  literature review.
+\newblock In {\em World Conference on Educational Multimedia, Hypermedia and
+  Telecommunications}, vol.~2014 (2014), 1305--1313.
 
 \bibitem{kizilcec2013deconstructing}
 Kizilcec, R.~F., Piech, C., and Schneider, E.
@@ -88,6 +106,12 @@ Moore, M.~G., and Kearsley, G.
 \newblock {\em Distance education: A systems view}.
 \newblock Wadsworth Publishing Company, 1966.
 
+\bibitem{morris2005tracking}
+Morris, L.~V., Finnegan, C., and Wu, S.-S.
+\newblock Tracking student behavior, persistence, and achievement in online
+  courses.
+\newblock {\em The Internet and Higher Education 8}, 3 (2005), 221--231.
+
 \bibitem{muilenburg2005student}
 Muilenburg, L.~Y., and Berge, Z.~L.
 \newblock Student barriers to online learning: A factor analytic study.
@@ -102,6 +126,13 @@ Parr, C.
 Rivard, R.
 \newblock Measuring the mooc dropout rate.
 \newblock {\em Inside Higher Ed 8\/} (2013).
+
+\bibitem{rose2014social}
+Ros{\'e}, C.~P., Carlson, R., Yang, D., Wen, M., Resnick, L., Goldman, P., and
+  Sherer, J.
+\newblock Social factors that contribute to attrition in moocs.
+\newblock In {\em Proceedings of the first ACM conference on Learning@ scale
+  conference}, ACM (2014), 197--198.
 
 \bibitem{rovai2003search}
 Rovai, A.~P.
