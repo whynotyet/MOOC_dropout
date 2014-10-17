@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  17 OCT 2014 01:12
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  17 OCT 2014 00:33
+>>>>>>> ca15fac04e9a7820832fd241b9b16e68d5222e76
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -546,6 +550,7 @@ Package rerunfilecheck Info: File `paper_v1.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 296.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  6903 strings out of 493315
  99757 string characters out of 6137904
  195555 words of memory out of 5000000
@@ -553,6 +558,15 @@ Here is how much of TeX's memory you used:
  37405 words of font info for 84 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,10n,30p,1331b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
+=======
+ 6901 strings out of 493315
+ 99736 string characters out of 6137904
+ 202525 words of memory out of 5000000
+ 10159 multiletter control sequences out of 15000+600000
+ 37405 words of font info for 84 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 41i,10n,30p,1331b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
+>>>>>>> ca15fac04e9a7820832fd241b9b16e68d5222e76
 pdfTeX warning (dest): name{section*.22} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -586,10 +600,18 @@ st/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2013/texmf-dist/fon
 ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
+<<<<<<< HEAD
 Output written on paper_v1.pdf (4 pages, 113591 bytes).
 PDF statistics:
  232 PDF objects out of 1000 (max. 8388607)
  215 compressed objects within 3 object streams
  67 named destinations out of 1000 (max. 500000)
+=======
+Output written on paper_v1.pdf (4 pages, 113121 bytes).
+PDF statistics:
+ 229 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+>>>>>>> ca15fac04e9a7820832fd241b9b16e68d5222e76
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

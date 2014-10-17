@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{balakrishnan2013predicting}
+Balakrishnan, G., and Coetzee, D.
+\newblock Predicting student retention in massive open online courses using
+  hidden markov models, 2013.
+
 \bibitem{bean1985conceptual}
 Bean, J.~P., and Metzner, B.~S.
 \newblock A conceptual model of nontraditional undergraduate student attrition.
@@ -58,11 +63,14 @@ G{\"u}tl, C., Rizzardini, R.~H., Chang, V., and Morales, M.
 \newblock In {\em Learning Technology for Education in Cloud. MOOC and Big
   Data}. Springer, 2014, 37--48.
 
+<<<<<<< HEAD
 \bibitem{halawa2014dropout}
 Halawa, S., Greene, D., and Mitchell, J.
 \newblock Dropout prediction in moocs using learner activity features.
 \newblock {\em eLearning Papers\/} (2014), 1--10.
 
+=======
+>>>>>>> ca15fac04e9a7820832fd241b9b16e68d5222e76
 \bibitem{kember1989longitudinal}
 Kember, D.
 \newblock A longitudinal-process model of drop-out from distance education.
