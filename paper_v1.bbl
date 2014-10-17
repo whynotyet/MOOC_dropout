@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{balakrishnan2013predicting}
-Balakrishnan, G., and Coetzee, D.
-\newblock Predicting student retention in massive open online courses using
-  hidden markov models, 2013.
-
 \bibitem{bean1985conceptual}
 Bean, J.~P., and Metzner, B.~S.
 \newblock A conceptual model of nontraditional undergraduate student attrition.
@@ -63,14 +58,11 @@ G{\"u}tl, C., Rizzardini, R.~H., Chang, V., and Morales, M.
 \newblock In {\em Learning Technology for Education in Cloud. MOOC and Big
   Data}. Springer, 2014, 37--48.
 
-<<<<<<< HEAD
 \bibitem{halawa2014dropout}
 Halawa, S., Greene, D., and Mitchell, J.
 \newblock Dropout prediction in moocs using learner activity features.
 \newblock {\em eLearning Papers\/} (2014), 1--10.
 
-=======
->>>>>>> ca15fac04e9a7820832fd241b9b16e68d5222e76
 \bibitem{kember1989longitudinal}
 Kember, D.
 \newblock A longitudinal-process model of drop-out from distance education.
@@ -130,17 +122,17 @@ Parr, C.
 \newblock Mooc completion rates `below 7\%'.
 \newblock {\em Times Higher Education\/} (2013, May).
 
+\bibitem{paunesku2012brief}
+Paunesku, D., Yeager, D., Romero, C., and Walton, G.
+\newblock A brief growth mindset intervention improves academic outcomes of
+  community college students enrolled in developmental mathematics courses.
+\newblock {\em Unpublished manuscript, Stanford University, Stanford, CA\/}
+  (2012).
+
 \bibitem{rivard2013measuring}
 Rivard, R.
 \newblock Measuring the mooc dropout rate.
 \newblock {\em Inside Higher Ed 8\/} (2013).
-
-\bibitem{rose2014social}
-Ros{\'e}, C.~P., Carlson, R., Yang, D., Wen, M., Resnick, L., Goldman, P., and
-  Sherer, J.
-\newblock Social factors that contribute to attrition in moocs.
-\newblock In {\em Proceedings of the first ACM conference on Learning@ scale
-  conference}, ACM (2014), 197--198.
 
 \bibitem{rovai2003search}
 Rovai, A.~P.
@@ -174,16 +166,17 @@ Walton, G.~M., and Cohen, G.~L.
 \newblock A question of belonging: race, social fit, and achievement.
 \newblock {\em Journal of personality and social psychology 92}, 1 (2007), 82.
 
-\bibitem{walton2011brief}
-Walton, G.~M., and Cohen, G.~L.
-\newblock A brief social-belonging intervention improves academic and health
-  outcomes of minority students.
-\newblock {\em Science 331}, 6023 (2011), 1447--1451.
-
 \bibitem{wilkowski2014student}
 Wilkowski, J., Deutsch, A., and Russell, D.~M.
 \newblock Student skill and goal achievement in the mapping with google mooc.
 \newblock In {\em Proceedings of the first ACM conference on Learning@ scale
   conference}, ACM (2014), 3--10.
+
+\bibitem{yang2013turn}
+Yang, D., Sinha, T., Adamson, D., and Ros{\'e}, C.~P.
+\newblock Turn on, tune in, drop out: Anticipating student dropouts in massive
+  open online courses.
+\newblock In {\em Proceedings of the 2013 NIPS Data-Driven Education Workshop}
+  (2013).
 
 \end{thebibliography}
