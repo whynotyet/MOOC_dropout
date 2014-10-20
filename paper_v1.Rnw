@@ -23,6 +23,7 @@ DOI string from ACM form confirmation}
 \usepackage{graphics} % for EPS, load graphicx instead
 \usepackage{times}    % comment if you want LaTeX's default font
 \usepackage{url}      % llt: nicely formatted URLs
+\usepackage{booktabs}
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -192,29 +193,55 @@ The particular MOOC under observation was an undergraduate level course on an ad
 
 \subsubsection{Predicting Disengagement}
 
-TODO: Details of the prediction algorithm.
+SHERIF TODO: Details of the prediction algorithm.
 
 \subsubsection{Feedback Survey}
 
-Every learner who was predicted to disengage from the course was sent an email kindly requesting their help: ``You are enrolled in [course name], but you've been less active recently. Could you help us understand why?'' A very low response rate was expected, given that this subpopulation was defined by low engagement. 535 out of 6,050 learners started the survey (8.8\% response rate), and 499 completed it (8.2\% completion rate).
+Every learner who was predicted to disengage from the course was sent an email kindly requesting their help: ``You are enrolled in [course name], but you've been less active recently. Could you help us understand why?'' A very low response rate was expected, given that this subpopulation was defined by low engagement. 756 out of 6,050 learners started the survey (12.5\% response rate), and 459 completed it (61\% completion rate). Missing values were multiply imputated using chained equations based on responses to all survey questions\footnote{reference to MICE}. All estimates were pooled across ten imputations, with standard errors adjusted for added variance. 85\% of respondents were male, 35.6 years old on average ($SD=12.5$), and 80\% had achieved a bachelors' or more advanced degree.
 
 Learners were asked to report how satisfied they were with their progress in the course, and whether they were using the course materials more, less, or exactly as much as they would have liked. In addition, they reported intentions for engaging with each week's course content. Then, they were asked to openly report ``what challenges, inside or outside of the course, [they] experienced while [they were] taking this course, if any?'' The instructions encouraged them to list all challenges they could think of. This question was deliberately asked prior to any survey questions that could suggest particular reasons for disengagement.
 
-Two research assistants independently developed a codebook for the resulting 435 non-empty open responses. Their codebooks were consolidated and applied on Mechanical Turk, where 4 `classification experts' independently coded all 200 randomly selected responses. Specific updates to the initial codebook were informed by category frequency, category correlations, and inter-coder agreement. The updated codebook was then applied by 4 Mechanical Turk `classification experts' to the 235 remaining open responses.
+Two research assistants independently developed a codebook for the resulting 448 non-empty open responses. Their codebooks were consolidated and applied on Mechanical Turk, where 250 randomly selected responses were each coded by four `classification experts'. Specific updates to the initial codebook were informed by code frequency, code correlations, and inter-coder agreement. The updated codebook was then applied by Mechanical Turk `classification experts' to the 198 remaining open responses (four coders per response).
 
-Following the open response question, learners reported the difficulty of the course material and the extent to which their progress was hindered by a number of obstacles (see Table [XX]). The survey also included a measure of learners' sense of social and academic fit \cite{walton2007question} (17 items, $M=4.67, SD=0.72, \alpha=0.87$); mindset (4 items on the nature of intelligence and talent\footnote{Items were adpated from the mindset questionnaire available at \url{http://mindsetonline.com/testyourmindset/}.}; $M=2.45, SD=0.90, \alpha=0.78$), and goal striving (5 items on motivation, perceived importance, committment, confidence, and distractions; $M=3.08, SD=0.83, \alpha=0.76$).
-
-TODO: update numbers once finalized, explain use of imputation
+Besides these open responses, learners reported the difficulty of the course material and the extent to which their progress was hindered by a number of obstacles (see Table [XX]). The survey also included a measure of learners' sense of social and academic fit \cite{walton2007question} (17 items, $M=4.66, SD=0.71, \alpha=0.86$); mindset (4 items on the nature of intelligence and talent\footnote{Items were adpated from the mindset questionnaire available at \url{http://mindsetonline.com/testyourmindset/}.}; $M=4.44, SD=0.92, \alpha=0.77$), goal striving (4 items on motivation, perceived importance, committment, and confidence; $M=3.12, SD=0.95, \alpha=0.82$), and one item on volition (about lower-priority distractions hindering the learner's course progress; $M=2.73, SD=1.29$).
 
 \subsection{Results}
 
+\subsubsection{Predicting Likely Dropouts}
+
+SHERIF TODO: Add results of prediction. How well did the prediction work? And who took the survey; how sure was the model that those who took the survey would actually drop out, relative to those who didn't take the survey?
+
+\subsubsection{Reasons for Dropout}
+
+Reasons for learner attrition were measured using open response as well as multiple-choice questions. As we were interested in learners who left the course unsatisfied, we focused on the subpopulation that reported being only somewhat or less satisfied with their progress in the course (73\% of respondents). Almost half (47\%) the respondents found the course somewhat, very, or extremely difficult. When asked about the extent their progress was hindered by certain challenges, 18\% reported problems with computer or Internet access, 8\% reported technical difficulties, 17\% had difficulties with their level of English, and 24\% found the course requirements unclear. While two in three (66\%) respondents were substantially held back by other committments that took up time they had planned to spend on the course, only one in four (25\%) indicated being hindered by distractions of lower priority than the course (i.e. volition). The two measures, which only differ in the specified level of priority, were not significantly correlated, $r=.05, t_{548}=1.3 p=.21$. 
 
 
+\subsubsection{Psychological Factors}
 
+Hypotheses H1, H2, and H3 about goal striving, perceived social belonging, and mindset, respectively, were tested by comparing self-described successful with unsuccessful learners. Success was measured by relative progress, and satisfaction with progress: 68\% of respondents reported using the course materials less than they would have wanted, and 57\% reported not being satisfied with their progress in the course (18\% were very or extremely dissatisfied). The two measures were correlated, $r=.35, t_{754}=10, p<.001$; satisfied respondents were, however, equally likely to be successful and unsuccessful in terms of their progress. Table \ref{tab:psych} provides summary statistics for each psychological measure by these two success metrics. Successful learners exhibited higher levels of goal striving according to both progress and satisfaction measures. Social belonging was significantly higher for learners who were successful in terms of satisfaction but not progress. The pattern was reversed for growth mindset, with evidence for the hypothesized effect for progress but not satisfaction. The results fully support $H1$, and partially support $H2$ and $H3$.
 
-TODO: Add results of prediction. How well did the prediction work? And who took the survey; how sure was the model that those who took the survey would actually drop out, relative to those who didn't take the survey?
+\begin{table*}[ht]
+\caption{Descriptive and inferrential statistics for psychological measures by learner success}
+\label{tab:psych}
+\small
+\center
+\begin{tabular}{lcccc}
+\toprule
+ & $N$ & Goal Striving ($H1$) & Social Belonging ($H2$) & Growth Mindset ($H3$) \\
+\midrule
+\emph{Relative Progress} &  &  &  \\
+\quad Successful & 241 & 3.46 $(SD=0.91)$ & 4.70 $(SD=0.74)$ &  4.58 $(SD=0.99)$ \\
+\quad Unsuccessful & 515 & 2.96 $(SD=0.93)$ & 4.63 $(SD=0.70)$ & 4.38 $(SD=0.87)$ \\
+ &  & $t_{201}=6.3, p<.001, d=0.55$ & $t_{60}=1.0, p>.25, d=.09$ & $t_{152}=2.4, p=.017, d=0.21$ \\
+ \emph{Satisfaction} &  &  &  \\
+\quad Successful & 325 & 3.43 $(SD=0.83)$ & 4.76 $(SD=0.70)$ & 4.47 $(SD=0.93)$ \\
+\quad Unsuccessful & 431 & 2.88 $(SD=0.97)$ & 4.58 $(SD=0.71)$ & 4.42 $(SD=0.91)$ \\
+&  & $t_{166}=7.2, p<.001, d=0.59$ & $t_{158}=3.1, p=.002, d=.26$ & $t_{175}=0.6, p>.25, d=.05$ \\
+\bottomrule
+% \multicolumn{4}{l}{Two-sided $t$-test: $^{***} < .001$, $^{**} < .01$, $^{*} < .05$} \\
+\end{tabular}
+\end{table*}
 
-TODO: Write up results of diagnostic survey, keeping it simple for now.
 
 
 \subsection{Discussion}
