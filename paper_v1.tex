@@ -240,15 +240,46 @@ Another goal of Study 2 was to collect data to test hypotheses $H1, H2, H3$ on t
 
 \subsection{Methods}
 
-The particular MOOC under observation was an undergraduate level course on an advanced topic in computer science. It was offered in 2014 through Coursera. There were [N1] enrolled learners; [N2] watched more than one video, and [N3] attempted more than one assignment.
+The particular MOOC under observation was an undergraduate level course on an advanced topic in computer science. It was offered in 2014 through Coursera. There were  20,048 enrolled learners; 10,510 watched at least one video, and [N] attempted more than one assignment.
 
 \subsubsection{Predicting Disengagement}
 
-SHERIF TODO: Details of the prediction algorithm.
+The objective was to build an `early warning' prediction model that could flag learners who are likely to drop out in the future. We defined the following three criteria by which to evaluate the performance of the model.
+
+\textit{1. Prediction accuracy}: Prediction recall (the fraction of correctly predicted dropouts) should be high to deliver the survey to as many future dropouts as possible. The false positive rate (the fraction of non-dropouts incorrectly predicted as droputs) should be low to avoid sending a survey to learners who do not experience challenges in the courses.
+
+\textit{2. Prediction lag}: The period between a learner's last site activity and the time they are flagged as being likely to drop out should be short. A shorter prediction lag improves the likelihood of successfully intervening to help the learner get back on track.
+
+\textit{3. Transferability}: Whether or not a learner drops out of the course can not be determined before the end of the course. We thus had to train the prediction model using data from previous courses. The performance of the prediction model should be adequate in courses other than those on which it was trained.
+
+The training set was composed of learners' interaction data (predictors) and dropout states (outcome) from 20 MOOCs. The large number of courses should improve model transferability by favoring features that are strongly predictive across different courses. Five hundred learners from each MOOC were included in the training set ($train$), and 500 other learners from the same MOOCs were selected for the test set ($test_1$). Another second test set of similar size was composed from 20 other MOOCs ($test_2$). Features extracted from the interaction data included different aspects of learners' video, assignment, and forum activity; their pace of viewing videos relative to the course pace, as well as various aspects of engagement time, such as the last time the learner interacted with the course (see \cite{halawa2014dropout}, for additional details on the prediction model). The model was fit by logistic regression. Table \ref{tab:drop_pred_rocs} provides information on the prediction performance, measured by the difference in ROC and AUC.
+
+\begin{table}[h!]
+\caption{Performance of the dropout prediction model}
+\label{tab:drop_pred_rocs}
+\small
+\center
+\begin{tabular}{lccc}
+\toprule
+ & $train$ & $test_1$ & $test_2$ \\
+\midrule
+ROC -- AUC &  0.931 & 0.929 & 0.922  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two of the predictors in the fitted model are highly influential. The first is the number of days since the learner has last been active ($x_{1}$). The likelihood that the learner drops out increases substantially if the learner disengages for 14 days or more. However, the likelihood of such a learner re-engaging increases with the fraction of released videos the learner has viewed ($x_{2}$) prior to the absence; this is the second most influential feature in the model. Equation 1 is an approximation of the model with only these two predictors. A learner was flagged if their dropout probability exceeded a half:
+
+\begin{equation}
+Pr(\text{dropout}) = \frac{1}{1+e^{-0.431x_1 + 6.388x_2 + 1.626}} > 0.5
+\end{equation}
+
+Out of the 20,048 enrolled learners in the course, we only considered those 10,510 who watched at least one lecture video, and 6,074 of them were flagged as likely to drop out. The survey was sent out to 6,053 leaners (excluding 21 learners with invalid email addresses or duplicate accounts).
+
 
 \subsubsection{Feedback Survey}
 
-Every learner who was predicted to disengage from the course was sent an email kindly requesting their help: ``You are enrolled in [course name], but you've been less active recently. Could you help us understand why?'' A low response rate was expected for a subpopulation that was defined by low engagement. And yet, 756 out of 6,050 learners started the survey (12.5\% response rate), and 459 completed it (61\% completion rate). Missing values were multiply imputated by predictive mean matching using responses to all survey questions\footnote{The $R$ mice package was used to perform multiple imputation and subsequent analyses.}. All estimates were pooled across ten imputations, with standard errors adjusted for added variance. The majority of respondents were male (85\%), 35.6 years old on average ($SD=12.5$), and 80\% had achieved a bachelors' or more advanced degree.
+Every learner who was predicted to disengage from the course was sent an email kindly requesting their help: ``You are enrolled in [course name], but you've been less active recently. Could you help us understand why?'' A low response rate was expected for a subpopulation that was defined by low engagement. And yet, 756 out of 6,053 learners started the survey (12.5\% response rate), and 459 completed it (61\% completion rate). Missing values were multiply imputated by predictive mean matching using responses to all survey questions\footnote{The $R$ mice package was used to perform multiple imputation and subsequent analyses.}. All estimates were pooled across ten imputations, with standard errors adjusted for added variance. The majority of respondents were male (85\%), 35.6 years old on average ($SD=12.5$), and 80\% had achieved a bachelors' or more advanced degree.
 
 Learners were asked to report how satisfied they were with their progress in the course, and whether they were using the course materials more, less, or exactly as much as they would have liked. In addition, they reported intentions for engaging with each week's course content. Then, they were asked to openly report ``what challenges, inside or outside of the course, [they] experienced while [they were] taking this course, if any?'' The instructions encouraged them to list all challenges they could think of. This question was deliberately asked prior to any survey questions that could suggest particular reasons for disengagement.
 
@@ -258,9 +289,9 @@ Besides these open responses, learners rated their relative progress and satisfa
 
 \subsection{Results}
 
-\subsubsection{Predicting Likely Dropouts}
+% \subsubsection{Predicting Likely Dropouts}
 
-SHERIF TODO: Add results of prediction. How well did the prediction work? And who took the survey; how sure was the model that those who took the survey would actually drop out, relative to those who didn't take the survey?
+% SHERIF TODO: Add results of prediction. How well did the prediction work? And who took the survey; how sure was the model that those who took the survey would actually drop out, relative to those who didn't take the survey?
 
 \subsubsection{Reasons for Dropout}
 
@@ -298,6 +329,11 @@ Hypotheses $H1$, $H2$, and $H3$ about goal striving, perceived social belonging,
 
 
 \subsection{Discussion}
+
+Learners drop out at different times during the course. To elicit feedback from likely dropouts, one possible approach is to send the follow-up survey to every learner in the course, and then exclude learners who persist from the analysis. However, learners can develop risk factors at different times in the course. The drawback of this approach is that it requires the survey to be delivered to every learner multiple times in order to capture feedback from learners who might develop risk factors at different times. Such increased survey load can increase attrition or dissatisfaction in the course.
+
+An alternative approach is to employ a predictive model that red-flags a learner when they start exhibiting behaviors predictive of dropout, and sending the survey only to students who are newly red-flagged. This reduces survey burden while allowing us, ideally, to reach the whole population of interest (every learner who is at risk). Several MOOC instructors required minimization of the workload associated with taking the follow-up survey, which urged us to follow this approach.
+
 
 
 \section{General Discussion}
