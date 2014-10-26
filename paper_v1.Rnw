@@ -202,7 +202,7 @@ The objective was to build an `early warning' prediction model that could flag l
 
 \textit{3. Transferability}: Whether or not a learner drops out of the course can not be determined before the end of the course. We thus had to train the prediction model using data from previous courses. The performance of the prediction model should be adequate in courses other than those on which it was trained.
 
-The training set was composed of learners' interaction data (predictors) and dropout states (outcome) from 20 MOOCs. The large number of courses should improve model transferability by favoring features that are strongly predictive across different courses. Five hundred learners from each MOOC were included in the training set ($train$), and 500 other learners from the same MOOCs were selected for the test set ($test_1$). Another second test set of similar size was composed from 20 other MOOCs ($test_2$). Features extracted from the interaction data included different aspects of learners' video, assignment, and forum activity; their pace of viewing videos relative to the course pace, as well as various aspects of engagement time, such as the last time the learner interacted with the course (see \cite{halawa2014dropout}, for additional details on the prediction model). The model was fit by logistic regression. Table \ref{tab:drop_pred_rocs} provides information on the prediction performance, measured by the difference in ROC and AUC.
+The training set was composed of learners' interaction data (predictors) and dropout states (outcome) from 20 MOOCs. The large number of courses should improve model transferability by favoring features that are strongly predictive across different courses. Five hundred learners from each MOOC were included in the training set ($train$), and 500 other learners from the same MOOCs were selected for the test set ($test_1$). Another second test set of similar size was composed from 20 other MOOCs ($test_2$). Features extracted from the interaction data included different aspects of learners' video, assignment, and forum activity; their pace of viewing videos relative to the course pace, as well as various aspects of engagement time, such as the last time the learner interacted with the course (see \cite{halawa2014dropout}, for additional details on the prediction model). The model was fit by logistic regression. Table \ref{tab:drop_pred_rocs} provides information on the prediction performance, measured by the area under the ROC curve (AUC).
 
 \begin{table}[h!]
 \caption{Performance of the dropout prediction model}
@@ -213,7 +213,7 @@ The training set was composed of learners' interaction data (predictors) and dro
 \toprule
  & $train$ & $test_1$ & $test_2$ \\
 \midrule
-ROC -- AUC &  0.931 & 0.929 & 0.922  \\
+AUC &  0.931 & 0.929 & 0.922  \\
 \bottomrule
 \end{tabular}
 \end{table}
