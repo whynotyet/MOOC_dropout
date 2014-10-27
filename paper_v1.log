@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  26 OCT 2014 14:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  26 OCT 2014 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -531,53 +531,57 @@ Non-PDF special ignored!
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
- [2] [3]
+ [2]
+
+Package hyperref Warning: Suppressing empty link on input line 214.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 258.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 291.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 224.
+
+Overfull \hbox (10.34416pt too wide) in paragraph at lines 265--285
+ [] 
+ []
 
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+Underfull \vbox (badness 1502) has occurred while \output is active []
+
+ [3]
+[4]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 356.
+
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <8> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 291.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4] (./paper_v1.bbl
-
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-[5]
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 356.
+ [5]
+[6] (./paper_v1.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
+ [7])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 465.
 
-Overfull \vbox (10.23569pt too high) has occurred while \output is active []
+Overfull \vbox (1.53247pt too high) has occurred while \output is active []
 
 
-[6])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 465.
  (./paper_v1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 400.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 400.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 465.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 465.
 Package rerunfilecheck Info: File `paper_v1.out' has not changed.
 (rerunfilecheck)             Checksum: 9FC00AC6E7EE39571B1F66F8BB6249BC;1250.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 400.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 465.
  ) 
 Here is how much of TeX's memory you used:
- 6988 strings out of 493315
- 100834 string characters out of 6137904
- 203568 words of memory out of 5000000
- 10224 multiletter control sequences out of 15000+600000
+ 6997 strings out of 493315
+ 100986 string characters out of 6137904
+ 212630 words of memory out of 5000000
+ 10230 multiletter control sequences out of 15000+600000
  42917 words of font info for 90 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,10n,30p,1507b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,15n,30p,1507b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{section*.24} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -620,10 +624,10 @@ rw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/helv
 etic/uhvro8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb
 8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper_v1.pdf (7 pages, 216099 bytes).
+Output written on paper_v1.pdf (8 pages, 222180 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 323 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
+ 83 named destinations out of 1000 (max. 500000)
  169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
