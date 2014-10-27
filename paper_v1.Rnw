@@ -89,7 +89,8 @@ breaklinks=true,
 \maketitle
 
 \begin{abstract}
-Persistence and attrition in MOOCs are systematically analyzed using self-report and behavioral data collected from 20879 online learners in 18 courses. Study 1 offers insights into reasons for disengaging from MOOCs and explores relationships with prior behavior and reported intentions. Study 2 is a case study to develop a deeper understanding of attrition in MOOCs by conducting a case study. Targeting online learners who were predicted likely dropouts in a particular course were invited to provide feedback via a survey. (abstract needs work...)
+% Persistence and attrition in MOOCs are systematically analyzed using self-report and behavioral data collected from 20879 online learners in 18 courses. Study 1 offers insights into reasons for disengaging from MOOCs and explores relationships with prior behavior and reported intentions. Study 2 is a case study to develop a deeper understanding of attrition in MOOCs by conducting a case study. Targeting online learners who were predicted likely dropouts in a particular course were invited to provide feedback via a survey. (abstract needs work...)
+Abstract goes here.
 \end{abstract}
 
 \keywords{Online learning, persistence, attrition, dropout, disengagement, massive open online courses, MOOC, psychological factors}
@@ -99,7 +100,7 @@ Persistence and attrition in MOOCs are systematically analyzed using self-report
 
 \section{Introduction}
 
-Educational environments has become increasingly diverse. Traditional schools and universities have a characteristically rigid structure, including instructor-defined---even nationally agreed---syllabi, fixed time schedules, entry requirements, and material costs to enter and exit. Novel institutional structures have been developed to overcome particular constraints. Community colleges, for instance, were created in an attempt to democratize education by offering instruction at a lower cost and by accommodating people with less flexible schedules \cite{goldrick2010challenges}. Distance learning programs intended to deliver education in remote parts of the world and for people who simply could not attend in-person classes. Course materials, including assessments, were delivered through mail (``correspondence education''), radio, television, and eventually the Internet, thereby addressing geographical and time related constraints of traditional instruction \cite{moore1996distance}.
+Educational environments have become increasingly diverse. Traditional schools and universities have a characteristically rigid structure, including instructor-defined---even nationally agreed---syllabi, fixed time schedules, entry requirements, and material costs to enter and exit. Novel institutional structures have been developed to overcome particular constraints. Community colleges, for instance, were created in an attempt to democratize education by offering instruction at a lower cost and by accommodating people with less flexible schedules \cite{goldrick2010challenges}. Distance learning programs intended to deliver education in remote parts of the world and for people who simply could not attend in-person classes. Course materials, including assessments, were delivered through mail (``correspondence education''), radio, television, and eventually the Internet, thereby addressing geographical and time related constraints of traditional instruction \cite{moore1996distance}.
 
 The latest generation of online learning environments, characterized by massive open online courses (MOOCs), has pushed the boundary on the scale of education \cite{waldrop2013campus}. By design, MOOCs provide course materials to millions of people worldwide. This scale could be achieved by pre-recording lectures, designing assessments that can be graded automatically, and by leveraging the momentum of the number of people involved (e.g., to facilitate peer learning or peer grading \cite{kulkarni2013peer,cambre2014talkabout}). Maybe by virtue of their large scale, their prominent instructors, or their adherence to contemporary interface designs, MOOCs rapidly became an online media phenomenon. People would sign up weeks in advance of the course launch date, many of whom would never even enter the course site. And among those who enroll and enter the site, a large proportion tends to only ``sample'' some content and leave again \cite{kizilcec2013deconstructing}. Many of the prototypical behaviors observed in MOOCs \cite{kizilcec2013deconstructing,breslow2013studying} (other?) resemble those on online media platforms, such as YouTube or tumblr. This trend has also been reflected in the diversity of MOOC learners' motivations for enrolling \cite{kizilcec2015motivation}.
 
@@ -141,6 +142,41 @@ Distance education, in contrast to traditional in-person education, attracts a d
 
 Rovai \citeyear{rovai2003search}, combining Tinto's and Bean and Metzner's models with factors specific to online learning and pedagogical styles, proposed a composite persistence model specifically for students in online distance education programs. Among other novel factors, Rovai's model acknowledges the critical role of computer literacy in online learning. And yet, while the theoretical models become more developed, they became harder to apply to real-world settings, and hence, the empirical evidence to support them remained sparse. An exploratory study of reasons for attrition suggested the following eight constructs, based on over 1,000 online education students: academic and technical skills, learner motivation, time and support for studies, cost and access to the Internet, and technical problems \cite{muilenburg2005student}. An analysis of student behavior on an online education platform showed that 31\% of variation in achievement could be accounted for by a small set of participation measures \cite{morris2005tracking}.
 
+\begin{table*}[th]
+\label{tab:s1sum}
+\caption{Summary statistics of learner demographics and behavior in 14 MOOCs}
+\small
+\center
+\begin{tabular}{llccccccccccc}
+% & & & & & & & & $>$ 30\% & $>$ 50\% & $>$ 80\% & Self-Rep. \\
+% & Topic Area & Enrollment & Course survey & Feedback survey & Female & Age & Education & videos & videos & videos & Dropout \\
+\toprule
+ &            &          & \multicolumn{3}{c}{Survey Responses} & & & & & \multicolumn{3}{c}{Videos Watched} \\
+ \cmidrule(r){4-6} \cmidrule(r){11-13}
+ & Topic Area & Enrolled & Initial & Feedback & Both & Female & Age$^1$   & Education$^2$ & Dropout$^3$ & $>$ 30\% & $>$ 50\% & $>$ 80\% \\
+\midrule
+C1 & Business & 61,096   & 9,943  & 2,367    & N    & 42\%   & 39 (30,49) & n.a.       & 10\% & 39\% & 20\% & 7\% \\
+C2 & Business & 41,081   & 6,544  & 883      & N    & 40\%   & 39 (30,49) & 97\%       & 9\%  & 32\% & 13\% & 2\% \\
+C3 & CS       & 27,104   & 6,104 & 2,854     & N    & 35\%   & 30 (22,41) & 74\%       & 2\%  & 67\% & 40\% & 7\% \\
+C4 & CS       & 56,154   & 3,406 & 1,123     & N    & 11\%   & 33 (27,42) & 91\%       & 21\% & 34\% & 16\% & 11\% \\
+C5 & CS       & 57,636   & 5738  & 402       & N    & 17\%   & 33 (26,43) & 91\%       & 14\% & 66\% & 55\% & 28\% \\
+C6 & Engineering & 16,220 & 2,540 & 269      & N    & 13\%   & 33 (27,45) & 92\%       & 15\% & 62\% & 49\% & 17\% \\
+C7 & Enginerring & 7,178 & 1,312 & 202       & N    & 12\%   & 27 (22,39) & 85\%       & 7\%  & 51\% & 18\% & 2\% \\
+C8 & Humanities & 7,634 & 3,631  & 152       & N    & 92\%   & 33 (26,45) & 93\%       & 7\%  & 45\% & 11\% & 0\% \\
+C9 & Humanities & 6,475 & 3,315  & 326       & N    & 90\%   & 32 (27,47) & 91\%       & 16\% & 69\% & 50\% & 17\% \\
+C10 & Humanities & 9,903 & 4,227 & 1,570     & N    & 52\%   & 39 (29,52) & 89\%       & 3\%  & 84\% & 74\% & 21\% \\
+C11 & Humanities & 630 & 167     & 80        & N    & 50\%   & 30 (27,40) & 97\%       & 16\% & 74\% & 55\% & 16\% \\
+C12 & Math \& Stats & 49,317 & 3,090 & 862   & N    & 33\%   & 41 (29,55) & 88\%       & 31\% & 27\% & 10\% & 1\% \\
+C13 & Math \& Stats & 32,006 & 26,142 & 5,336 & N   & 58\%   & 28 (16,46) & n.a.       & 4\%  & 69\% & 38\% & 8\% \\
+C14 & Math \& Stats & 16,857 & 2,892 & 363   & N    & 9\%    & 31 (26,38) & 99\%       & 14\% & 61\% & 45\% & 25\% \\
+C15 & Math \& Stats & 37,017 & 11,629 & 1,854 & N   & 20\%   & 35 (29,45) & 98\%       & 8\%  & 78\% & 67\% & 34\% \\
+C16 & Math \& Stats & 27,236 & 2,711 & 637   & N    & 82\%   & 43 (34,51) & n.a.       & 1\%  & 64\% & 36\% & 5\% \\
+C17 & Math \& Stats & 13,132 & 3,629 & 843   & N    & n.a.   & n.a.       & n.a.       & 5\%  & 70\% & 54\% & 14\% \\
+\bottomrule
+\multicolumn{13}{l}{$^1$ mean (SD)  $^2$ bachelors' or higher degree  $^3$ self-reported in the feedback survey}
+\end{tabular}
+\end{table*}
+
 \subsection{MOOCs}
 
 A survey of over one hundred learners who dropped out of a MOOC showed that the majority indicated having too little time due to work responsibilities, not enough social support inside and outside of the course, and insufficient academic and technical support from the course \cite{gutl2014attrition}. A qualitative analysis of public records, especially forum posts, from 42 MOOCs suggested the following reasons for attrition: lack of time, learner motivation, feelings of isolation, lack of interactivity, insufficient prior knowledge or skills, and hidden costs \cite{khalil2014moocs}. A survival analysis of close to 800 learners who had posted on a MOOC discussion forum suggested that the likelihood of dropout was lower for those who i. actively participated in the first week of the course; ii. served as an authority figure in the community on the forum, and iii. did not engage in a particular subcommunity on the forum \cite{yang2013turn}. In addition, a number of machine learning approaches yielded promising results for early dropout prediction (e.g. \cite{taylor2014likely,halawa2014dropout}), but fell short of offering insights into why a given learner would leave the course.
@@ -153,57 +189,27 @@ A survey of over one hundred learners who dropped out of a MOOC showed that the 
 
 \section{Study 1: Reasons for Disengaging}
 
-% \begin{description}
-%   \item[H1] prior experience -- technical difficulties
-%   \item[H2] demographics (education) -- course difficulty
-% \end{description}
-
+The present study extends the existing literature on persistence with a representative quantitative treatment of attrition in MOOCs. We address the research questions developed in the previous section with a combination of self-report and behavioral data from seventeen diverse MOOCs. Going beyond specific research questions, this observational analysis is intended to inform our understanding of attrition in MOOCs to better support learners in these environments. This can be achieved through general changes, for instance, to the course format; or by targeted interventions that support a particular group of learners, such as those who exhibit low levels of goal striving (cf. Study 2).
 
 \subsection{Methods}
 
-% Which courses did we use? What data
-Seventeen MOOCs on topcis in a variety of disciplines were selected for investigation: four on topics in the humanities, two in engineering, three in computer science, two runs of the same course in business, and six in mathematics and statistics. For each course, we merged data from the initial course survey (distributed in the first weeks of the course), the feedback surveys (distributed in the last weeks of the course), and behavioral data collected in the learning environment. Only those learners who completed the feedback survey were included in the analyses (some did not complete the initial course survey). Table \ref{tab:study1_courses_summary} provides the following summary statistics for each course: the number of enrolled learners, the number of learners who completed the course survey and the feedback surveys, age, gender, and education level, and the proportion of learners who self-reported that they stopped participating in the course. Note that age, gender, and education level statistics were computed using only the subset of learners who took both the initial and feedback surveys. We also computed the proprtions of learners who viewed at least 30, 50, and 80\% of the course videos.
+Seventeen MOOCs on topics in a variety of disciplines were selected for investigation (see Table \ref{tab:s1sum}). For each course, we merged data from the initial course survey (distributed in the first weeks of the course), the feedback surveys (distributed in the last weeks of the course), and behavioral data collected in the learning environment. 
+% Only those learners who completed the feedback survey were included in the analyses (some did not complete the initial course survey). 
+Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and behavioral indicators for each course. Self-reported dropout was measured in the feedback survey by asking learners if they stopped participating in the course. The three behavioral indicators are the proportions of learners who viewed at least 30, 50, and 80\% of the lecture videos. Information about age, gender, and education level were only available for learners who completed the initial course survey.
 
 %Table:  course name; enrollment; pre-survey response rate; prop. demographics (age, gender, educ); who intended to do all; post-survey response rate; self-identified dropout rate
-  
-\begin{table*}
-\label{tab:study1_courses_summary}
-\caption{Summary statistics of 14 MOOCs}
-\small
-\center
-\begin{tabular}{llcccccccccc}
-\toprule
-%  & Topic Area & Enrollment & Course survey & Feedback survey & Female & Age & Education & \specialcellcentered{\ensuremath{>} 30\% \\ videos} & \specialcellcentered{\ensuremath{>} 50\% \\ videos} & \specialcellcentered{\ensuremath{>} 80\% \\ videos} & \specialcellcentered{Self-Rep. \\ Dropout} \\
-& & & & & & & & $>$ 30\% & $>$ 50\% & $>$ 80\% & Self-Rep. \\
-& Topic Area & Enrollment & Course survey & Feedback survey & Female & Age & Education & videos & videos & videos & Dropout \\
-\midrule
-C1 & Business & 61,096 & 9,943 & 2,367 & 42\% & 39 (30,49) & n/a & 39\% & 20\% & 7\% & 10\% \\
-C2 & Business & 41,081 & 6,544 & 883 & 40\% & 39 (30,49) & 97\% & 32\% & 13\% & 2\% & 9\% \\
-C3 & CS & 27,104 & 6,104 & 2,854 & 35\% & 30 (22,41) & 74\% & 67\% & 40\% & 7\% & 2\% \\
-C4 & CS & 56,154 & 3,406 & 1,123 & 11\% & 33 (27,42) & 91\% & 34\% & 16\% & 11\% & 21\% \\
-C5 & CS & 57,636 & 5738 & 402 & 17\% & 33 (26,43) & 91\% & 66\% & 55\% & 28\% & 14\% \\
-C6 & Engineering & 16,220 & 2,540 & 269 & 13\% & 33 (27,45) & 92\% & 62\% & 49\% & 17\% & 15\% \\
-C7 & Enginerring & 7,178 & 1,312 & 202 & 12\% & 27 (22,39) & 85\% & 51\% & 18\% & 2\% & 7\% \\
-C8 & Humanities & 7,634 & 3,631 & 152 & 92\% & 33 (26,45) & 93\% & 45\% & 11\% & 0\% & 7\% \\
-C9 & Humanities & 6,475 & 3,315 & 326 & 90\% & 32 (27,47) & 91\% & 69\% & 50\% & 17\% & 16\% \\
-C10 & Humanities & 9,903 & 4,227 & 1,570 & 52\% & 39 (29,52) & 89\% & 84\% & 74\% & 21\% & 3\% \\
-C11 & Humanities & 630 & 167 & 80 & 50\% & 30 (27,40) & 97\% & 74\% & 55\% & 16\% & 16\% \\
-C12 & Math \& Stats & 49,317 & 3,090 & 862 & 33\% & 41 (29,55) & 88\% & 27\% & 10\% & 1\% & 31\% \\
-C13 & Math \& Stats & 32,006 & 26,142 & 5,336 & 58\% & 28 (16,46) & n/a & 69\% & 38\% & 8\% & 4\% \\
-C14 & Math \& Stats & 16,857 & 2,892 & 363 & 9\% & 31 (26,38) & 99\% & 61\% & 45\% & 25\% & 14\% \\
-C15 & Math \& Stats & 37,017 & 11,629 & 1,854 & 20\% & 35 (29,45) & 98\% & 78\% & 67\% & 34\% & 8\% \\
-C16 & Math \& Stats & 27,236 & 2,711 & 637 & 82\% & 43 (34,51) & n/a & 64\% & 36\% & 5\% & 1\% \\
-C17 & Math \& Stats & 13,132 & 3,629 & 843 & n/a & n/a & n/a & 70\% & 54\% & 14\% & 5\% \\
-\bottomrule
-\end{tabular}
-\end{table*}
+
+\subsubsection{Measures}
+
+Learners reported reasons for enrolling in the course (using the OLEI scale \cite{kizilcec2015motivation} on the course survey) and leaving the course (on the feedback survey) on a grid of binary-choice items. The feedback survey for asked learners whether or not they have stopped participating before the end of the course, and if they did, what reasons influenced their decision to stop. For each reason, the student was asked to select one of two options: ``Did influence my decision to stop" and ``Did NOT influence my decision to stop". Compared to a question where the student only checks a box if the reason applies, this design aims to distinguish between respondents who skip reporting reasons and those who express that the reason did not apply to them. We also computed the fraction of videos in the course each learner had watched to relate self-report measures to learner behavior.
+
+We first report the proportion for each reason for dropping out. This was computed as the number of respondents who reported that the reason applied to them divided by the total number of those who responded to the question (reporting that it applies or that it does not apply). We also computed the median and interquartile range of the proprtions across all courses for each reason. The resulting proportions are shown in Figure \ref{fig:prop-reason}. Second, we performed three correlational analyses were performed to investigate associations between these measures.
+
+We examined the strength of correlations between reasons for dropout. The correlation matrix for the reasons were computed separately for each course, and then linearly combined to yield the average correlation matrix shown in Table \ref{tab:study1_rfd_corr}. Following the same procedure, we computed the correlation matrix between reasons to enroll and reasons for attrition. Furthermore, we computed correlations between reported reasons for dropout and certain learner behaviors. Finally, for each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table [TableToBeAdded].
 
 
-% Proportions for each dropout reason for each course
-We are interested in the proportions of respondents that reported each reason for dropout across the courses. These proportions are shown in Figure \ref{fig:prop-reason}. The proprtion for each reason was computed as the number of respondents who reported that the reason applied to them divided by the total number of those who responded to the question (reporting that it aplies or that it does not apply). We also computed the median and interquartile range of the proprtions across all courses for each reason. 
+\subsection{Results}
 
-
-%Figure: proportions for each dropout reason for each course
 <<prop-reason, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Proportion of learners who indicated each reason for attrition across 17 MOOCs'>>=
 values = c(18,20,10,22,19,21,8,11,13,13,9,7,14,18,11,14,19,
 57,39,13,48,42,51,33,60,65,42,18,52,21,68,39,28,68,
@@ -229,8 +235,6 @@ ggplot(dat, aes(reorder(reasons, values, median), values)) + geom_boxplot() + co
 @
 
 
-
-The feedback survey for each course asked the learners, among other questions, whether or not they have stopped participating before the end of the course, and if they did, what reasons influenced their decision to stop. For each reason, the student was asked to select one of two options: "Did influence my decision to stop" and "Did NOT influence my decision to stop". Compared to a question where the student only checks a box if the reason applies, this design aims to distinguish between respondents who skip reportinga reason and those who express that the reason did not apply to them. We are interested in examining the strength of correlations between these reasons. We computed the correlation matrix for the reasons for each course separately, and then linearly combined these matrices to yield the average correlation matrix shown in Table \ref{tab:study1_rfd_corr}.
 
 \begin{table*}
 \label{tab:study1_rfd_corr}
@@ -259,7 +263,7 @@ R14: Videos were confusing &  &  &  &  &  &  &  &  &  &  &  &  &  & 1 \\
 \end{tabular}
 \end{table*}
 
-In the initial surveys, learners were asked about their reasons for enrollment, and they were asked to mark whether or not each of a set of enrollment reasons \cite{} applies to them. For each course, we computed the correlation matrix of the reasons for dropout with reasons for enrollment. These matrices were then linearly combined to give the matrix shown in Table \ref{tab:study1_rfd_ei_corr}.
+
 
 \begin{table*}
 \label{tab:study1_rfd_ei_corr}
@@ -288,15 +292,21 @@ Take with others & 0 & -0.02 & 0.16 & 0.06 & 0.12 & 0.05 & 0.06 & 0.24 & 0.11 & 
 \end{tabular}
 \end{table*}
 
+(Note: this section is work in progress, we will go through each RQ and present results that address them here.)
 
+Table \ref{tab:study1_rfd_ei_corr}.
 
-% Proportion videos watched for each disengagement reason
-We are also interested in the correlations between reported reasons for dropout and certain learner behaviors. For each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table [TableToBeAdded].
+How do prior learner characteristics (demographics, geographic location, intentions and motivations, and previous online courses) influence learners' likelihood of dropping out of a MOOC? (RQ1)
 
+What proportion of learners who dropped out were satisfied with their achievements in the course? (RQ2)
 
+What reasons do learners report for dropping out of a MOOC? (RQ3a)
 
-\subsection{Results}
-Study 1 shows that the two most commonly reported reasons for dropout are related to one's ability to commit time to the course. The correlation between the two reasons is $r=0.32$. A more detailed analysis we conditioned on responses to these two reasons revealed that 30\% of respondents who reported at least one of these two time reasons reported no other reasons for dropout, while 24\% reported one other reason and 46\% reported more than one.
+ How do reasons for dropping out vary across prior learner characteristics (cf. RQ1)? (RQ3b)
+ 
+How does behavior in MOOCs vary by reasons for dropping out? (RQ4)
+
+The two most commonly reported reasons for dropout are related to one's ability to commit time to the course. The correlation between the two reasons is $r=0.32$. A more detailed analysis we conditioned on responses to these two reasons revealed that 30\% of respondents who reported at least one of these two time reasons reported no other reasons for dropout, while 24\% reported one other reason and 46\% reported more than one.
 
 Difficulty of an assignment or exam was the third most reported reason for dropout. It is most positively correlated with reasons citing difficulties, including ``Too advanced for my background'' ($r=0.4$), ``Materials not explained properly'' ($r=0.37$), and ``Technical difficulties'' ($r=0.33$).
 
@@ -310,31 +320,33 @@ The reason that exhibited the strongest positive correlations with other feature
 
 Unlike correlations among reasons for disengagement, correlations of reasons for disengagement with enrollment intentions were mostly weak ($-0.14 < r < 0.24$). Among the strongest positive correlations were the cases listed in Table \ref{tab:rfd_ei_strongest_correlations}
 
-\begin{table*}
-\label{tab:rfd_ei_strongest_correlations}
-\caption{Strongest observed correlations ($r >= 0.15) between reasons for disengagement and enrollment intentions}
-\center
-\small
-\begin{tabular}{llr}
-\toprule
- Enrollment intention & Dropout reason & $r$ \\
-\midrule
-Take with others & Course not challenging enough & 0.24 \\
-Take with others & Too advanced for my background & 0.20 \\
-Experience an online course & I was only exploring the course & 0.17 \\
-Improve my English & Technical difficulties & 0.17 \\
-Personal growth & Could not keep up with deadlines & 0.16 \\
-Take with others & Credentials not valuable enough for me & 0.16 \\
-Take with others & Technical difficulties & 0.15 \\
-Prestigious uni/prof & Could not keep up with deadlines & 0.15 \\
-\bottomrule
-\end{tabular}
-\end{table*}
+% \begin{table*}
+% \label{tab:rfd_ei_strongest_correlations}
+% \caption{Strongest observed correlations ($r >= 0.15$) between reasons for disengagement and enrollment intentions}
+% \center
+% \small
+% \begin{tabular}{llr}
+% \toprule
+%  Enrollment intention & Dropout reason & $r$ \\
+% \midrule
+% Take with others & Course not challenging enough & 0.24 \\
+% Take with others & Too advanced for my background & 0.20 \\
+% Experience an online course & I was only exploring the course & 0.17 \\
+% Improve my English & Technical difficulties & 0.17 \\
+% Personal growth & Could not keep up with deadlines & 0.16 \\
+% Take with others & Credentials not valuable enough for me & 0.16 \\
+% Take with others & Technical difficulties & 0.15 \\
+% Prestigious uni/prof & Could not keep up with deadlines & 0.15 \\
+% \bottomrule
+% \end{tabular}
+% \end{table*}
 
 \subsection{Discussion}
-Even though study 1 accentuates ``time'' as a reported reason for dropout, interpreting what time means is not straight forward. Expectency-value theory models the learner as a rational agent who allocates time to different activities to maximize subjective gain. In other words, a learner might disengage from the course if she gets occupied by other higher priority tasks. Because learners can join or leave MOOCs freely. Joining a MOOC does not necessarily imply that a learner is capable of allocating the time for it according to the rational framework that expectancy value theory predicts. Moreover, previous research on volitional control suggests that learners allocate time to the next highest priority task, but could rather get distracted by lower priority activities that promise nearer gratification. So what does lack of time for the course mean? In study 2, we attempt to investigate various possible dropout reasons that learners might report as "lack of time".
 
-[TBC]
+(Note: this section is also work in progress.)
+
+Even though study 1 accentuates ``time'' as a reported reason for dropout, interpreting what time means is not straight forward. Expectency-value theory models the learner as a rational agent who allocates time to different activities to maximize subjective gain. In other words, a learner might disengage from the course if she gets occupied by other higher priority tasks. Because learners can join or leave MOOCs freely. Joining a MOOC does not necessarily imply that a learner is capable of allocating the time for it according to the rational framework that expectancy value theory predicts. Moreover, previous research on volitional control suggests that learners allocate time to the next highest priority task, but could rather get distracted by lower priority activities that promise nearer gratification. So what does lack of time for the course mean? In study 2, we attempt to investigate various possible dropout reasons that learners might report as ``lack of time".
+
 
 \section{Study 2: Understanding Disengagement}
 
