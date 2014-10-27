@@ -291,15 +291,50 @@ Take with others & 0 & -0.02 & 0.16 & 0.06 & 0.12 & 0.05 & 0.06 & 0.24 & 0.11 & 
 
 
 % Proportion videos watched for each disengagement reason
-We are also interested in the correlations between reported reasons for dropout and certain learner behaviors. For each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table \ref{tab:study1_rfd_video_behavior_corr}.
+We are also interested in the correlations between reported reasons for dropout and certain learner behaviors. For each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table [TableToBeAdded].
 
 
 
 \subsection{Results}
+Study 1 shows that the two most commonly reported reasons for dropout are related to one's ability to commit time to the course. The correlation between the two reasons is $r=0.32$. A more detailed analysis we conditioned on responses to these two reasons revealed that 30\% of respondents who reported at least one of these two time reasons reported no other reasons for dropout, while 24\% reported one other reason and 46\% reported more than one.
 
+Difficulty of an assignment or exam was the third most reported reason for dropout. It is most positively correlated with reasons citing difficulties, including ``Too advanced for my background'' ($r=0.4$), ``Materials not explained properly'' ($r=0.37$), and ``Technical difficulties'' ($r=0.33$).
+
+The proportion of respondents who selected ``Technical difficulties'' exceeded 20\% in 10 out of the 17 courses. This reason, however, exhibits positive correlations stronger that 0.2 with 7 other reasons. [What might we like to study more about respondents who selected this reason?]
+
+In the median, 19\% of respondents reported they learned what they wanted in the course, and this reason was moderately positively correlated with reasons citing no or incomplete interest in the course, namely ``I was only exploring the course'' ($r=0.36$), ``The course is not challenging enough for me'' ($r=0.31$), and ``The course is not what I was looking for'' ($r=0.28$).
+
+Another set of interesting positive correlations exists between ``Course is not what I was looking for'' and other reasons citing the materials' level of difficulty/challenge, the value of the credentials to the respondent, and the extent to which she enjoyed the online course format, suggesting .... [TBC]
+
+The reason that exhibited the strongest positive correlations with other features was ``Videos were confusing''. it correlates most strongly with ``Materials not explained properly'' ($r=0.66$) and ``Did not enjoy online course format'' ($r=0.54$)
+
+Unlike correlations among reasons for disengagement, correlations of reasons for disengagement with enrollment intentions were mostly weak ($-0.14 < r < 0.24$). Among the strongest positive correlations were the cases listed in Table \ref{tab:rfd_ei_strongest_correlations}
+
+\begin{table*}
+\label{tab:rfd_ei_strongest_correlations}
+\caption{Strongest observed correlations ($r >= 0.15) between reasons for disengagement and enrollment intentions}
+\center
+\small
+\begin{tabular}{llr}
+\toprule
+ Enrollment intention & Dropout reason & $r$ \\
+\midrule
+Take with others & Course not challenging enough & 0.24 \\
+Take with others & Too advanced for my background & 0.20 \\
+Experience an online course & I was only exploring the course & 0.17 \\
+Improve my English & Technical difficulties & 0.17 \\
+Personal growth & Could not keep up with deadlines & 0.16 \\
+Take with others & Credentials not valuable enough for me & 0.16 \\
+Take with others & Technical difficulties & 0.15 \\
+Prestigious uni/prof & Could not keep up with deadlines & 0.15 \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
 \subsection{Discussion}
+Even though study 1 accentuates ``time'' as a reported reason for dropout, interpreting what time means is not straight forward. Expectency-value theory models the learner as a rational agent who allocates time to different activities to maximize subjective gain. In other words, a learner might disengage from the course if she gets occupied by other higher priority tasks. Because learners can join or leave MOOCs freely. Joining a MOOC does not necessarily imply that a learner is capable of allocating the time for it according to the rational framework that expectancy value theory predicts. Moreover, previous research on volitional control suggests that learners allocate time to the next highest priority task, but could rather get distracted by lower priority activities that promise nearer gratification. So what does lack of time for the course mean? In study 2, we attempt to investigate various possible dropout reasons that learners might report as "lack of time".
 
+[TBC]
 
 \section{Study 2: Understanding Disengagement}
 
