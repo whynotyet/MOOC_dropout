@@ -195,22 +195,20 @@ The present study extends the existing literature on persistence with a represen
 
 Seventeen MOOCs on topics in a variety of disciplines were selected for investigation (see Table \ref{tab:s1sum}). For each course, we merged data from the initial course survey (distributed in the first weeks of the course), the feedback surveys (distributed in the last weeks of the course), and behavioral data collected in the learning environment. 
 % Only those learners who completed the feedback survey were included in the analyses (some did not complete the initial course survey). 
-Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and behavioral indicators for each course. Self-reported dropout was measured in the feedback survey by asking learners if they stopped participating in the course. The three behavioral indicators are the proportions of learners who viewed at least 30, 50, and 80\% of the lecture videos. Information about age, gender, and education level were only available for learners who completed the initial course survey.
+On the initial course surveys, learners reported their gender, age, prior experience, and enrollment intentions (on the OLEI scale \cite{kizilcec2015motivation}). On the feedback survey, learners reported their satisfaction with the course (N-item index, $\alpha=.XX, M=XX, SD=XX$), and whether they `stopped participating in the course before it ended' or `remained active until the end'. If they indicated that they stopped participating, learners reported `what influenced their decision to stop participating' using a grid of 14 binary-choice items (see Figure \ref{fig:s1reason}).\footnote{Instead of a select-all-that-apply question, we opted for binary-choice items to encourage learners to consider each reason in turn. The response options were ``Did influence my decision to stop" and ``Did NOT influence my decision to stop," which should reduce acquiescence bias relative to yes/no or true/false scales.}
 
-%Table:  course name; enrollment; pre-survey response rate; prop. demographics (age, gender, educ); who intended to do all; post-survey response rate; self-identified dropout rate
+Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and three behavioral indicators for each course. The behavioral indicators represent course milestones: the proportions of learners who viewed over 30\%, 50\%, and 80\% of lecture videos in the course. The data illustrated in Figure \ref{fig:s1reason} reflect the proportions of learners who selected each reason relative to all learners who reportedly stopped participating in each course. The correlation matrixes in Tables \ref{tab:s1reascor} and \ref{tab:s1cor2} are a linear combination of correlation matrixes for each course, assigning equal weight to all courses to discount for considerable variation in sample sizes.
 
-\subsubsection{Measures}
+TODO, update based on what we do here: We computed correlations between reported reasons for dropout and certain learner behaviors. Finally, for each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table [TableToBeAdded].
 
-Learners reported reasons for enrolling in the course (using the OLEI scale \cite{kizilcec2015motivation} on the course survey) and leaving the course (on the feedback survey) on a grid of binary-choice items. The feedback survey for asked learners whether or not they have stopped participating before the end of the course, and if they did, what reasons influenced their decision to stop. For each reason, the student was asked to select one of two options: ``Did influence my decision to stop" and ``Did NOT influence my decision to stop". Compared to a question where the student only checks a box if the reason applies, this design aims to distinguish between respondents who skip reporting reasons and those who express that the reason did not apply to them. We also computed the fraction of videos in the course each learner had watched to relate self-report measures to learner behavior.
-
-We first report the proportion for each reason for dropping out. This was computed as the number of respondents who reported that the reason applied to them divided by the total number of those who responded to the question (reporting that it applies or that it does not apply). We also computed the median and interquartile range of the proprtions across all courses for each reason. The resulting proportions are shown in Figure \ref{fig:prop-reason}. Second, we performed three correlational analyses were performed to investigate associations between these measures.
-
-We examined the strength of correlations between reasons for dropout. The correlation matrix for the reasons were computed separately for each course, and then linearly combined to yield the average correlation matrix shown in Table \ref{tab:study1_rfd_corr}. Following the same procedure, we computed the correlation matrix between reasons to enroll and reasons for attrition. Furthermore, we computed correlations between reported reasons for dropout and certain learner behaviors. Finally, for each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table [TableToBeAdded].
-
+% Information about age, gender, and education level were only available for learners who completed the initial course survey.
+% We also computed the fraction of videos in the course each learner had watched to relate self-report measures to learner behavior
 
 \subsection{Results}
 
-<<prop-reason, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Proportion of learners who indicated each reason for attrition across 17 MOOCs'>>=
+Research question $RQ3a$ about learners' reasons for dropping out of a MOOC is addressed by examining the proportion of learners who selected reasons for attrition from a pre-defined list. The distribution of proportions across fourteen MOOCs is illustrated in Figure \ref{fig:s1reason} with boxplots. Two reasons related to having too little time stand out because they were reported by about half of the respondents as influencing their decision to stop participating: the reasons were issues keeping up with deadlines, and the course demanding too much time. Other reasons for attrition were less prevalent, though reported by around 10\% to 25\% of respondents.
+
+<<s1reason, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Proportion of learners who indicated each reason for attrition across 17 MOOCs'>>=
 values = c(18,20,10,22,19,21,8,11,13,13,9,7,14,18,11,14,19,
 57,39,13,48,42,51,33,60,65,42,18,52,21,68,39,28,68,
 21,23,25,14,13,19,8,0,0,23,9,12,20,20,13,28,12,
@@ -235,9 +233,8 @@ ggplot(dat, aes(reorder(reasons, values, median), values)) + geom_boxplot() + co
 @
 
 
-
 \begin{table*}
-\label{tab:study1_rfd_corr}
+\label{tab:s1reascor}
 \caption{Correlations among reasons for disengagement based on a linear combination of the courses' correlation matrices}
 \small
 \center
@@ -299,8 +296,6 @@ Table \ref{tab:study1_rfd_ei_corr}.
 How do prior learner characteristics (demographics, geographic location, intentions and motivations, and previous online courses) influence learners' likelihood of dropping out of a MOOC? (RQ1)
 
 What proportion of learners who dropped out were satisfied with their achievements in the course? (RQ2)
-
-What reasons do learners report for dropping out of a MOOC? (RQ3a)
 
  How do reasons for dropping out vary across prior learner characteristics (cf. RQ1)? (RQ3b)
  
