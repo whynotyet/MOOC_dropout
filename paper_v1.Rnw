@@ -24,6 +24,7 @@ DOI string from ACM form confirmation}
 \usepackage{times}    % comment if you want LaTeX's default font
 \usepackage{url}      % llt: nicely formatted URLs
 \usepackage{booktabs}
+\usepackage{rotating}
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -161,56 +162,133 @@ A survey of over one hundred learners who dropped out of a MOOC showed that the 
 \subsection{Methods}
 
 % Which courses did we use? What data
-In this study, we used 17 MOOCs from different areas including humanities sciences (4 courses), engineering (2 courses), computer science (3 courses), mathematics and statistics (6 courses), and business (2 instances of 1 course). For each course, we acquired the data from the pre-and post-course surveys, as well as the learner activity data from the online platform. From each course, we selected all learners who took the post-course survey, and we matched learners to their activity data and pre-course survey response (if available).
-
-The post-course survey for each course asked the learners a range of questions about quality of experience with the course (Extremely dissatisfied - Extremely satisfied, 7 point scale), the extent to which they found it difficult/easy (Extremely easy - Extremely difficult, 7 point scale), whether or not they have stopped participating before the end of the course, and if they did, what reasons influenced their decision to stop. For each reason, the student was asked to select one of two options: "Did influence my decision to stop" and "Did NOT influence my decision to stop". Compared to a question where the student only checks a box if the reason applies, this design aims to distinguish between respondents who skip reportinga reason and those who express that the reason did not apply to them.
-
-Table \ref{tab:study1_courses_summary} shows the number of enrolled learners, percentage of learners who took the post-course survey, percentage who took both the pre- and post-course surveys, distributions of age, gender, and education level, and the proportion of learner who reported in the post-course survey that they stopped participating in the course before the end. The table also shows the proprtions of learners who viewed at least $30\%$/$50\%$/$80\%$ of the course videos. Note that the target of this study are the learners who took the post-course survey, whereas the demographic questions are asked in the pre-course survey. The age, gender, and education statistics are thus computed from the learners who took both surveys, which might be different from the statistics of the post-course survey takers, pre-course takers, or whole course learner population.
+Seventeen MOOCs on topcis in a variety of disciplines were selected for investigation: four on topics in the humanities, two in engineering, three in computer science, two runs of the same course in business, and six in mathematics and statistics. For each course, we merged data from the initial course survey (distributed in the first weeks of the course), the feedback surveys (distributed in the last weeks of the course), and behavioral data collected in the learning environment. Only those learners who completed the feedback survey were included in the analyses (some did not complete the initial course survey). Table \ref{tab:study1_courses_summary} provides the following summary statistics for each course: the number of enrolled learners, the number of learners who completed the course survey and the feedback surveys, age, gender, and education level, and the proportion of learners who self-reported that they stopped participating in the course. Note that age, gender, and education level statistics were computed using only the subset of learners who took both the initial and feedback surveys. We also computed the proprtions of learners who viewed at least 30, 50, and 80\% of the course videos.
 
 %Table:  course name; enrollment; pre-survey response rate; prop. demographics (age, gender, educ); who intended to do all; post-survey response rate; self-identified dropout rate
-\newcommand{\specialcellcentered}[2][c]{%
-  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-\newcommand{\specialcellleft}[2][c]{%
-  \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
   
 \begin{table*}
 \label{tab:study1_courses_summary}
-\caption{Summary on courses and surveys used in Study 1}
+\caption{Summary statistics of 14 MOOCs}
 \small
 \center
-\begin{tabular}{llrrrrrrrrrr}
+\begin{tabular}{llcccccccccc}
 \toprule
-ID & Topic Area & Enrollment & Pre-survey & Post-survey & Female & Age & Education & \specialcellcentered{\ensuremath{>} 30\% \\ videos} & \specialcellcentered{\ensuremath{>} 50\% \\ videos} & \specialcellcentered{\ensuremath{>} 80\% \\ videos} & \specialcellcentered{Self-Rep. \\ Dropout} \\
+%  & Topic Area & Enrollment & Course survey & Feedback survey & Female & Age & Education & \specialcellcentered{\ensuremath{>} 30\% \\ videos} & \specialcellcentered{\ensuremath{>} 50\% \\ videos} & \specialcellcentered{\ensuremath{>} 80\% \\ videos} & \specialcellcentered{Self-Rep. \\ Dropout} \\
+& & & & & & & & $>$ 30\% & $>$ 50\% & $>$ 80\% & Self-Rep. \\
+& Topic Area & Enrollment & Course survey & Feedback survey & Female & Age & Education & videos & videos & videos & Dropout \\
 \midrule
-C1 & Business & 61096 & 9943 & 2367 & 42\% & 39 (30,49) & n/a & 39\% & 20\% & 7\% & 10\% \\
-C2 & Business & 41081 & 6544 & 883 & 40\% & 39 (30,49) & 97\% & 32\% & 13\% & 2\% & 9\% \\
-C3 & Comp. Sc. & 27104 & 6104 & 2854 & 35\% & 30 (22,41) & 74\% & 67\% & 40\% & 7\% & 2\% \\
-C4 & Comp. Sc. & 56154 & 3406 & 1123 & 11\% & 33 (27,42) & 91\% & 34\% & 16\% & 11\% & 21\% \\
-C5 & Comp. Sc. & 57636 & 5738 & 402 & 17\% & 33 (26,43) & 91\% & 66\% & 55\% & 28\% & 14\% \\
-C6 & Engineering & 16220 & 2540 & 269 & 13\% & 33 (27,45) & 92\% & 62\% & 49\% & 17\% & 15\% \\
-C7 & Enginerring & 7178 & 1312 & 202 & 12\% & 27 (22,39) & 85\% & 51\% & 18\% & 2\% & 7\% \\
-C8 & Humanities & 7634 & 3631 & 152 & 92\% & 33 (26,45) & 93\% & 45\% & 11\% & 0\% & 7\% \\
-C9 & Humanities & 6475 & 3315 & 326 & 90\% & 32 (27,47) & 91\% & 69\% & 50\% & 17\% & 16\% \\
-C10 & Humanities & 9903 & 4227 & 1570 & 52\% & 39 (29,52) & 89\% & 84\% & 74\% & 21\% & 3\% \\
+C1 & Business & 61,096 & 9,943 & 2,367 & 42\% & 39 (30,49) & n/a & 39\% & 20\% & 7\% & 10\% \\
+C2 & Business & 41,081 & 6,544 & 883 & 40\% & 39 (30,49) & 97\% & 32\% & 13\% & 2\% & 9\% \\
+C3 & CS & 27,104 & 6,104 & 2,854 & 35\% & 30 (22,41) & 74\% & 67\% & 40\% & 7\% & 2\% \\
+C4 & CS & 56,154 & 3,406 & 1,123 & 11\% & 33 (27,42) & 91\% & 34\% & 16\% & 11\% & 21\% \\
+C5 & CS & 57,636 & 5738 & 402 & 17\% & 33 (26,43) & 91\% & 66\% & 55\% & 28\% & 14\% \\
+C6 & Engineering & 16,220 & 2,540 & 269 & 13\% & 33 (27,45) & 92\% & 62\% & 49\% & 17\% & 15\% \\
+C7 & Enginerring & 7,178 & 1,312 & 202 & 12\% & 27 (22,39) & 85\% & 51\% & 18\% & 2\% & 7\% \\
+C8 & Humanities & 7,634 & 3,631 & 152 & 92\% & 33 (26,45) & 93\% & 45\% & 11\% & 0\% & 7\% \\
+C9 & Humanities & 6,475 & 3,315 & 326 & 90\% & 32 (27,47) & 91\% & 69\% & 50\% & 17\% & 16\% \\
+C10 & Humanities & 9,903 & 4,227 & 1,570 & 52\% & 39 (29,52) & 89\% & 84\% & 74\% & 21\% & 3\% \\
 C11 & Humanities & 630 & 167 & 80 & 50\% & 30 (27,40) & 97\% & 74\% & 55\% & 16\% & 16\% \\
-C12 & Math \& Stats & 49317 & 3090 & 862 & 33\% & 41 (29,55) & 88\% & 27\% & 10\% & 1\% & 31\% \\
-C13 & Math \& Stats & 32006 & 26142 & 5336 & 58\% & 28 (16,46) & n/a & 69\% & 38\% & 8\% & 4\% \\
-C14 & Math \& Stats & 16857 & 2892 & 363 & 9\% & 31 (26,38) & 99\% & 61\% & 45\% & 25\% & 14\% \\
-C15 & Math \& Stats & 37017 & 11629 & 1854 & 20\% & 35 (29,45) & 98\% & 78\% & 67\% & 34\% & 8\% \\
-C16 & Math \& Stats & 27236 & 2711 & 637 & 82\% & 43 (34,51) & n/a & 64\% & 36\% & 5\% & 1\% \\
-C17 & Math \& Stats & 13132 & 3629 & 843 & n/a & n/a & n/a & 70\% & 54\% & 14\% & 5\% \\
+C12 & Math \& Stats & 49,317 & 3,090 & 862 & 33\% & 41 (29,55) & 88\% & 27\% & 10\% & 1\% & 31\% \\
+C13 & Math \& Stats & 32,006 & 26,142 & 5,336 & 58\% & 28 (16,46) & n/a & 69\% & 38\% & 8\% & 4\% \\
+C14 & Math \& Stats & 16,857 & 2,892 & 363 & 9\% & 31 (26,38) & 99\% & 61\% & 45\% & 25\% & 14\% \\
+C15 & Math \& Stats & 37,017 & 11,629 & 1,854 & 20\% & 35 (29,45) & 98\% & 78\% & 67\% & 34\% & 8\% \\
+C16 & Math \& Stats & 27,236 & 2,711 & 637 & 82\% & 43 (34,51) & n/a & 64\% & 36\% & 5\% & 1\% \\
+C17 & Math \& Stats & 13,132 & 3,629 & 843 & n/a & n/a & n/a & 70\% & 54\% & 14\% & 5\% \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
 
 % Proportions for each dropout reason for each course
-We are interested in the proportions of respondents that reported each reason for dropout across the courses. These proportions are shown in [Ref to Box plot]. The proprtion for each reason was computed as the number of respondents who reported that the reason applied to them divided by the total number of those who responded to the question (reporting that it aplies or that it does not apply). We also computed the median and interquartile range of the proprtions across all courses for each reason. 
+We are interested in the proportions of respondents that reported each reason for dropout across the courses. These proportions are shown in Figure \ref{fig:prop-reason}. The proprtion for each reason was computed as the number of respondents who reported that the reason applied to them divided by the total number of those who responded to the question (reporting that it aplies or that it does not apply). We also computed the median and interquartile range of the proprtions across all courses for each reason. 
+
+
+%Figure: proportions for each dropout reason for each course
+<<prop-reason, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Proportion of learners who indicated each reason for attrition across 17 MOOCs'>>=
+values = c(18,20,10,22,19,21,8,11,13,13,9,7,14,18,11,14,19,
+57,39,13,48,42,51,33,60,65,42,18,52,21,68,39,28,68,
+21,23,25,14,13,19,8,0,0,23,9,12,20,20,13,28,12,
+32,18,25,28,32,28,25,11,20,27,27,19,19,22,18,0,11,
+15,14,8,16,13,12,0,0,9,10,9,9,19,12,7,14,14,
+21,3,18,12,17,24,25,30,30,10,36,13,20,25,12,0,21,
+69,58,38,76,80,66,66,55,69,67,27,71,28,64,54,0,71,
+12,7,27,8,4,18,41,11,6,10,27,10,24,14,11,28,7,
+18,7,26,17,19,16,41,10,9,25,18,21,27,25,20,28,12,
+13,12,10,19,19,21,0,11,7,13,9,9,11,16,9,14,19,
+16,5,22,17,14,21,16,11,7,18,20,16,23,20,16,16,12,
+14,10,10,23,24,16,8,11,2,13,18,19,10,25,17,0,29,
+26,8,11,27,23,39,33,11,24,11,27,27,11,35,15,14,41,
+14,9,18,10,10,18,25,22,4,5,18,7,20,22,14,14,25)
+
+reasons = c("Material not explained properly","Course requires too much time","Not what I was looking for","I joined too late","Didn't enjoy online course format","Technical difficulties","Couldn't keep up with deadlines","Not challenging enough","I learned all I wanted","Videos were confusing","I was only exploring","Too advanced for my background","Assignment or exam was too difficult","Credentials not valuable to me")
+
+dat = data.frame(reasons = rep(reasons, each=17), values)
+
+library(ggplot2)
+ggplot(dat, aes(reorder(reasons, values, median), values)) + geom_boxplot() + coord_flip() + theme_bw() + labs(y="Proportion",x="")
+@
 
 
 
-% Correlations among rfd's and between rfd's and ei's.
-For each  course, we also computed the correlations between the reported reasons for dropout (Table \ref{tab:study1_rfd_corr}), and the correlations between reported reasons for dropout and enrollment intentions (Table \ref{tab:study1_rfd_ei_corr}). Each table shows a linear combination of the correlation matrices of the 17 courses.
+The feedback survey for each course asked the learners, among other questions, whether or not they have stopped participating before the end of the course, and if they did, what reasons influenced their decision to stop. For each reason, the student was asked to select one of two options: "Did influence my decision to stop" and "Did NOT influence my decision to stop". Compared to a question where the student only checks a box if the reason applies, this design aims to distinguish between respondents who skip reportinga reason and those who express that the reason did not apply to them. We are interested in examining the strength of correlations between these reasons. We computed the correlation matrix for the reasons for each course separately, and then linearly combined these matrices to yield the average correlation matrix shown in Table \ref{tab:study1_rfd_corr}.
+
+\begin{table*}
+\label{tab:study1_rfd_corr}
+\caption{Correlations among reasons for disengagement based on a linear combination of the courses' correlation matrices}
+\small
+\center
+\begin{tabular}{lrrrrrrrrrrrrrr}
+\toprule
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 \\
+\midrule
+R1: Assn or exam was too difficult & 1.0 & 0.17 & 0.28 & 0.3 & 0.16 & 0.14 & 0.37 & 0.24 & 0.26 & 0.2 & 0.09 & 0.33 & 0.4 & 0.28 \\
+R2: Couldn't keep up with deadlines &  & 1.0 & 0.06 & -0.03 & 0.01 & -0.05 & 0.05 & -0.07 & -0.06 & 0.32 & 0.17 & 0.04 & 0.08 & 0.04 \\
+R3: Credentials not valuable to me &  &  & 1.0 & 0.34 & 0.34 & 0.25 & 0.34 & 0.37 & 0.39 & 0.17 & 0.17 & 0.27 & 0.28 & 0.35 \\
+R4: Didn't enjoy online course format &  &  &  & 1.0 & 0.24 & 0.15 & 0.53 & 0.36 & 0.44 & 0.02 & 0.18 & 0.34 & 0.33 & 0.54 \\
+R5: I was only exploring &  &  &  &  & 1.0 & 0.36 & 0.2 & 0.26 & 0.31 & 0.11 & 0.18 & 0.21 & 0.16 & 0.18 \\
+R6: I learned all I wanted &  &  &  &  &  & 1.0 & 0.12 & 0.31 & 0.28 & 0.0 & 0.12 & 0.16 & 0.16 & 0.09 \\
+R7: Material not explained properly &  &  &  &  &  &  & 1.0 & 0.36 & 0.45 & 0.15 & 0.13 & 0.31 & 0.35 & 0.66 \\
+R8: Not challenging enough &  &  &  &  &  &  &  & 1.0 & 0.45 & 0.0 & 0.12 & 0.28 & 0.21 & 0.32 \\
+R9: Not what I was looking for &  &  &  &  &  &  &  &  & 1.0 & 0.07 & 0.12 & 0.3 & 0.33 & 0.44 \\
+R10: Course requires too much time &  &  &  &  &  &  &  &  &  & 1.0 & 0.06 & 0.08 & 0.19 & 0.12 \\
+R11: I joined too late &  &  &  &  &  &  &  &  &  &  & 1.0 & 0.22 & 0.11 & 0.14 \\
+R12: Technical difficulties &  &  &  &  &  &  &  &  &  &  &  & 1.0 & 0.27 & 0.3 \\
+R13: Too advanced for my background &  &  &  &  &  &  &  &  &  &  &  &  & 1.0 & 0.33 \\
+R14: Videos were confusing &  &  &  &  &  &  &  &  &  &  &  &  &  & 1 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+In the initial surveys, learners were asked about their reasons for enrollment, and they were asked to mark whether or not each of a set of enrollment reasons \cite{} applies to them. For each course, we computed the correlation matrix of the reasons for dropout with reasons for enrollment. These matrices were then linearly combined to give the matrix shown in Table \ref{tab:study1_rfd_ei_corr}.
+
+\begin{table*}
+\label{tab:study1_rfd_ei_corr}
+\caption{Correlations between reasons for disengagement and enrollment intentions based on a linear combination of the courses' correlation matrices}
+\small
+\center
+\begin{tabular}{lrrrrrrrrrrrrrr}
+\toprule
+ & R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8 & R9 & R10 & R11 & R12 & R13 & R14 \\
+\midrule
+Career change & 0.03 & 0.02 & -0.11 & -0.03 & -0.02 & -0.06 & 0 & -0.01 & 0 & 0 & 0.03 & 0.04 & 0 & -0.03 \\
+Experience online course & 0.06 & 0.01 & 0.01 & 0.1 & 0.17 & 0.09 & 0.02 & 0.01 & -0.01 & -0.02 & 0.05 & 0.12 & 0.12 & 0.08 \\
+Fun and challenege & 0.05 & 0.07 & -0.03 & -0.01 & 0.02 & -0.05 & -0.01 & 0 & -0.08 & 0.06 & 0.02 & 0.01 & -0.01 & 0 \\
+General interest & 0.01 & -0.04 & -0.04 & 0.02 & -0.01 & -0.07 & -0.05 & 0.01 & 0.04 & 0.03 & 0.06 & -0.03 & -0.01 & 0.02 \\
+Improve my English & 0.08 & 0 & 0.05 & 0.1 & 0.09 & 0.07 & 0.02 & 0.03 & 0.04 & 0 & 0.1 & 0.17 & 0.08 & 0.05 \\
+Presitgious uni/prof & 0.03 & 0.15 & -0.08 & -0.07 & -0.04 & -0.06 & -0.07 & -0.1 & -0.14 & 0.03 & 0.02 & 0 & -0.03 & -0.05 \\
+Relevant to job & -0.04 & -0.01 & 0.02 & 0.05 & 0.04 & 0 & 0.01 & -0.02 & 0 & 0 & -0.03 & 0.09 & 0.02 & 0.01 \\
+Meet new people & 0.05 & -0.02 & 0.05 & 0.08 & 0.06 & -0.04 & 0.03 & 0.13 & -0.01 & 0.01 & 0.14 & 0.15 & 0.06 & 0.03 \\
+Other & 0 & -0.07 & 0.08 & 0.05 & 0 & -0.03 & 0.03 & 0 & 0.01 & -0.08 & 0 & 0.09 & 0.15 & 0 \\
+Personal growth & 0.02 & 0.16 & 0 & -0.03 & 0.02 & -0.02 & 0.07 & -0.01 & 0 & 0.03 & 0.1 & 0 & -0.03 & -0.02 \\
+Relevant to research & -0.02 & 0.01 & 0.1 & 0.06 & 0.05 & 0 & 0.02 & 0.03 & -0.01 & -0.02 & 0.13 & 0.1 & -0.01 & 0.07 \\
+Relevant to school & -0.06 & 0 & 0.08 & 0.01 & 0.08 & 0.02 & -0.01 & 0.02 & -0.05 & -0.04 & 0.08 & 0.02 & -0.02 & -0.01 \\
+Statement of accomp. & 0.08 & 0.1 & 0.02 & 0.03 & 0.01 & -0.02 & 0.08 & 0 & 0.02 & 0 & 0.06 & 0.09 & 0.14 & 0.02 \\
+Take with others & 0 & -0.02 & 0.16 & 0.06 & 0.12 & 0.05 & 0.06 & 0.24 & 0.11 & 0.04 & 0.09 & 0.15 & 0.2 & 0.08 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
 
 % Proportion videos watched for each disengagement reason
 We are also interested in the correlations between reported reasons for dropout and certain learner behaviors. For each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table \ref{tab:study1_rfd_video_behavior_corr}.

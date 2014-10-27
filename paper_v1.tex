@@ -73,6 +73,7 @@ DOI string from ACM form confirmation}
 \usepackage{times}    % comment if you want LaTeX's default font
 \usepackage{url}      % llt: nicely formatted URLs
 \usepackage{booktabs}
+\usepackage{rotating}
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -138,7 +139,7 @@ breaklinks=true,
 \maketitle
 
 \begin{abstract}
-Persistence and attrition in MOOCs are systematically analyzed using self-report and behavioral data collected from [N] online learners in [M] courses. Study 1 offers insights into reasons for disengaging from MOOCs and explores relationships with prior behavior and reported intentions. Study 2 is a case study to develop a deeper understanding of attrition in MOOCs by conducting a case study. Targeting online learners who were predicted likely dropouts in a particular course were invited to provide feedback via a survey. (abstract needs work...)
+Persistence and attrition in MOOCs are systematically analyzed using self-report and behavioral data collected from 20879 online learners in 18 courses. Study 1 offers insights into reasons for disengaging from MOOCs and explores relationships with prior behavior and reported intentions. Study 2 is a case study to develop a deeper understanding of attrition in MOOCs by conducting a case study. Targeting online learners who were predicted likely dropouts in a particular course were invited to provide feedback via a survey. (abstract needs work...)
 \end{abstract}
 
 \keywords{Online learning, persistence, attrition, dropout, disengagement, massive open online courses, MOOC, psychological factors}
@@ -210,14 +211,86 @@ A survey of over one hundred learners who dropped out of a MOOC showed that the 
 
 \subsection{Methods}
 
-TODO: Outline different courses and go through variabels in the course info table.
+% Which courses did we use? What data
+Seventeen MOOCs on topcis in a variety of disciplines were selected for investigation: four on topics in the humanities, two in engineering, three in computer science, two runs of the same course in business, and six in mathematics and statistics. For each course, we merged data from the course survey (distributed in the first weeks of the course), the feedback surveys (distributed in the last weeks of the course), and behavioral data collected in the learning environment. Only those learners who completed the feedback survey were included in the analyses (some did not complete the initial course survey). Table \ref{tab:study1_courses_summary} provides the following summary statistics for each course: the number of enrolled learners, the number of learners who completed the course survey and the feedback surveys, age, gender, and education level, and the proportion of learners who self-reported that they stopped participating in the course. We also computed the proprtions of learners who viewed at least 30, 50, and 80\% of the course videos.
 
-Table:  course name; enrollment; pre-survey response rate; prop. demographics (age, gender, educ); who intended to do all; post-survey response rate; self-identified dropout rate
+%Table:  course name; enrollment; pre-survey response rate; prop. demographics (age, gender, educ); who intended to do all; post-survey response rate; self-identified dropout rate
+  
+\begin{table*}
+\label{tab:study1_courses_summary}
+\caption{Summary statistics of 14 MOOCs}
+\small
+\center
+\begin{tabular}{llcccccccccc}
+\toprule
+%  & Topic Area & Enrollment & Course survey & Feedback survey & Female & Age & Education & \specialcellcentered{\ensuremath{>} 30\% \\ videos} & \specialcellcentered{\ensuremath{>} 50\% \\ videos} & \specialcellcentered{\ensuremath{>} 80\% \\ videos} & \specialcellcentered{Self-Rep. \\ Dropout} \\
+& & & & & & & & $>$ 30\% & $>$ 50\% & $>$ 80\% & Self-Rep. \\
+& Topic Area & Enrollment & Course survey & Feedback survey & Female & Age & Education & videos & videos & videos & Dropout \\
+\midrule
+C1 & Business & 61,096 & 9,943 & 2,367 & 42\% & 39 (30,49) & n/a & 39\% & 20\% & 7\% & 10\% \\
+C2 & Business & 41,081 & 6,544 & 883 & 40\% & 39 (30,49) & 97\% & 32\% & 13\% & 2\% & 9\% \\
+C3 & CS & 27,104 & 6,104 & 2,854 & 35\% & 30 (22,41) & 74\% & 67\% & 40\% & 7\% & 2\% \\
+C4 & CS & 56,154 & 3,406 & 1,123 & 11\% & 33 (27,42) & 91\% & 34\% & 16\% & 11\% & 21\% \\
+C5 & CS & 57,636 & 5738 & 402 & 17\% & 33 (26,43) & 91\% & 66\% & 55\% & 28\% & 14\% \\
+C6 & Engineering & 16,220 & 2,540 & 269 & 13\% & 33 (27,45) & 92\% & 62\% & 49\% & 17\% & 15\% \\
+C7 & Enginerring & 7,178 & 1,312 & 202 & 12\% & 27 (22,39) & 85\% & 51\% & 18\% & 2\% & 7\% \\
+C8 & Humanities & 7,634 & 3,631 & 152 & 92\% & 33 (26,45) & 93\% & 45\% & 11\% & 0\% & 7\% \\
+C9 & Humanities & 6,475 & 3,315 & 326 & 90\% & 32 (27,47) & 91\% & 69\% & 50\% & 17\% & 16\% \\
+C10 & Humanities & 9,903 & 4,227 & 1,570 & 52\% & 39 (29,52) & 89\% & 84\% & 74\% & 21\% & 3\% \\
+C11 & Humanities & 630 & 167 & 80 & 50\% & 30 (27,40) & 97\% & 74\% & 55\% & 16\% & 16\% \\
+C12 & Math \& Stats & 49,317 & 3,090 & 862 & 33\% & 41 (29,55) & 88\% & 27\% & 10\% & 1\% & 31\% \\
+C13 & Math \& Stats & 32,006 & 26,142 & 5,336 & 58\% & 28 (16,46) & n/a & 69\% & 38\% & 8\% & 4\% \\
+C14 & Math \& Stats & 16,857 & 2,892 & 363 & 9\% & 31 (26,38) & 99\% & 61\% & 45\% & 25\% & 14\% \\
+C15 & Math \& Stats & 37,017 & 11,629 & 1,854 & 20\% & 35 (29,45) & 98\% & 78\% & 67\% & 34\% & 8\% \\
+C16 & Math \& Stats & 27,236 & 2,711 & 637 & 82\% & 43 (34,51) & n/a & 64\% & 36\% & 5\% & 1\% \\
+C17 & Math \& Stats & 13,132 & 3,629 & 843 & n/a & n/a & n/a & 70\% & 54\% & 14\% & 5\% \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
+
+
+% What LMS data variables did we compute?
+We are interested in exploring correlations between reasons for dropout and learner behaviors. If such correlations exist, they can be an additional towards understanding why learners engage with or disengage from various learning activities. In this study, we computed the fraction of videos watched by each learner, fraction of problems attempted, average grade scored on attempted problems, and number of forum posts and replies posted.
 
 \subsection{Results}
 
-Table: proportions for each dropout reason for each course
+%Table: proportions for each dropout reason for each course
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure*}[ht]
+
+\includegraphics[width=\maxwidth]{figure/prop-reason} \caption[Proportion of learners who indicated each reason for attrition across 17 MOOCs]{Proportion of learners who indicated each reason for attrition across 17 MOOCs\label{fig:prop-reason}}
+\end{figure*}
+
+
+\end{knitrout}
+
+% \begin{sidewaystable}
+% \label{tab:proprtion_reason_for_dropout}
+% \caption{Distribution of reported reasons for dropping out across courses. Percentage of learners who selected each reason for dropping out in each course, and median and interquartile range across courses}
+% \small
+% \center
+% \begin{tabular}{llrrrrrrrrrrrrrrrrrr}
+% \toprule
+% Reason for dropout & C1 & C2 & C3 & C4 & C5 & C6 & C7 & C8 & C9 & C10 & C11 & C12 & C13 & C14 & C15 & C16 & C17 & Median & IQR \\
+% \midrule
+% \specialcellleft{Material not explained \\ properly} & 18 & 20 & 10 & 22 & 19 & 21 & 8 & 11 & 13 & 13 & 9 & 7 & 14 & 18 & 11 & 14 & 19 & 14 & 8 \\
+% \specialcellleft{Course requires too \\ much time} & 57 & 39 & 13 & 48 & 42 & 51 & 33 & 60 & 65 & 42 & 18 & 52 & 21 & 68 & 39 & 28 & 68 & 42 & 24 \\
+% \specialcellleft{Not what I was looking \\ for} & 21 & 23 & 25 & 14 & 13 & 19 & 8 & 0 & 0 & 23 & 9 & 12 & 20 & 20 & 13 & 28 & 12 & 14 & 9 \\
+% I joined too late & 32 & 18 & 25 & 28 & 32 & 28 & 25 & 11 & 20 & 27 & 27 & 19 & 19 & 22 & 18 & 0 & 11 & 22 & 9 \\
+% \specialcellleft{Didn't enjoy online \\ course format} & 15 & 14 & 8 & 16 & 13 & 12 & 0 & 0 & 9 & 10 & 9 & 9 & 19 & 12 & 7 & 14 & 14 & 12 & 5 \\
+% Technical difficulties & 21 & 3 & 18 & 12 & 17 & 24 & 25 & 30 & 30 & 10 & 36 & 13 & 20 & 25 & 12 & 0 & 21 & 20 & 13 \\
+% \specialcellleft{Couldn't keep up with \\ deadlines} & 69 & 58 & 38 & 76 & 80 & 66 & 66 & 55 & 69 & 67 & 27 & 71 & 28 & 64 & 54 & 0 & 71 & 66 & 15 \\
+% Not challenging enough & 12 & 7 & 27 & 8 & 4 & 18 & 41 & 11 & 6 & 10 & 27 & 10 & 24 & 14 & 11 & 28 & 7 & 11 & 16 \\
+% I learned all I wanted & 18 & 7 & 26 & 17 & 19 & 16 & 41 & 10 & 9 & 25 & 18 & 21 & 27 & 25 & 20 & 28 & 12 & 19 & 9 \\
+% Videos were confusing & 13 & 12 & 10 & 19 & 19 & 21 & 0 & 11 & 7 & 13 & 9 & 9 & 11 & 16 & 9 & 14 & 19 & 12 & 7 \\
+% I was only exploring & 16 & 5 & 22 & 17 & 14 & 21 & 16 & 11 & 7 & 18 & 20 & 16 & 23 & 20 & 16 & 16 & 12 & 16 & 6 \\
+% \specialcellleft{Too advanced for my \\ background} & 14 & 10 & 10 & 23 & 24 & 16 & 8 & 11 & 2 & 13 & 18 & 19 & 10 & 25 & 17 & 0 & 29 & 14 & 9 \\
+% \specialcellleft{Assn or exam was too \\ difficult} & 26 & 8 & 11 & 27 & 23 & 39 & 33 & 11 & 24 & 11 & 27 & 27 & 11 & 35 & 15 & 14 & 41 & 24 & 16 \\
+% \specialcellleft{Credentials not valuable \\ to me} & 14 & 9 & 18 & 10 & 10 & 18 & 25 & 22 & 4 & 5 & 18 & 7 & 20 & 22 & 14 & 14 & 25 & 14 & 10 \\
+% \bottomrule
+% \end{tabular}
+% \end{sidewaystable}
 
 Table: correlations between reasons and one with cors between reasons and intentions
 
