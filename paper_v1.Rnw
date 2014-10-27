@@ -161,7 +161,11 @@ A survey of over one hundred learners who dropped out of a MOOC showed that the 
 \subsection{Methods}
 
 % Which courses did we use? What data
-In this study, we used 17 MOOCs from different areas including humanities sciences (4 courses), engineering (2 courses), computer science (3 courses), mathematics and statistics (6 courses), and business (2 instances of 1 course). For each course, we acquired the data from the pre-course and post-course surveys, as well as the learner activity data from the platform hosting the course. From each course, we selected all learners who took the post-course survey, and we matched learners to their activity data and pre-course survey response (if available). Table \ref{tab:study1_courses_summary} shows the number of enrolled learners, number of learners who responses to the pre-course/post-course survey, distributions of age, gender, and education level, and the proportion of learner who self-reported that they stopped participating in the course. We also computed the proprtions of learners who viewed at least $p$\% of the course videos for $p = 30\%$, $50\%$, and $80\%$.
+In this study, we used 17 MOOCs from different areas including humanities sciences (4 courses), engineering (2 courses), computer science (3 courses), mathematics and statistics (6 courses), and business (2 instances of 1 course). For each course, we acquired the data from the pre-and post-course surveys, as well as the learner activity data from the online platform. From each course, we selected all learners who took the post-course survey, and we matched learners to their activity data and pre-course survey response (if available).
+
+The post-course survey for each course asked the learners a range of questions about quality of experience with the course (Extremely dissatisfied - Extremely satisfied, 7 point scale), the extent to which they found it difficult/easy (Extremely easy - Extremely difficult, 7 point scale), whether or not they have stopped participating before the end of the course, and if they did, what reasons influenced their decision to stop. For each reason, the student was asked to select one of two options: "Did influence my decision to stop" and "Did NOT influence my decision to stop". Compared to a question where the student only checks a box if the reason applies, this design aims to distinguish between respondents who skip reportinga reason and those who express that the reason did not apply to them.
+
+Table \ref{tab:study1_courses_summary} shows the number of enrolled learners, percentage of learners who took the post-course survey, percentage who took both the pre- and post-course surveys, distributions of age, gender, and education level, and the proportion of learner who reported in the post-course survey that they stopped participating in the course before the end. The table also shows the proprtions of learners who viewed at least $30\%$/$50\%$/$80\%$ of the course videos. Note that the target of this study are the learners who took the post-course survey, whereas the demographic questions are asked in the pre-course survey. The age, gender, and education statistics are thus computed from the learners who took both surveys, which might be different from the statistics of the post-course survey takers, pre-course takers, or whole course learner population.
 
 %Table:  course name; enrollment; pre-survey response rate; prop. demographics (age, gender, educ); who intended to do all; post-survey response rate; self-identified dropout rate
 \newcommand{\specialcellcentered}[2][c]{%
@@ -200,43 +204,20 @@ C17 & Math \& Stats & 13132 & 3629 & 843 & n/a & n/a & n/a & 70\% & 54\% & 14\% 
 \end{table*}
 
 
+% Proportions for each dropout reason for each course
+We are interested in the proportions of respondents that reported each reason for dropout across the courses. These proportions are shown in [Ref to Box plot]. The proprtion for each reason was computed as the number of respondents who reported that the reason applied to them divided by the total number of those who responded to the question (reporting that it aplies or that it does not apply). We also computed the median and interquartile range of the proprtions across all courses for each reason. 
 
-% What LMS data variables did we compute?
-We are interested in exploring correlations between reasons for dropout and learner behaviors. If such correlations exist, they can be an additional towards understanding why learners engage with or disengage from various learning activities. In this study, we computed the fraction of videos watched by each learner, fraction of problems attempted, average grade scored on attempted problems, and number of forum posts and replies posted.
+
+
+% Correlations among rfd's and between rfd's and ei's.
+For each  course, we also computed the correlations between the reported reasons for dropout (Table \ref{tab:study1_rfd_corr}), and the correlations between reported reasons for dropout and enrollment intentions (Table \ref{tab:study1_rfd_ei_corr}). Each table shows a linear combination of the correlation matrices of the 17 courses.
+
+% Proportion videos watched for each disengagement reason
+We are also interested in the correlations between reported reasons for dropout and certain learner behaviors. For each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table \ref{tab:study1_rfd_video_behavior_corr}.
+
+
 
 \subsection{Results}
-
-%Table: proportions for each dropout reason for each course
-\begin{table*}
-\label{tab:proprtion_reason_for_dropout}
-\caption{Distribution of reported reasons for dropping out across courses. Percentage of learners who selected each reason for dropping out in each course, and median and interquartile range across courses}
-\small
-\center
-\begin{tabular}{llrrrrrrrrrrrrrrrrrr}
-\toprule
-Reason for dropout & C1 & C2 & C3 & C4 & C5 & C6 & C7 & C8 & C9 & C10 & C11 & C12 & C13 & C14 & C15 & C16 & C17 & Median & IQR \\
-\midrule
-\specialcellleft{Material not explained \\ properly} & 18 & 20 & 10 & 22 & 19 & 21 & 8 & 11 & 13 & 13 & 9 & 7 & 14 & 18 & 11 & 14 & 19 & 14 & 8 \\
-\specialcellleft{Course requires too \\ much time} & 57 & 39 & 13 & 48 & 42 & 51 & 33 & 60 & 65 & 42 & 18 & 52 & 21 & 68 & 39 & 28 & 68 & 42 & 24 \\
-\specialcellleft{Not what I was looking \\ for} & 21 & 23 & 25 & 14 & 13 & 19 & 8 & 0 & 0 & 23 & 9 & 12 & 20 & 20 & 13 & 28 & 12 & 14 & 9 \\
-I joined too late & 32 & 18 & 25 & 28 & 32 & 28 & 25 & 11 & 20 & 27 & 27 & 19 & 19 & 22 & 18 & 0 & 11 & 22 & 9 \\
-\specialcellleft{Didn't enjoy online \\ course format} & 15 & 14 & 8 & 16 & 13 & 12 & 0 & 0 & 9 & 10 & 9 & 9 & 19 & 12 & 7 & 14 & 14 & 12 & 5 \\
-Technical difficulties & 21 & 3 & 18 & 12 & 17 & 24 & 25 & 30 & 30 & 10 & 36 & 13 & 20 & 25 & 12 & 0 & 21 & 20 & 13 \\
-\specialcellleft{Couldn't keep up with \\ deadlines} & 69 & 58 & 38 & 76 & 80 & 66 & 66 & 55 & 69 & 67 & 27 & 71 & 28 & 64 & 54 & 0 & 71 & 66 & 15 \\
-Not challenging enough & 12 & 7 & 27 & 8 & 4 & 18 & 41 & 11 & 6 & 10 & 27 & 10 & 24 & 14 & 11 & 28 & 7 & 11 & 16 \\
-I learned all I wanted & 18 & 7 & 26 & 17 & 19 & 16 & 41 & 10 & 9 & 25 & 18 & 21 & 27 & 25 & 20 & 28 & 12 & 19 & 9 \\
-Videos were confusing & 13 & 12 & 10 & 19 & 19 & 21 & 0 & 11 & 7 & 13 & 9 & 9 & 11 & 16 & 9 & 14 & 19 & 12 & 7 \\
-I was only exploring & 16 & 5 & 22 & 17 & 14 & 21 & 16 & 11 & 7 & 18 & 20 & 16 & 23 & 20 & 16 & 16 & 12 & 16 & 6 \\
-\specialcellleft{Too advanced for my \\ background} & 14 & 10 & 10 & 23 & 24 & 16 & 8 & 11 & 2 & 13 & 18 & 19 & 10 & 25 & 17 & 0 & 29 & 14 & 9 \\
-\specialcellleft{Assn or exam was too \\ difficult} & 26 & 8 & 11 & 27 & 23 & 39 & 33 & 11 & 24 & 11 & 27 & 27 & 11 & 35 & 15 & 14 & 41 & 24 & 16 \\
-\specialcellleft{Credentials not valuable \\ to me} & 14 & 9 & 18 & 10 & 10 & 18 & 25 & 22 & 4 & 5 & 18 & 7 & 20 & 22 & 14 & 14 & 25 & 14 & 10 \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
-Table: correlations between reasons and one with cors between reasons and intentions
-
-Plot: ecdf curves for proportion videos watched for each disengagement reason
 
 
 \subsection{Discussion}
