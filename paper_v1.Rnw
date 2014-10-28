@@ -176,8 +176,6 @@ Distance education, in contrast to traditional in-person education, attracts a d
 
 Rovai \citeyear{rovai2003search}, combining Tinto's and Bean and Metzner's models with factors specific to online learning and pedagogical styles, proposed a composite persistence model specifically for students in online distance education programs. Among other novel factors, Rovai's model acknowledges the critical role of computer literacy in online learning. And yet, while the theoretical models become more developed, they became harder to apply to real-world settings, and hence, the empirical evidence to support them remained sparse. An exploratory study of reasons for attrition suggested the following eight constructs, based on over 1,000 online education students: academic and technical skills, learner motivation, time and support for studies, cost and access to the Internet, and technical problems \cite{muilenburg2005student}. An analysis of student behavior on an online education platform showed that 31\% of variation in achievement could be accounted for by a small set of participation measures \cite{morris2005tracking}.
 
-
-
 \subsection{MOOCs}
 
 A survey of over one hundred learners who dropped out of a MOOC showed that the majority indicated having too little time due to work responsibilities, not enough social support inside and outside of the course, and insufficient academic and technical support from the course \cite{gutl2014attrition}. A qualitative analysis of public records, especially forum posts, from 42 MOOCs suggested the following reasons for attrition: lack of time, learner motivation, feelings of isolation, lack of interactivity, insufficient prior knowledge or skills, and hidden costs \cite{khalil2014moocs}. A survival analysis of close to 800 learners who had posted on a MOOC discussion forum suggested that the likelihood of dropout was lower for those who i. actively participated in the first week of the course; ii. served as an authority figure in the community on the forum, and iii. did not engage in a particular subcommunity on the forum \cite{yang2013turn}. In addition, a number of machine learning approaches yielded promising results for early dropout prediction (e.g. \cite{taylor2014likely,halawa2014dropout}), but fell short of offering insights into why a given learner would leave the course.
@@ -231,15 +229,35 @@ TODO, update based on what we do here: We computed correlations between reported
 
 \subsection{Results}
 
+\subsubsection{Predictors}
+
+RQ1: How do prior learner characteristics (demographics, geographic location, enrollment intentions, and previous online courses) influence learners' likelihood of disengaging from a MOOC?
+
+TODO Rene adds these analyses here
+
+\subsubsection{Satisfaction}
+
+RQ2a: What proportion of learners who disengaged were satisfied with their achievements in the course?
+
+RQ2b: How does learners' behavior in the MOOC vary by their level of satisfaction?
+
+Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2). 
+
+TODO Sherif adds satisfaction analyses here
+
+\subsubsection{Reasons}
+
+RQ3a: What reasons do learners report for disengaging from a MOOC?
+
+RQ3b: How do reasons for disengaging vary across prior learner characteristics (cf. RQ1)?
+
 Research question $RQ3a$ about learners' reasons for dropping out of a MOOC is addressed by examining the proportion of learners who selected reasons for attrition from a pre-defined list. The distribution of proportions across fourteen MOOCs is illustrated in Figure \ref{fig:s1reason} with boxplots. Two reasons related to having too little time stand out because they were reported by about half of the respondents as influencing their decision to stop participating: the reasons were issues keeping up with deadlines, and the course demanding too much time. Other reasons for attrition were less prevalent, though still reported by around 10\% to 25\% of respondents. Notably, just under 20\% of respondents in a typical course (the median proportion) stopped participating because they had learned what they wanted to learn.
-
-
 
 Report results of factor analysis here.
 
 We expected reasons for disengaging from the course to be related to the motivations that drove the learner to initially enroll in the course. A correlation matrix of learners' enrollment intentions and their subsequent reasons for disengaging revealed a small number of notable associations. Taking the course with friends or colleagues was correlated with disengaging because the course is not challenging enough, the material is too advanced of the learner's background, and the credential is not valuable enough to the learner ($r=.24, .20, .16$, respectively). Not surprisingly, learners who enrolled to experience an online course tended to stop participating because they were only exploring the course ($r=.17$). Learners looking to improve their English tended to experience technical difficulties ($r=.17$), and those who enrolled for personal growth and enrichment tended to struggle to keep up with deadlines ($r=.16$).
 
-Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2). TODO add satisfaction analysis here
+
 
 
 
