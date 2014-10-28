@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  27 OCT 2014 15:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  27 OCT 2014 21:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -533,7 +533,7 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 140.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \vbox (badness 1642) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -542,92 +542,84 @@ Non-PDF special ignored!
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 172.
-
-Underfull \vbox (badness 1902) has occurred while \output is active []
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 171.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 197.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 196.
  [2]
 
-Package hyperref Warning: Suppressing empty link on input line 246.
+Package hyperref Warning: Suppressing empty link on input line 245.
 
 
-Package hyperref Warning: Suppressing empty link on input line 250.
+Package hyperref Warning: Suppressing empty link on input line 249.
 
 
-Package hyperref Warning: Suppressing empty link on input line 250.
+Package hyperref Warning: Suppressing empty link on input line 249.
 
 
-LaTeX Warning: Reference `tab:s1cor2' on page 3 undefined on input line 250.
+LaTeX Warning: Reference `tab:s1cor2' on page 3 undefined on input line 249.
 
-[3]
-Package color Info: Redefining color shadecolor on input line 262.
- <figure/s1reason.pdf, id=191, 650.43pt x 289.08pt>
+
+Underfull \vbox (badness 4832) has occurred while \output is active []
+
+ [3]
+Package color Info: Redefining color shadecolor on input line 263.
+
+<figure/s1reason.pdf, id=191, 650.43pt x 289.08pt>
 File: figure/s1reason.pdf Graphic file (type pdf)
-
-<use figure/s1reason.pdf>
-Package pdftex.def Info: figure/s1reason.pdf used on input line 264.
+ <use figure/s1reason.pdf>
+Package pdftex.def Info: figure/s1reason.pdf used on input line 265.
 (pdftex.def)             Requested size: 512.1496pt x 227.63846pt.
-
-
-Package hyperref Warning: Suppressing empty link on input line 330.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Warning: Reference `tab:rfd_ei_strongest_correlations' on page 4 undefine
-d on input line 354.
+d on input line 374.
 
 [4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./figure/s1reason.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 445.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 441.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <8> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 445.
-
-Underfull \vbox (badness 2368) has occurred while \output is active []
-
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 441.
  [6]
-[7] (./paper_v1.bbl
+Underfull \vbox (badness 2393) has occurred while \output is active []
+
+ [7]
+(./paper_v1.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-
-Overfull \vbox (6.43068pt too high) has occurred while \output is active []
-
-
-[8])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 554.
+ [8])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 550.
  [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 554.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 550.
  (./paper_v1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 554.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 554.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 550.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 550.
 Package rerunfilecheck Info: File `paper_v1.out' has not changed.
 (rerunfilecheck)             Checksum: 9FC00AC6E7EE39571B1F66F8BB6249BC;1250.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 554.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 550.
  ) 
 Here is how much of TeX's memory you used:
- 7116 strings out of 493315
- 102558 string characters out of 6137904
- 210562 words of memory out of 5000000
- 10335 multiletter control sequences out of 15000+600000
+ 7114 strings out of 493315
+ 102527 string characters out of 6137904
+ 205535 words of memory out of 5000000
+ 10334 multiletter control sequences out of 15000+600000
  42917 words of font info for 90 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,10n,30p,1507b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,30p,1507b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{section*.24} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -670,10 +662,10 @@ rw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/helv
 etic/uhvro8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb
 8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper_v1.pdf (9 pages, 234260 bytes).
+Output written on paper_v1.pdf (9 pages, 234797 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 308 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
+ 86 named destinations out of 1000 (max. 500000)
  174 words of extra memory for PDF output out of 10000 (max. 10000000)
 

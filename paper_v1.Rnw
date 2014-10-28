@@ -106,8 +106,7 @@ The latest generation of online learning environments, characterized by massive 
 
 Shortly after the first wave of courses had finished, extensive media coverage led to MOOCs becoming associated with high attrition rates \cite{lewin2013after,parr2013mooc,guthrie2013moocs}. Early MOOC research cautioned against dichotomizing learners into successes and failures based on course completion \cite{kizilcec2013deconstructing,rivard2013measuring}. Instead, more nuanced categorizations based on learner behavior \cite{kizilcec2013deconstructing,clow2013moocs} (other?), motivations \cite{kizilcec2015motivation}, or intentions \cite{wilkowski2014student} have been suggested. Ultimately, perspectives on persistence and attrition in MOOCs depend on how MOOCs have been conceptualized. Kizilcec and Schneider \citeyear{kizilcec2015motivation} proposed that MOOCs have bridged two different world: one world is governed by the user-centric norms of online media, where everyone is encouraged to be as active as they wish; the other world adheres to the ``grammar of schooling'', which presupposes instructor-defined goals that students strive to achieve \cite{tyack1994grammar}. Viewing MOOC participation as bridging these two worlds undoubtedly adds a layer of complexity to interpretations of attrition.
 
-This paper presents a systematic investigation into attrition in MOOCs, based on self-report and behavioral data collected from [N] online learners in [M] courses. We begin by briefly reviewing the large literature on attrition in educational environments with a focus on important developments in understanding its causes. Building on this foundation of prior work, Study 1 offers insights into reasons for disengaging from MOOCs and explores relationships with prior behavior and reported intentions. In Study 2, we sought to develop a deeper understanding of attrition in MOOCs by conducting a case study. Targeting around 7,000 online learners who were predicted likely dropouts in a particular course were invited to provide feedback via a survey. 
-TODO: complete paragraph based on what we actually do in Study 2.
+This paper presents a systematic investigation into attrition in MOOCs, based on self-report and behavioral data collected from 20,879 online learners in 18 courses. A better understanding of why learners disengage from MOOCs allows for earlier recognition of impending attrition and thereby enables targeted interventions to help learners who want to persist. We begin by briefly reviewing the large literature on attrition in educational environments with a focus on important developments in understanding its causes. Building on this foundation of prior work, Study 1 offers insights into reasons for disengaging from MOOCs and explores relationships with prior behavior and reported intentions. In Study 2, to develop a deeper understanding of MOOC attrition, we invited around 6,500 learners who were predicted to have disengaged from a MOOC to provide feedback. Their open response answers about what challenges they faced while taking the MOOC were iteratively coded. We investigated the role of volitional control for learners who report having not enough time, and examine goal striving, social belonging, and growth mindset in relation to being successful in a MOOC.
 
 
 \section{Related Work}
@@ -206,7 +205,9 @@ TODO, update based on what we do here: We computed correlations between reported
 
 \subsection{Results}
 
-Research question $RQ3a$ about learners' reasons for dropping out of a MOOC is addressed by examining the proportion of learners who selected reasons for attrition from a pre-defined list. The distribution of proportions across fourteen MOOCs is illustrated in Figure \ref{fig:s1reason} with boxplots. Two reasons related to having too little time stand out because they were reported by about half of the respondents as influencing their decision to stop participating: the reasons were issues keeping up with deadlines, and the course demanding too much time. Other reasons for attrition were less prevalent, though reported by around 10\% to 25\% of respondents.
+Research question $RQ3a$ about learners' reasons for dropping out of a MOOC is addressed by examining the proportion of learners who selected reasons for attrition from a pre-defined list. The distribution of proportions across fourteen MOOCs is illustrated in Figure \ref{fig:s1reason} with boxplots. Two reasons related to having too little time stand out because they were reported by about half of the respondents as influencing their decision to stop participating: the reasons were issues keeping up with deadlines, and the course demanding too much time. Other reasons for attrition were less prevalent, though still reported by around 10\% to 25\% of respondents. Notably, just under 20\% of respondents in a typical course (the median proportion) stopped participating because they had learned what they wanted to learn.
+
+[.] What proportion of learners who dropped out were satisfied with their achievements in the course? (RQ2)
 
 <<s1reason, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Proportion of learners who indicated each reason for attrition across 17 MOOCs'>>=
 values = c(18,20,10,22,19,21,8,11,13,13,9,7,14,18,11,14,19,
@@ -238,68 +239,90 @@ ggplot(dat, aes(reorder(reasons, values, median), values)) + geom_boxplot() + co
 \caption{Correlations among reasons for disengagement based on a linear combination of the courses' correlation matrices}
 \small
 \center
-\begin{tabular}{lrrrrrrrrrrrrrr}
+\begin{tabular}{lccccccccccccc}
 \toprule
- & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 \\
+ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 \\
 \midrule
-R1: Assn or exam was too difficult & 1.0 & 0.17 & 0.28 & 0.3 & 0.16 & 0.14 & 0.37 & 0.24 & 0.26 & 0.2 & 0.09 & 0.33 & 0.4 & 0.28 \\
-R2: Couldn't keep up with deadlines &  & 1.0 & 0.06 & -0.03 & 0.01 & -0.05 & 0.05 & -0.07 & -0.06 & 0.32 & 0.17 & 0.04 & 0.08 & 0.04 \\
-R3: Credentials not valuable to me &  &  & 1.0 & 0.34 & 0.34 & 0.25 & 0.34 & 0.37 & 0.39 & 0.17 & 0.17 & 0.27 & 0.28 & 0.35 \\
-R4: Didn't enjoy online course format &  &  &  & 1.0 & 0.24 & 0.15 & 0.53 & 0.36 & 0.44 & 0.02 & 0.18 & 0.34 & 0.33 & 0.54 \\
-R5: I was only exploring &  &  &  &  & 1.0 & 0.36 & 0.2 & 0.26 & 0.31 & 0.11 & 0.18 & 0.21 & 0.16 & 0.18 \\
-R6: I learned all I wanted &  &  &  &  &  & 1.0 & 0.12 & 0.31 & 0.28 & 0.0 & 0.12 & 0.16 & 0.16 & 0.09 \\
-R7: Material not explained properly &  &  &  &  &  &  & 1.0 & 0.36 & 0.45 & 0.15 & 0.13 & 0.31 & 0.35 & 0.66 \\
-R8: Not challenging enough &  &  &  &  &  &  &  & 1.0 & 0.45 & 0.0 & 0.12 & 0.28 & 0.21 & 0.32 \\
-R9: Not what I was looking for &  &  &  &  &  &  &  &  & 1.0 & 0.07 & 0.12 & 0.3 & 0.33 & 0.44 \\
-R10: Course requires too much time &  &  &  &  &  &  &  &  &  & 1.0 & 0.06 & 0.08 & 0.19 & 0.12 \\
-R11: I joined too late &  &  &  &  &  &  &  &  &  &  & 1.0 & 0.22 & 0.11 & 0.14 \\
-R12: Technical difficulties &  &  &  &  &  &  &  &  &  &  &  & 1.0 & 0.27 & 0.3 \\
-R13: Too advanced for my background &  &  &  &  &  &  &  &  &  &  &  &  & 1.0 & 0.33 \\
-R14: Videos were confusing &  &  &  &  &  &  &  &  &  &  &  &  &  & 1 \\
+1 Assn or exam was too difficult    & 0.17 & 0.28 & 0.30 & 0.16 & 0.14 & 0.37 & 0.24 & 0.26 & 0.20 & 0.09 & 0.33 & 0.40 & 0.28 \\
+2 Couldn't keep up with deadlines   & 1 & 0.06 & -0.03 & 0.01 & -0.05 & 0.05 & -0.07 & -0.06 & 0.32 & 0.17 & 0.04 & 0.08 & 0.04 \\
+3 Credentials not valuable to me    &   & 1 & 0.34 & 0.34 & 0.25 & 0.34 & 0.37 & 0.39 & 0.17 & 0.17 & 0.27 & 0.28 & 0.35 \\
+4 Didn't enjoy online course format &   &  & 1 & 0.24 & 0.15 & 0.53 & 0.36 & 0.44 & 0.02 & 0.18 & 0.34 & 0.33 & 0.54 \\
+5 I was only exploring              &   &  &  & 1 & 0.36 & 0.20 & 0.26 & 0.31 & 0.11 & 0.18 & 0.21 & 0.16 & 0.18 \\
+6 I learned all I wanted            &   &  &  &  & 1 & 0.12 & 0.31 & 0.28 & 0.0? & 0.12 & 0.16 & 0.16 & 0.09 \\
+7 Material not explained properly   &   &  &  &  &  & 1 & 0.36 & 0.45 & 0.15 & 0.13 & 0.31 & 0.35 & 0.66 \\
+8 Not challenging enough            &   &  &  &  &  &  & 1 & 0.45 & 0.0 & 0.12 & 0.28 & 0.21 & 0.32 \\
+9 Not what I was looking for        &   &  &  &  &  &  &  & 1 & 0.07 & 0.12 & 0.3 & 0.33 & 0.44 \\
+10 Course requires too much time    &   &  &  &  &  &  &  &  & 1 & 0.06 & 0.08 & 0.19 & 0.12 \\
+11 I joined too late                &   &  &  &  &  &  &  &  &  & 1 & 0.22 & 0.11 & 0.14 \\
+12 Technical difficulties           &   &  &  &  &  &  &  &  &  &  & 1 & 0.27 & 0.30 \\
+13 Too advanced for my background   &   &  &  &  &  &  &  &  &  &  &  & 1 & 0.33 \\
+14 Videos were confusing            &   &  &  &  &  &  &  &  &  &  &  &  & 1 \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
+[.] How do prior learner characteristics (demographics, geographic location, intentions and motivations, and previous online courses) influence learners' likelihood of dropping out of a MOOC? (RQ1)
 
 
-\begin{table*}
-\label{tab:study1_rfd_ei_corr}
-\caption{Correlations between reasons for disengagement and enrollment intentions based on a linear combination of the courses' correlation matrices}
-\small
-\center
-\begin{tabular}{lrrrrrrrrrrrrrr}
-\toprule
- & R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8 & R9 & R10 & R11 & R12 & R13 & R14 \\
-\midrule
-Career change & 0.03 & 0.02 & -0.11 & -0.03 & -0.02 & -0.06 & 0 & -0.01 & 0 & 0 & 0.03 & 0.04 & 0 & -0.03 \\
-Experience online course & 0.06 & 0.01 & 0.01 & 0.1 & 0.17 & 0.09 & 0.02 & 0.01 & -0.01 & -0.02 & 0.05 & 0.12 & 0.12 & 0.08 \\
-Fun and challenege & 0.05 & 0.07 & -0.03 & -0.01 & 0.02 & -0.05 & -0.01 & 0 & -0.08 & 0.06 & 0.02 & 0.01 & -0.01 & 0 \\
-General interest & 0.01 & -0.04 & -0.04 & 0.02 & -0.01 & -0.07 & -0.05 & 0.01 & 0.04 & 0.03 & 0.06 & -0.03 & -0.01 & 0.02 \\
-Improve my English & 0.08 & 0 & 0.05 & 0.1 & 0.09 & 0.07 & 0.02 & 0.03 & 0.04 & 0 & 0.1 & 0.17 & 0.08 & 0.05 \\
-Presitgious uni/prof & 0.03 & 0.15 & -0.08 & -0.07 & -0.04 & -0.06 & -0.07 & -0.1 & -0.14 & 0.03 & 0.02 & 0 & -0.03 & -0.05 \\
-Relevant to job & -0.04 & -0.01 & 0.02 & 0.05 & 0.04 & 0 & 0.01 & -0.02 & 0 & 0 & -0.03 & 0.09 & 0.02 & 0.01 \\
-Meet new people & 0.05 & -0.02 & 0.05 & 0.08 & 0.06 & -0.04 & 0.03 & 0.13 & -0.01 & 0.01 & 0.14 & 0.15 & 0.06 & 0.03 \\
-Other & 0 & -0.07 & 0.08 & 0.05 & 0 & -0.03 & 0.03 & 0 & 0.01 & -0.08 & 0 & 0.09 & 0.15 & 0 \\
-Personal growth & 0.02 & 0.16 & 0 & -0.03 & 0.02 & -0.02 & 0.07 & -0.01 & 0 & 0.03 & 0.1 & 0 & -0.03 & -0.02 \\
-Relevant to research & -0.02 & 0.01 & 0.1 & 0.06 & 0.05 & 0 & 0.02 & 0.03 & -0.01 & -0.02 & 0.13 & 0.1 & -0.01 & 0.07 \\
-Relevant to school & -0.06 & 0 & 0.08 & 0.01 & 0.08 & 0.02 & -0.01 & 0.02 & -0.05 & -0.04 & 0.08 & 0.02 & -0.02 & -0.01 \\
-Statement of accomp. & 0.08 & 0.1 & 0.02 & 0.03 & 0.01 & -0.02 & 0.08 & 0 & 0.02 & 0 & 0.06 & 0.09 & 0.14 & 0.02 \\
-Take with others & 0 & -0.02 & 0.16 & 0.06 & 0.12 & 0.05 & 0.06 & 0.24 & 0.11 & 0.04 & 0.09 & 0.15 & 0.2 & 0.08 \\
-\bottomrule
-\end{tabular}
-\end{table*}
+We expected reasons for disengaging from the course to be related to the motivations that drove the learner to initially enroll in the course. A correlation matrix of learners' enrollment intentions and their subsequent reasons for disengaging revealed a small number of notable associations. Taking the course with friends or colleagues was correlated with disengaging because the course is not challenging enough, the material is too advanced of the learner's background, and the credential is not valuable enough to the learner ($r=.24, .20, .16$, respectively). Not surprisingly, learners who enrolled to experience an online course tended to stop participating because they were only exploring the course ($r=.17$). Learners looking to improve their English tended to experience technical difficulties ($r=.17$), and those who enrolled for personal growth and enrichment tended to struggle to keep up with deadlines ($r=.16$).
+
+% \begin{table}
+% \label{tab:rfd_ei_strongest_correlations}
+% \caption{Strongest correlations between enrollment intentions and reasons for disengaging ($|r| \geq 0.15$)}
+% \center
+% \small
+% \begin{tabular}{llr}
+% \toprule
+%  Enrollment Intention & Reason for Disengaging & $r$ \\
+% \midrule
+% Take with others & Course not challenging enough & 0.24 \\
+% Take with others & Too advanced for my background & 0.20 \\
+% Take with others & Credentials not valuable enough for me & 0.16 \\
+% Take with others & Technical difficulties & 0.15 \\
+% Experience an online course & I was only exploring the course & 0.17 \\
+% Improve my English & Technical difficulties & 0.17 \\
+% Personal growth & Could not keep up with deadlines & 0.16 \\
+% Prestigious uni/prof & Could not keep up with deadlines & 0.15 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+
+% \begin{table*}
+% \label{tab:study1_rfd_ei_corr}
+% \caption{Correlations between reasons for disengagement and enrollment intentions based on a linear combination of the courses' correlation matrices}
+% \small
+% \center
+% \begin{tabular}{lrrrrrrrrrrrrrr}
+% \toprule
+%  & R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8 & R9 & R10 & R11 & R12 & R13 & R14 \\
+% \midrule
+% Career change & 0.03 & 0.02 & -0.11 & -0.03 & -0.02 & -0.06 & 0 & -0.01 & 0 & 0 & 0.03 & 0.04 & 0 & -0.03 \\
+% Experience online course & 0.06 & 0.01 & 0.01 & 0.1 & 0.17 & 0.09 & 0.02 & 0.01 & -0.01 & -0.02 & 0.05 & 0.12 & 0.12 & 0.08 \\
+% Fun and challenege & 0.05 & 0.07 & -0.03 & -0.01 & 0.02 & -0.05 & -0.01 & 0 & -0.08 & 0.06 & 0.02 & 0.01 & -0.01 & 0 \\
+% General interest & 0.01 & -0.04 & -0.04 & 0.02 & -0.01 & -0.07 & -0.05 & 0.01 & 0.04 & 0.03 & 0.06 & -0.03 & -0.01 & 0.02 \\
+% Improve my English & 0.08 & 0 & 0.05 & 0.1 & 0.09 & 0.07 & 0.02 & 0.03 & 0.04 & 0 & 0.1 & 0.17 & 0.08 & 0.05 \\
+% Presitgious uni/prof & 0.03 & 0.15 & -0.08 & -0.07 & -0.04 & -0.06 & -0.07 & -0.1 & -0.14 & 0.03 & 0.02 & 0 & -0.03 & -0.05 \\
+% Relevant to job & -0.04 & -0.01 & 0.02 & 0.05 & 0.04 & 0 & 0.01 & -0.02 & 0 & 0 & -0.03 & 0.09 & 0.02 & 0.01 \\
+% Meet new people & 0.05 & -0.02 & 0.05 & 0.08 & 0.06 & -0.04 & 0.03 & 0.13 & -0.01 & 0.01 & 0.14 & 0.15 & 0.06 & 0.03 \\
+% Other & 0 & -0.07 & 0.08 & 0.05 & 0 & -0.03 & 0.03 & 0 & 0.01 & -0.08 & 0 & 0.09 & 0.15 & 0 \\
+% Personal growth & 0.02 & 0.16 & 0 & -0.03 & 0.02 & -0.02 & 0.07 & -0.01 & 0 & 0.03 & 0.1 & 0 & -0.03 & -0.02 \\
+% Relevant to research & -0.02 & 0.01 & 0.1 & 0.06 & 0.05 & 0 & 0.02 & 0.03 & -0.01 & -0.02 & 0.13 & 0.1 & -0.01 & 0.07 \\
+% Relevant to school & -0.06 & 0 & 0.08 & 0.01 & 0.08 & 0.02 & -0.01 & 0.02 & -0.05 & -0.04 & 0.08 & 0.02 & -0.02 & -0.01 \\
+% Statement of accomp. & 0.08 & 0.1 & 0.02 & 0.03 & 0.01 & -0.02 & 0.08 & 0 & 0.02 & 0 & 0.06 & 0.09 & 0.14 & 0.02 \\
+% Take with others & 0 & -0.02 & 0.16 & 0.06 & 0.12 & 0.05 & 0.06 & 0.24 & 0.11 & 0.04 & 0.09 & 0.15 & 0.2 & 0.08 \\
+% \bottomrule
+% \end{tabular}
+% \end{table*}
 
 (Note: this section is work in progress, we will go through each RQ and present results that address them here.)
 
-Table \ref{tab:study1_rfd_ei_corr}.
 
-How do prior learner characteristics (demographics, geographic location, intentions and motivations, and previous online courses) influence learners' likelihood of dropping out of a MOOC? (RQ1)
 
-What proportion of learners who dropped out were satisfied with their achievements in the course? (RQ2)
 
- How do reasons for dropping out vary across prior learner characteristics (cf. RQ1)? (RQ3b)
+[.] How do reasons for dropping out vary across prior learner characteristics (cf. RQ1)? (RQ3b) <- we may not be able to answer this
  
-How does behavior in MOOCs vary by reasons for dropping out? (RQ4)
+[.] How does behavior in MOOCs vary by reasons for dropping out? (RQ4) <- we need to see if we have enough data to answer this/if this is interesting
 
 The two most commonly reported reasons for dropout are related to one's ability to commit time to the course. The correlation between the two reasons is $r=0.32$. A more detailed analysis we conditioned on responses to these two reasons revealed that 30\% of respondents who reported at least one of these two time reasons reported no other reasons for dropout, while 24\% reported one other reason and 46\% reported more than one.
 
@@ -315,37 +338,15 @@ The reason that exhibited the strongest positive correlations with other feature
 
 Unlike correlations among reasons for disengagement, correlations of reasons for disengagement with enrollment intentions were mostly weak ($-0.14 < r < 0.24$). Among the strongest positive correlations were the cases listed in Table \ref{tab:rfd_ei_strongest_correlations}
 
-% \begin{table*}
-% \label{tab:rfd_ei_strongest_correlations}
-% \caption{Strongest observed correlations ($r >= 0.15$) between reasons for disengagement and enrollment intentions}
-% \center
-% \small
-% \begin{tabular}{llr}
-% \toprule
-%  Enrollment intention & Dropout reason & $r$ \\
-% \midrule
-% Take with others & Course not challenging enough & 0.24 \\
-% Take with others & Too advanced for my background & 0.20 \\
-% Experience an online course & I was only exploring the course & 0.17 \\
-% Improve my English & Technical difficulties & 0.17 \\
-% Personal growth & Could not keep up with deadlines & 0.16 \\
-% Take with others & Credentials not valuable enough for me & 0.16 \\
-% Take with others & Technical difficulties & 0.15 \\
-% Prestigious uni/prof & Could not keep up with deadlines & 0.15 \\
-% \bottomrule
-% \end{tabular}
-% \end{table*}
 
 \subsection{Discussion}
 
-(Note: this section is also work in progress.)
-
-Even though study 1 accentuates ``time'' as a reported reason for dropout, interpreting what time means is not straight forward. Expectency-value theory models the learner as a rational agent who allocates time to different activities to maximize subjective gain. In other words, a learner might disengage from the course if she gets occupied by other higher priority tasks. Because learners can join or leave MOOCs freely. Joining a MOOC does not necessarily imply that a learner is capable of allocating the time for it according to the rational framework that expectancy value theory predicts. Moreover, previous research on volitional control suggests that learners allocate time to the next highest priority task, but could rather get distracted by lower priority activities that promise nearer gratification. So what does lack of time for the course mean? In study 2, we attempt to investigate various possible dropout reasons that learners might report as ``lack of time".
+Even though study 1 accentuates ``time'' as a reported reason for dropout, interpreting what time means is not straight forward. Expectancy-value theory models the learner as a rational agent who allocates time to different activities to maximize subjective gain. In other words, a learner might disengage from the course if she gets occupied by other higher priority tasks. Because learners can join or leave MOOCs freely. Joining a MOOC does not necessarily imply that a learner is capable of allocating the time for it according to the rational framework that expectancy value theory predicts. Moreover, previous research on volitional control suggests that learners allocate time to the next highest priority task, but could rather get distracted by lower priority activities that promise nearer gratification. So what does lack of time for the course mean? In study 2, we attempt to investigate various possible dropout reasons that learners might report as ``lack of time".
 
 
 \section{Study 2: Understanding Disengagement}
 
-To gain a better understanding of the attrition patterns identified in Study 1, we designed a smaller, more focused follow-up study. In Study 2, we reached out to learners who were likely to drop out of a course and asked them to provide feedback. To this end, we developed a predictive model to identify at-risk learners and asked them to complete a survey. One goal of this study was to further investiage research question $RQ3a$ about reasons for attrition based on learners' own descriptions of the challenges they faced. Specifically, in Study 1, most learners reported that they disengaged due to a shortage of time. A variety of factors can influence the amount of time learners have at their disposal. Higher priority obligations, such as professional, academic, and personal committments, are certainly large contributors. Another critical factor, especially in the context of MOOCs as largely unguided learning environments, is learners' volitional control to engage in self-regulated learning \cite{corno2001volitional}. For instance, learners' ability to allocate time for the course in the presence of potential distractors of subjectively lower importance than taking the course (e.g., watching TV). We constructed the following hypotheses about the presence of these two factors for learners who report having not enough time:
+To gain a better understanding of the attrition patterns identified in Study 1, we designed a smaller, more focused follow-up study. In Study 2, we reached out to learners who were likely to drop out of a course and asked them to provide feedback. To this end, we developed a predictive model to identify at-risk learners and asked them to complete a survey. One goal of this study was to further investigate research question $RQ3a$ about reasons for attrition based on learners' own descriptions of the challenges they faced. Specifically, in Study 1, most learners reported that they disengaged due to a shortage of time. A variety of factors can influence the amount of time learners have at their disposal. Higher priority obligations, such as professional, academic, and personal committments, are presumably large contributors. Another critical factor, especially in the context of MOOCs as largely unguided learning environments, is learners' volitional control to engage in self-regulated learning \cite{corno2001volitional}. For instance, learners' ability to allocate time for the course in the presence of potential distractors of subjectively lower importance than taking the course (e.g., watching TV). We constructed the following hypotheses about the presence of these two factors for learners who report having not enough time:
 
 \begin{description}
   \item[H4a] Learners who report having `not enough time' can be grouped into those with higher priority obligations (professional, academic, and personal) and those with low volitional control.
@@ -356,7 +357,7 @@ Another goal of Study 2 was to collect data to test hypotheses $H1, H2,$ and $H3
 
 \subsection{Methods}
 
-The particular MOOC under observation was an undergraduate level course on an advanced topic in computer science. It was offered in 2014 through Coursera. There were  20,048 enrolled learners; 10,510 watched at least one video, and [N] attempted more than one assignment.
+The particular MOOC under observation was an undergraduate level course on an advanced topic in computer science. It was offered in 2014 through Coursera. There were  20,048 enrolled learners; 10,510 watched at least one video, and [N] attempted more than one assignment. The following subsections describe how disengaging learners were identified, which measures were included in the feedback survey, and how open responses were iteratively coded.
 
 \subsubsection{Predicting Disengagement}
 
@@ -397,11 +398,9 @@ Out of the 20,048 enrolled learners in the course, we only considered those 10,5
 
 Every learner who was predicted to disengage from the course was sent an email kindly requesting their help: ``You are enrolled in [course name], but you've been less active recently. Could you help us understand why?'' A low response rate was expected for this subpopulation that was defined by low engagement. And yet, 756 out of 6,053 learners started the survey (12.5\% response rate), and 459 completed it (61\% completion rate). Missing values were multiply imputated by predictive mean matching using responses to all survey questions.\footnote{The $R$ mice package was used to perform multiple imputation and subsequent pooled analyses.} All estimates were pooled across ten imputations, with standard errors adjusted for added variance. The majority of respondents were male (85\%), 35.6 years old on average ($SD=12.5$), and 80\% had achieved a bachelors' or more advanced degree.
 
-Learners were asked to report how satisfied they were with their progress in the course, and whether they were using the course materials more, less, or exactly as much as they would have liked. These items served as measures of personal success.
-% In addition, they reported intentions for engaging with each week's course content. 
-They were then asked to openly report ``what challenges, inside or outside of the course, [they] experienced while [they were] taking this course, if any?'' The instructions encouraged them to list all challenges they could think of. This question was deliberately asked prior to any survey questions that could suggest particular reasons for disengagement.
+Learners were asked to report how satisfied they were with their progress in the course, and whether they were using the course materials more, less, or exactly as much as they would have liked. These items served as measures of personal success. They were then asked to openly report ``what challenges, inside or outside of the course, [they] experienced while [they were] taking this course, if any?'' The instructions encouraged them to list all challenges they could think of. This question was deliberately asked prior to any survey questions that could suggest particular reasons for disengagement.
 
-Two research assistants independently developed codebooks for the resulting 448 non-empty open responses. Their codebooks were consolidated and applied on Mechanical Turk in three iterations. The codebook was updated in each iteration to reliably fit the open response data. Specific updates to the initial codebook were informed by code frequency, code correlations, and inter-coder agreement. In the first iteration, 250 randomly selected responses were each coded by four `classification experts'. In the second iteration, the remaining responses were coded in the same way. In the final iteration, all responses were coded by two classification experts (ties were resolved by two researchers).\footnote{For additional details on the coding procedure and codebooks, see [URL].} The iterative coding yielded 399 relevant coded responses, which were analyzed in combination with the remaining survey data.
+Two research assistants independently developed codebooks for the resulting 448 non-empty open responses. Their codebooks were consolidated and applied on Amazon Mechanical Turk (AMT) in three iterations. The codebook was updated in each iteration to reliably fit the open response data. Specific updates to the initial codebook were informed by code frequency, code correlations, and inter-coder agreement. In the first iteration, 250 randomly selected responses were each coded by four `classification experts,' which is an AMT-specific qualification. In the second iteration, the remaining responses were coded in the same way. In the final iteration, all responses were coded by two classification experts (ties were resolved by two researchers).\footnote{For additional details on the coding procedure and codebooks, see [URL].} The iterative coding yielded 399 relevant coded responses, which were analyzed in combination with the remaining survey data.
 
 % Learners also rated the extent to which their progress was hindered by a number of obstacles. 
 Learners also rated their sense of social and academic fit \cite{walton2007question} (17 items, $M=4.66, SD=0.71, \alpha=0.86$); mindset (4 items on the nature of intelligence and talent\footnote{Items were adpated from the mindset questionnaire available at \url{http://mindsetonline.com/testyourmindset/}.}; $M=4.44, SD=0.92, \alpha=0.77$), goal striving (4 items on motivation, perceived importance, committment, and confidence; $M=3.12, SD=0.95, \alpha=0.82$), and capacity for volitional control (one item about lower-priority distractions hindering the learner's course progress; $M=2.73, SD=1.29$).
@@ -416,7 +415,7 @@ Learners also rated their sense of social and academic fit \cite{walton2007quest
 
 The majority of survey respondents (550 of 756; 73\%) reported being only somewhat or less satisfied with their progress in the course. While many of them (66\%) were substantially held back by other committments that took up time they had planned to spend on the course, only one in four (25\%) indicated being hindered by distractions of lower priority than the course (i.e. exhibit lower volitional control). These two time-related measures, which only differ in the assigned level of priority, were not significantly correlated ($r=.05, t_{548}=1.3, p=.21$).
 
-Reasons for learner attrition were measured using iteratively coded open responses ($n=399$). Table \ref{tab:s2reas} provides each coded challenge and percentage of open responses that indicated it. A number of significant correlations between these challenges stood out: having not enough time was negatively associated with disliking the format or teaching style ($r=-.52$), needing additional course materials ($r=-.26$), finding the course uninteresting or not valuable ($r=-.45$), and facing technical difficulties ($r=-.29$). 
+Reasons for learner attrition were measured using iteratively coded open responses ($n=399$). Table \ref{tab:s2reas} provides each coded challenge and percentage of open responses that indicated it. A number of significant correlations between these challenges stood out: having not enough time was negatively associated with disliking the format or teaching style ($r=-.52$), needing additional course materials ($r=-.26$), finding the course uninteresting or not valuable ($r=-.45$), and facing technical difficulties ($r=-.29$). Hence, if a learner had not enough time, this tended to be the main challenge.
 
 \begin{table}[h!]
 \caption{Iteratively-Coded Reasons for Attrition}
@@ -438,7 +437,7 @@ Language barrier & 1 \\
 \end{tabular}
 \end{table}
 
-To test hypotheses $H4a$ and $H4b$, we examined the 336 open responses that indicated having too little time. It revealed that no particular commitment was specified in about half of them (53\%). This distinction was a salient feature in the initial codebooks, but could not be coded with sufficient reliability across coders. Coders would have required additional training to avoid reading specific reasons into unspecific resposnes. We thus operationalized the distinction by string matching to caputre professional, academic, and personal reasons for having not enough time.\footnote{Pattern: {\em work$|$job$|$school$|$university$|$college$|$family$|$kids$|$health}} Relative to those who specified a reason, learners who indicated too little time without specifying a reason also reported a significantly lower level of volitional control, i.e. their progress was more severely hindered by lower-prioirty distractions ($t_{331}=2.9, p=.003, d=.32$). However, the two groups did not significantly differ in how much they were held back by commitments that took up time they had planned to spend on the course ($t_{333}=-.75, p=.45$). These findings lend strong support to hypotheses $H4a$ and $H4b$: that is, while the large group of learners who report having not enough time generally faced higher-priority obligations, a substantial proportion suffered from low volitional control---and reporting no specific reasons for having not enough time was indicative thereof.
+To test hypotheses $H4a$ and $H4b$, we examined the 336 open responses that indicated having too little time. It revealed that no particular commitment was specified in about half of them (53\%). This distinction was a salient feature in the initial codebooks, but could not be coded with sufficient reliability across coders. Coders would have required additional training to avoid reading specific reasons into unspecific resposnes. We thus operationalized the distinction by string matching to capture professional, academic, and personal reasons for having not enough time.\footnote{Pattern: {\em work$|$job$|$school$|$university$|$college$|$family$|$kids$|$health}} Relative to those who specified a reason, learners who indicated too little time without specifying a reason also reported a significantly lower level of volitional control, i.e. their progress was more severely hindered by lower-prioirty distractions ($t_{331}=2.9, p=.003, d=.32$). However, the two groups did not significantly differ in how much they were held back by commitments that took up time they had planned to spend on the course ($t_{333}=-.75, p=.45$). These findings lend strong support to hypotheses $H4a$ and $H4b$: that is, while the large group of learners who report having not enough time generally faced higher-priority obligations, a substantial proportion suffered from low volitional control---and reporting no specific reasons for having not enough time was indicative thereof.
 
 \subsubsection{Psychological Factors}
 
@@ -468,7 +467,7 @@ Hypotheses $H1$, $H2$, and $H3$ about goal striving, perceived social belonging,
 
 \subsection{Discussion}
 
-Study 2 focused on reasons for attrition and psychological factors of learners who were likely to drop out of the course. Through iterative coding, we developed a set of challenges that were faced by a subset of learners in a particular MOOC (cf. Table \ref{tab:s2reas}). The large majority of learners who indicate that they had not have enough time was found to be sperable into two groups: those with higher priority obligations that take up too much time, and those who are challenged by low levels of volitional control ($H4a$). MOOCs are an environment that requires learners to be highly self-regulated to be successful. The present findings emphasize the critical role of their capacity for volitional control, a factor that warrants further investigation \cite{corno2001volitional}. Very few learners explicitly indicated issues with volitional control in their responses, potentially because it is not socially desirable to admit. The absence of specific reasons for their shortage of time was found indicative of issues with volitional control ($H4b$). This could be a useful proxy for volitional issues in future research.
+Study 2 focused on reasons for attrition and psychological factors of learners who were likely to drop out of the course. Through iterative coding, we developed a set of challenges that were faced by a subset of learners in a particular MOOC (cf. Table \ref{tab:s2reas}). The large majority of learners who indicate that they had not enough time was found to be separable into two groups: those with higher priority obligations that take up too much time, and those who are challenged by low levels of volitional control ($H4a$). MOOCs are an environment that requires learners to be highly self-regulated to be successful. The present findings emphasize the critical role of their capacity for volitional control, a factor that warrants further investigation \cite{corno2001volitional}. Very few learners explicitly indicated issues with volitional control in their responses, potentially because it is not socially desirable to admit. The absence of specific reasons for their shortage of time was found indicative of issues with volitional control ($H4b$). This could be a useful proxy for volitional issues in future research.
 
 We investigated the extent to which personal success in MOOCs is associated with three established psychological factors: goal striving, social belonging, and growth mindset. Prior evidence found the absence of each factor to cause lower persistence and performance in more traditional achievement-oriented environments. The present findings highlight the critical role of these factors in MOOCs based on observational evidence. Learners with higher levels of goal striving, social belonging, and growth mindset also reported higher levels of personal success ($H1,H2,H3$). The subpopulation of learners in this study was a small and intentionally skewed subset. The observed differences are expected to be larger in the full population of learners, compared to this homogenous sample of learners who are unlikely to persist. Goal striving was most strongly associated with both measures of personal success. Success in terms of relative progress was associated with a stronger growth mindset, but not significantly with social belonging. In contrast, success in terms of satisfaction with progress was associated with stronger social belonging, but not significantly with growth mindset. Future work should examine if this pattern reflects a difference in the underlying process by which these psychological factors affect learner behavior and perception.
 
