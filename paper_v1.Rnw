@@ -1,5 +1,28 @@
 \documentclass{sigchi}
 
+<<loadcsv, echo=FALSE>>=
+#library(RCurl)
+#data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
+#a = read.csv(text=data)
+a = read.csv("C:/Research/Analytics/pycode/user_code/halawa/publications/LAS2015/data_masters/compiled_data_all_courses.csv")
+
+# Shift scores for satisfaction index components up to 1-N
+a$qoe = a$qoe + 4
+a$satis_amount_learnt = a$satis_amount_learnt + 4
+a$satis_vs_time_spent = a$satis_vs_time_spent + 4
+a$satis_time_mgmt = a$satis_time_mgmt + 4
+a$how_met_expectations = a$how_met_expectations + 3
+a$how_engaging_material_presentation = a$how_engaging_material_presentation + 1
+
+satM = subset(a, select=c('qoe', 'satis_amount_learnt', 'satis_vs_time_spent', 'how_met_expectations', 'how_engaging_material_presentation'))
+a$satisfaction = rowMeans(satM, na.rm=TRUE)
+a$satisfaction[!is.finite(a$satisfaction)] = NA
+
+library(plyr)
+a$did_dropout = revalue(factor(a$did_dropout), c("0"="No", "1"="Yes"))
+@
+
+
 % Use this command to override the default ACM copyright statement (e.g. for preprints). 
 % Consult the conference website for the camera-ready copyright statement.
 
@@ -96,6 +119,9 @@ Research on attrition has a long tradition in the field of education. Large-scal
 
 \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
 \category{K.3.1.}{Computers and Education}{Computer Uses in Education}
+
+<<test1, echo=TRUE>>=
+@
 
 \section{Introduction}
 
@@ -238,9 +264,17 @@ TODO Rene adds these analyses here
 % RQ2a: What proportion of learners who disengaged were satisfied with their achievements in the course?
 % RQ2b: How does learners' behavior in the MOOC vary by their level of satisfaction?
 
-Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2). 
+Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2).
 
-TODO Sherif adds satisfaction analyses here
+First, we compared the distributions of satisfaction scores for learners who reported they stopped participating and those who reported not to have stopped. As figure \ref{fig:study1_satis_si_score_dist_comparison} shows, the mean satisfaction score ($mean=4.70$) for learners who reported to have stopped is 0.64 points lower than the other group ($mean=5.34$). 
+
+<<study1_satis_si_score_dist_comparison, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course'>>=
+y0 = a$satisfaction[a$did_dropout == "No"]
+y1 = a$satisfaction[a$did_dropout == "Yes"]
+b = a[!is.na(a$did_dropout),]
+ggplot(b) + geom_boxplot(aes(x=b$did_dropout,y=b$satisfaction)) + theme_bw() + labs(y="Satisfaction",x="Stopped participating?")
+@
+
 
 \subsubsection{Reasons for Disengaging}
 % RQ3a: What reasons do learners report for disengaging from a MOOC?
