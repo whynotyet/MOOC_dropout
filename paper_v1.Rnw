@@ -2,9 +2,9 @@
 
 <<loadcsv, echo=FALSE>>=
 #library(RCurl)
-#data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
-#a = read.csv(text=data)
-a = read.csv("C:/Research/Analytics/pycode/user_code/halawa/publications/LAS2015/data_masters/compiled_data_all_courses.csv")
+# data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
+# a = read.csv(text=data)
+a = read.csv("compiled_data_all_courses.csv")
 
 # Shift scores for satisfaction index components up to 1-N
 a$qoe = a$qoe + 4
@@ -211,31 +211,6 @@ A survey of over one hundred learners who dropped out of a MOOC showed that the 
 \item[RQ3b] How do reasons for disengaging vary across prior learner characteristics (cf. RQ1)?
 \end{description}  
 
-<<s1reason, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Proportion of learners who indicated each reason for attrition across 17 MOOCs'>>=
-values = c(18,20,10,22,19,21,8,11,13,13,9,7,14,18,11,14,19,
-57,39,13,48,42,51,33,60,65,42,18,52,21,68,39,28,68,
-21,23,25,14,13,19,8,0,0,23,9,12,20,20,13,28,12,
-32,18,25,28,32,28,25,11,20,27,27,19,19,22,18,0,11,
-15,14,8,16,13,12,0,0,9,10,9,9,19,12,7,14,14,
-21,3,18,12,17,24,25,30,30,10,36,13,20,25,12,0,21,
-69,58,38,76,80,66,66,55,69,67,27,71,28,64,54,0,71,
-12,7,27,8,4,18,41,11,6,10,27,10,24,14,11,28,7,
-18,7,26,17,19,16,41,10,9,25,18,21,27,25,20,28,12,
-13,12,10,19,19,21,0,11,7,13,9,9,11,16,9,14,19,
-16,5,22,17,14,21,16,11,7,18,20,16,23,20,16,16,12,
-14,10,10,23,24,16,8,11,2,13,18,19,10,25,17,0,29,
-26,8,11,27,23,39,33,11,24,11,27,27,11,35,15,14,41,
-14,9,18,10,10,18,25,22,4,5,18,7,20,22,14,14,25)
-
-reasons = c("Material not explained properly","Course requires too much time","Not what I was looking for","I joined too late","Didn't enjoy online course format","Technical difficulties","Couldn't keep up with deadlines","Not challenging enough","I learned all I wanted","Videos were confusing","I was only exploring","Too advanced for my background","Assignment or exam was too difficult","Credentials not valuable to me")
-
-dat = data.frame(reasons = rep(reasons, each=17), values)
-
-library(ggplot2)
-ggplot(dat, aes(reorder(reasons, values, median), values)) + geom_boxplot() + coord_flip() + theme_bw() + labs(y="Proportion",x="")
-@
-
-
 \section{Study 1: Understanding Attrition}
 
 The present study extends the existing literature on persistence with a representative quantitative treatment of attrition in MOOCs. We address the research questions developed in the previous section with a combination of self-report and behavioral data from seventeen diverse MOOCs. Going beyond specific research questions, this observational analysis is intended to inform our understanding of attrition in MOOCs to better support learners in these environments. This can be achieved through general changes, for instance, to the course format; or by targeted interventions that support a particular group of learners, such as those who exhibit low levels of goal striving (cf. Study 2).
@@ -244,30 +219,39 @@ The present study extends the existing literature on persistence with a represen
 
 Seventeen MOOCs on topics in a variety of disciplines were selected for investigation (see Table \ref{tab:s1sum}). For each course, we merged data from the initial course survey (distributed in the first weeks of the course), the feedback surveys (distributed in the last weeks of the course), and behavioral data collected in the learning environment. 
 % Only those learners who completed the feedback survey were included in the analyses (some did not complete the initial course survey). 
-On the initial course surveys, learners reported their gender, age, prior experience, and enrollment intentions (on the OLEI scale \cite{kizilcec2015motivation}). On the feedback survey, learners reported their satisfaction with the course (N-item index, M=XX, SD=XX, $\alpha=.XX$), and whether they `stopped participating in the course before it ended' or `remained active until the end'. If they indicated that they stopped participating, learners reported `what influenced their decision to stop participating' using a grid of 14 binary-choice items (see Figure \ref{fig:s1reason}).\footnote{Instead of a select-all-that-apply question, we opted for binary-choice items to encourage learners to consider each reason in turn. The response options were ``Did influence my decision to stop" and ``Did NOT influence my decision to stop," which should reduce acquiescence bias relative to yes/no or true/false scales.}
+On the initial course surveys, learners reported their gender, age, education, prior experience with the topic and MOOCs, enrollment intentions (on the OLEI scale \cite{kizilcec2015motivation}), and how many hours per week they intend to spend on the course. On the feedback survey, learners reported their satisfaction with the course (6-item index, $M=5.29, SD=0.94, \alpha=.82$), and whether they `stopped participating in the course before it ended' or `remained active until the end'. Those who indicated that they stopped participating also reported `what influenced their decision to stop participating' using a grid of 14 binary-choice items (see reasons in Figure \ref{fig:s1reason}).\footnote{Instead of a select-all-that-apply question, we opted for binary-choice items to encourage learners to consider each reason in turn. The response options were ``Did influence my decision to stop" and ``Did NOT influence my decision to stop," which should reduce acquiescence bias relative to yes/no or true/false scales.} Geographic location was determined by IP address.
 
-Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and three behavioral indicators for each course. The behavioral indicators represent course milestones: the proportions of learners who viewed over 30\%, 50\%, 80\% of lecture videos and attempted over 30\%, 50\%, 80\% of assessments in the course. In addition, to capture performance, we  The data illustrated in Figure \ref{fig:s1reason} reflect the proportions of learners who selected each reason relative to all learners who reportedly stopped participating in each course. The correlation matrixes in Tables \ref{tab:s1reascor} and \ref{tab:s1cor2} are a linear combination of correlation matrixes for each course, assigning equal weight to all courses to discount for considerable variation in sample sizes.
-
-TODO, update based on what we do here: We computed correlations between reported reasons for dropout and certain learner behaviors. Finally, for each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table [TableToBeAdded].
-
+Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and a subset of behavioral indicators for each course. Behavioral indicators were chosen to represent course milestones: watching over 30\%, 50\%, 80\% of lecture videos, attempting over 30\%, 50\%, 80\% of assessments, and achieving a grade above the 60$^\text{th}$, 80$^\text{th}$ percentile. A regression analysis predicting course milestones and performance was performed based on a subset of learners who completed the initial course survey in the 14 MOOCs in our dataset. Out of the 65,320 learners who started the survey, we selected those with up to three missing values in the dataset, yielding a sample of $N=44,382$. Missing values were multiply imputed based on other survey responses and pooled estimates are reported, which account for the added uncertainty.
+% The data illustrated in Figure \ref{fig:s1reason} reflect the proportions of learners who selected each reason relative to all learners who reportedly stopped participating in each course.
+% The correlation matrixes in Tables \ref{tab:s1reascor} and \ref{tab:s1cor2} are a linear combination of correlation matrixes for each course, assigning equal weight to all courses to discount for considerable variation in sample sizes.
 % Information about age, gender, and education level were only available for learners who completed the initial course survey.
 % We also computed the fraction of videos in the course each learner had watched to relate self-report measures to learner behavior
-
+ 
 \subsection{Results}
 
-\subsubsection{Predictors of Attrition}
-% RQ1: How do prior learner characteristics (demographics, geographic location, enrollment intentions, and previous online courses) influence learners' likelihood of disengaging from a MOOC?
+We address the research questions developed in the previous section in three parts: first, a regression analysis of differential attrition and performance ($RQ1$); second, a comparison of satisfaction levels across subsets of learners ($RQ2ab$), and third, a descriptive analysis of reported reasons for disengaging from the course ($RQ3ab$).
 
-<<>>=
+\subsubsection{Predictors of Attrition}
+
+We fit logistic mixed-effects (hierarchical) models to a number of binary persistence and performance metrics to estimate individual differences in prior learner characteristics, including demographic and geographic features. Correlations between predictors were low enough to allow for simple interpretation of coefficients. The 14 MOOCs in the dataset were modeled as a random effect, in order to generalize to the population of similar MOOCs. Figure \ref{fig:s1coefs} illustrates regression coefficients with 95\% confidence intervals from each model. The coefficients represent changes from a baseline (intercept) population: male learners in North America, with an average age, who had not earned a bachelor's degree and had no prior experience with the topic or taken other MOOCs, not intending to complete the course, and prepared to spend only up to two hours per week on the course.
+
+A number of significant and substantial individual differences emerged, some indicative of potential inequalities: Women were 10 to 15\% points less likely than men to persist with lectures and assessments. Women are also less likely to score a grade above the 60$^\text{th}$ percentile than men. Learners in Africa, Asia, and South America were 20 to 60\% points less likely to persist in video watching and achieved lower grades than learners in North America (N.A.). Learners in Europe exhibited 10 to 30\% points higher persistence with lectures and assessemnts than those in N.A.. While learners in Asia showed lower persistence with videos, they were more likely to attempt more assessments than learners from N.A.. 
+
+Besides gender and geography, the older the learner, the more likely they were to persist in lectures and assessments, but the lower their relative performance. More educated learners, those with a bachelor's or higher degree, were somewhat more likely to start assessments, compared to those with less education, but were less likely to perform highly on them. Not surprisingly, prior experience, intending to learn about all topics in the course, and being prepared to spend more hours in the course were strong predictors of persistance. Learners who took prior MOOCs, however, were less likely to persist, yet achieved higher grades.
+
+<<s1coefs, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=6, fig.width=10, fig.cap='Coefficients of predictors (binary, except for normalized age) from logistic mixed-effects model for predicting persistence and achievement milestones (prop. videos watched, prop. assessments completed, and grade percentile). The baseline (intercept) are males in N. America of average age who have not earned a bachelors\', no prior experience in the topic, not intending to complete the course, prepared to spend under 2 hours/week, this being their first MOOC. An estimate of -20 indicates a 20\\% points lower probability of achieving a milestone.'>>=
+library(ggplot2)
 res = read.csv("pred_coefs.csv")
-ggplot(subset(res, coef2!="Intercept"), aes(coef2, est, ymin=est-1.96*se, ymax=est+1.96*se, color=factor(sign))) + 
+res$y = factor(res$y, levels=c(">30% videos", ">50% videos", ">80% videos", ">60% pctile grade", ">30% assessments", ">50% assessments", ">80% assessments", ">80% pctile grade"))
+res$y = factor(res$y, labels=c("> 30% videos", "> 50% videos", "> 80% videos", "> 60th percentile grade", "> 30% assessments", "> 50% assessments", "> 80% assessments", "> 80th percentile grade"))
+res$coef2 = factor(res$coef2, levels=rev(c("Intercept", "Gender:F", "Age (norm.)", "Educ.:Bachelor+", "Prior Exp.", "Intent:All", "Hours:2-4", "Hours:4+ ", "Prior MOOCs:1-3", "Prior MOOCs:4+ ", "Geo:Europe", "Geo:Oceania", "Geo:Africa", "Geo:Asia", "Geo:S.America")))
+ggplot(subset(res, coef2!="Intercept"), 
+       aes(coef2, 100*est, ymin=100*(est-1.96*se), ymax=100*(est+1.96*se), color=factor(sign))) + 
   geom_hline(xintercept=0) + geom_pointrange() + facet_wrap(~y, ncol=4) + coord_flip() + 
   theme_minimal() + theme(legend.position="none",axis.title=element_text(vjust=0)) + 
-  scale_color_manual(values=c('red','grey30','darkgreen')) +
-  labs(y="Estimated change in probability (95% CIs)", x="")
+  scale_color_manual(values=c('red','grey30','green3')) +
+  labs(y="Predicted change in probability of achieving each `milestone` (95% CIs)", x="")
 @
-
-TODO Rene adds these analyses here
 
 \subsubsection{Satisfaction: Personal Success}
 % RQ2a: What proportion of learners who disengaged were satisfied with their achievements in the course?
@@ -295,6 +279,29 @@ To investigate the underlying factor structure of the reported reasons for disen
 
 We expected reasons for disengaging from the course to vary by learner characteristics ($RQ3b$), such as learners' motivations for enrolling in the course. A correlation matrix of learners' enrollment intentions and their subsequent reasons for disengaging revealed a small number of notable associations. Taking the course with friends or colleagues was correlated with disengaging because the course is not challenging enough, the material is too advanced of the learner's background, and the credential is not valuable enough to the learner ($r=.24, .20, .16$, respectively). Not surprisingly, learners who enrolled to experience an online course tended to stop participating because they were only exploring the course ($r=.17$). Learners looking to improve their English tended to experience technical difficulties ($r=.17$), and those who enrolled for personal growth and enrichment tended to struggle to keep up with deadlines ($r=.16$).
 
+<<s1reason, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Proportion of learners who indicated each reason for attrition across 17 MOOCs'>>=
+values = c(18,20,10,22,19,21,8,11,13,13,9,7,14,18,11,14,19,
+57,39,13,48,42,51,33,60,65,42,18,52,21,68,39,28,68,
+21,23,25,14,13,19,8,0,0,23,9,12,20,20,13,28,12,
+32,18,25,28,32,28,25,11,20,27,27,19,19,22,18,0,11,
+15,14,8,16,13,12,0,0,9,10,9,9,19,12,7,14,14,
+21,3,18,12,17,24,25,30,30,10,36,13,20,25,12,0,21,
+69,58,38,76,80,66,66,55,69,67,27,71,28,64,54,0,71,
+12,7,27,8,4,18,41,11,6,10,27,10,24,14,11,28,7,
+18,7,26,17,19,16,41,10,9,25,18,21,27,25,20,28,12,
+13,12,10,19,19,21,0,11,7,13,9,9,11,16,9,14,19,
+16,5,22,17,14,21,16,11,7,18,20,16,23,20,16,16,12,
+14,10,10,23,24,16,8,11,2,13,18,19,10,25,17,0,29,
+26,8,11,27,23,39,33,11,24,11,27,27,11,35,15,14,41,
+14,9,18,10,10,18,25,22,4,5,18,7,20,22,14,14,25)
+
+reasons = c("Material not explained properly","Course requires too much time","Not what I was looking for","I joined too late","Didn't enjoy online course format","Technical difficulties","Couldn't keep up with deadlines","Not challenging enough","I learned all I wanted","Videos were confusing","I was only exploring","Too advanced for my background","Assignment or exam was too difficult","Credentials not valuable to me")
+
+dat = data.frame(reasons = rep(reasons, each=17), values)
+
+library(ggplot2)
+ggplot(dat, aes(reorder(reasons, values, median), values)) + geom_boxplot() + coord_flip() + theme_bw() + labs(y="Proportion",x="")
+@
 
 % \begin{table*}
 % \label{tab:s1reascor}

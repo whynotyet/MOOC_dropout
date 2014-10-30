@@ -49,6 +49,9 @@
 
 \usepackage{alltt}
 
+
+
+
 % Use this command to override the default ACM copyright statement (e.g. for preprints). 
 % Consult the conference website for the camera-ready copyright statement.
 
@@ -139,13 +142,15 @@ breaklinks=true,
 \maketitle
 
 \begin{abstract}
-Research on attrition has a long tradition in the field of education. Large-scale open learning environments prompted a shift away from a monolithic notion of success toward a more nuanced treatment that accounts for diverse motivations. A systematic analysis of predictors of and reported reasons for attrition in 17 massive open online courses suggested time to be a critical obstacle and [other important take-aways from Study 1] (Study 1; $N = XX,XXX$). A follow-up study with online learners who disengaged from the course (Study 2; $ N = 756$) found self-ascribed successful learners to report higher levels of goal striving, feelings of social belonging, and growth mindset. Iterative coding of open responses about challenges learners faced while taking the course reiterated the prevalence of having not enough time (reported by 84\%). A low capacity for volitional control was identified as a large contributor to this issue, besides demands from higher priority obligations. A better understanding of why learners disengage from MOOCs allows for earlier recognition of impending attrition, which enables targeted interventions to help learners achieve their learning goals.
+Research on attrition has a long tradition in the field of education. Large-scale open learning environments prompted a shift away from a monolithic notion of success toward a more nuanced treatment that accounts for the diversity in motivation. A systematic analysis of predictors of and reported reasons for attrition in 17 massive open online courses suggested time to be a critical obstacle and [other important take-aways from Study 1] (Study 1; $N = XX,XXX$). A follow-up study with online learners who disengaged from the course (Study 2; $ N = 756$) found self-ascribed successful learners to report higher levels of goal striving, feelings of social belonging, and growth mindset. Iterative coding of open responses about challenges learners faced while taking the course reiterated the prevalence of having not enough time (reported by 84\%). A low capacity for volitional control was identified as a large contributor to this issue. A better understanding of why learners disengage from MOOCs allows for earlier recognition of impending attrition, which enables targeted interventions to help learners achieve their goals.
 \end{abstract}
 
 \keywords{Online learning, persistence, attrition, dropout, disengagement, massive open online courses, MOOC, psychological factors}
 
 \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
 \category{K.3.1.}{Computers and Education}{Computer Uses in Education}
+
+
 
 \section{Introduction}
 
@@ -235,16 +240,6 @@ A survey of over one hundred learners who dropped out of a MOOC showed that the 
 \item[RQ3b] How do reasons for disengaging vary across prior learner characteristics (cf. RQ1)?
 \end{description}  
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure*}[ht]
-
-\includegraphics[width=\maxwidth]{figure/s1reason} \caption[Proportion of learners who indicated each reason for attrition across 17 MOOCs]{Proportion of learners who indicated each reason for attrition across 17 MOOCs\label{fig:s1reason}}
-\end{figure*}
-
-
-\end{knitrout}
-
-
 \section{Study 1: Understanding Attrition}
 
 The present study extends the existing literature on persistence with a representative quantitative treatment of attrition in MOOCs. We address the research questions developed in the previous section with a combination of self-report and behavioral data from seventeen diverse MOOCs. Going beyond specific research questions, this observational analysis is intended to inform our understanding of attrition in MOOCs to better support learners in these environments. This can be achieved through general changes, for instance, to the course format; or by targeted interventions that support a particular group of learners, such as those who exhibit low levels of goal striving (cf. Study 2).
@@ -253,29 +248,53 @@ The present study extends the existing literature on persistence with a represen
 
 Seventeen MOOCs on topics in a variety of disciplines were selected for investigation (see Table \ref{tab:s1sum}). For each course, we merged data from the initial course survey (distributed in the first weeks of the course), the feedback surveys (distributed in the last weeks of the course), and behavioral data collected in the learning environment. 
 % Only those learners who completed the feedback survey were included in the analyses (some did not complete the initial course survey). 
-On the initial course surveys, learners reported their gender, age, prior experience, and enrollment intentions (on the OLEI scale \cite{kizilcec2015motivation}). On the feedback survey, learners reported their satisfaction with the course (N-item index, M=XX, SD=XX, $\alpha=.XX$), and whether they `stopped participating in the course before it ended' or `remained active until the end'. If they indicated that they stopped participating, learners reported `what influenced their decision to stop participating' using a grid of 14 binary-choice items (see Figure \ref{fig:s1reason}).\footnote{Instead of a select-all-that-apply question, we opted for binary-choice items to encourage learners to consider each reason in turn. The response options were ``Did influence my decision to stop" and ``Did NOT influence my decision to stop," which should reduce acquiescence bias relative to yes/no or true/false scales.}
+On the initial course surveys, learners reported their gender, age, education, prior experience with the topic and MOOCs, enrollment intentions (on the OLEI scale \cite{kizilcec2015motivation}), and how many hours per week they intend to spend on the course. On the feedback survey, learners reported their satisfaction with the course (6-item index, $M=5.29, SD=0.94, \alpha=.82$), and whether they `stopped participating in the course before it ended' or `remained active until the end'. Those who indicated that they stopped participating also reported `what influenced their decision to stop participating' using a grid of 14 binary-choice items (see reasons in Figure \ref{fig:s1reason}).\footnote{Instead of a select-all-that-apply question, we opted for binary-choice items to encourage learners to consider each reason in turn. The response options were ``Did influence my decision to stop" and ``Did NOT influence my decision to stop," which should reduce acquiescence bias relative to yes/no or true/false scales.} Geographic location was determined by IP address.
 
-Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and three behavioral indicators for each course. The behavioral indicators represent course milestones: the proportions of learners who viewed over 30\%, 50\%, and 80\% of lecture videos in the course. The data illustrated in Figure \ref{fig:s1reason} reflect the proportions of learners who selected each reason relative to all learners who reportedly stopped participating in each course. The correlation matrixes in Tables \ref{tab:s1reascor} and \ref{tab:s1cor2} are a linear combination of correlation matrixes for each course, assigning equal weight to all courses to discount for considerable variation in sample sizes.
-
-TODO, update based on what we do here: We computed correlations between reported reasons for dropout and certain learner behaviors. Finally, for each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table [TableToBeAdded].
-
+Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and a subset of behavioral indicators for each course. Behavioral indicators were chosen to represent course milestones: watching over 30\%, 50\%, 80\% of lecture videos, attempting over 30\%, 50\%, 80\% of assessments, and achieving a grade above the 60$^\text{th}$, 80$^\text{th}$ percentile. A regression analysis predicting course milestones and performance was performed based on a subset of learners who completed the initial course survey in the 14 MOOCs in our dataset. Out of the 65,320 learners who started the survey, we selected those with up to three missing values in the dataset, yielding a sample of $N=44,382$. Missing values were multiply imputed based on other survey responses and pooled estimates are reported, which account for the added uncertainty.
+% The data illustrated in Figure \ref{fig:s1reason} reflect the proportions of learners who selected each reason relative to all learners who reportedly stopped participating in each course.
+% The correlation matrixes in Tables \ref{tab:s1reascor} and \ref{tab:s1cor2} are a linear combination of correlation matrixes for each course, assigning equal weight to all courses to discount for considerable variation in sample sizes.
 % Information about age, gender, and education level were only available for learners who completed the initial course survey.
 % We also computed the fraction of videos in the course each learner had watched to relate self-report measures to learner behavior
-
+ 
 \subsection{Results}
 
-\subsubsection{Predictors of Attrition}
-% RQ1: How do prior learner characteristics (demographics, geographic location, enrollment intentions, and previous online courses) influence learners' likelihood of disengaging from a MOOC?
+We address the research questions developed in the previous section in three parts: first, a regression analysis of differential attrition and performance ($RQ1$); second, a comparison of satisfaction levels across subsets of learners ($RQ2ab$), and third, a descriptive analysis of reported reasons for disengaging from the course ($RQ3ab$).
 
-TODO Rene adds these analyses here
+\subsubsection{Predictors of Attrition}
+
+We fit logistic mixed-effects (hierarchical) models to a number of binary persistence and performance metrics to estimate individual differences in prior learner characteristics, including demographic and geographic features. Correlations between predictors were low, which allows for simple interpretations of coefficients. The 14 MOOCs were modeled as a random effect, given our goal of generalizing to the population of similar MOOCs. Figure \ref{fig:s1coefs} illustrates regression coefficients with 95\% confidence intervals from each model. The coefficients represent changes from a baseline (intercept) population: male learners in North America, with an average age, who had not earned a bachelor's degree and had no prior experience with the topic or taken other MOOCs, not intending to complete the course, and prepared to spend only up to two hours per week on the course.
+
+A number of significant and substantial individual differences emerged, some indicative of potential inequalities: Women were 10 to 15\% points less likely than men to persist with lectures and assessments. Women are also less likely to score a grade above the 60$^\text{th}$ percentile than men. Learners in Africa, Asia, and South America were 20 to 60\% points less likely to persist in video watching and achieved lower grades than learners in North America (N.A.). Learners in Europe exhibited 10 to 30\% points higher persistence with lectures and assessemnts than those in N.A.. While learners in Asia showed lower persistence with videos, they were more likely to attempt more assessments than learners from N.A.. Besides geography, the older the learner, the more likely they were to persist in lectures and assessments, but the lower their relative performance. More educated learners, those with a bachelor's or higher degree, were somewhat more likely to start assessments, compared to those with less education, but were less likely to perform highly on them. Not surprisingly, prior experience, intending to learn about all topics in the course, and being prepared to spend more hours in the course were strong predictors of persistance. Learners who took prior MOOCs, however, were less likely to persist, yet achieved higher grades.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure*}[ht]
+
+\includegraphics[width=\maxwidth]{figure/s1coefs} \caption[Coefficients of predictors (binary, except for normalized age) from logistic mixed-effects model for predicting persistence and achievement milestones (prop]{Coefficients of predictors (binary, except for normalized age) from logistic mixed-effects model for predicting persistence and achievement milestones (prop. videos watched, prop. assessments completed, and grade percentile). The baseline (intercept) are males in N. America of average age who have not earned a bachelors', no prior experience in the topic, not intending to complete the course, prepared to spend under 2 hours/week, this being their first MOOC. An estimate of -20 indicates a 20\% points lower probability of achieving a milestone.\label{fig:s1coefs}}
+\end{figure*}
+
+
+\end{knitrout}
 
 \subsubsection{Satisfaction: Personal Success}
 % RQ2a: What proportion of learners who disengaged were satisfied with their achievements in the course?
 % RQ2b: How does learners' behavior in the MOOC vary by their level of satisfaction?
 
-Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2). 
+Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2).
 
-TODO Sherif adds satisfaction analyses here
+First, we compared the distributions of satisfaction scores for learners who reported they stopped participating and those who reported not to have stopped. As figure \ref{fig:study1_satis_si_score_dist_comparison} shows, the mean satisfaction score ($mean=4.70$) for learners who reported to have stopped is 0.64 points lower than the other group ($mean=5.34$). 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 4 rows containing non-finite values (stat\_boxplot).}}\end{kframe}\begin{figure*}[ht]
+
+\includegraphics[width=\maxwidth]{figure/study1_satis_si_score_dist_comparison} \caption[Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course]{Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course\label{fig:study1_satis_si_score_dist_comparison}}
+\end{figure*}
+
+
+\end{knitrout}
+
 
 \subsubsection{Reasons for Disengaging}
 % RQ3a: What reasons do learners report for disengaging from a MOOC?
@@ -287,6 +306,14 @@ To investigate the underlying factor structure of the reported reasons for disen
 
 We expected reasons for disengaging from the course to vary by learner characteristics ($RQ3b$), such as learners' motivations for enrolling in the course. A correlation matrix of learners' enrollment intentions and their subsequent reasons for disengaging revealed a small number of notable associations. Taking the course with friends or colleagues was correlated with disengaging because the course is not challenging enough, the material is too advanced of the learner's background, and the credential is not valuable enough to the learner ($r=.24, .20, .16$, respectively). Not surprisingly, learners who enrolled to experience an online course tended to stop participating because they were only exploring the course ($r=.17$). Learners looking to improve their English tended to experience technical difficulties ($r=.17$), and those who enrolled for personal growth and enrichment tended to struggle to keep up with deadlines ($r=.16$).
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure*}[ht]
+
+\includegraphics[width=\maxwidth]{figure/s1reason} \caption[Proportion of learners who indicated each reason for attrition across 17 MOOCs]{Proportion of learners who indicated each reason for attrition across 17 MOOCs\label{fig:s1reason}}
+\end{figure*}
+
+
+\end{knitrout}
 
 % \begin{table*}
 % \label{tab:s1reascor}
