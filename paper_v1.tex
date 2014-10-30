@@ -49,37 +49,8 @@
 
 \usepackage{alltt}
 
-% 
-% <<loadcsv, echo=FALSE, warning=FALSE>>=
-% library(bitops)
-% library(RCurl)
-% data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
-% a = read.csv(text=data)
-% 
-% # Shift scores for satisfaction index components up to 1-N
-% a$qoe = a$qoe + 4
-% a$satis_amount_learnt = a$satis_amount_learnt + 4
-% a$satis_vs_time_spent = a$satis_vs_time_spent + 4
-% a$satis_time_mgmt = a$satis_time_mgmt + 4
-% a$how_met_expectations = a$how_met_expectations + 3
-% a$how_engaging_material_presentation = a$how_engaging_material_presentation + 1
-% 
-% satM = subset(a, select=c('qoe', 'satis_amount_learnt', 'satis_vs_time_spent', 'how_met_expectations', 'how_engaging_material_presentation'))
-% library(psych)
-% 
-% a$satisfaction = rowMeans(satM, na.rm=TRUE)
-% a$satisfaction[!is.finite(a$satisfaction)] = NA
-% a$sat
-% d=subset(a, select=c('course_id', 'num_videos_watched', 'did_dropout', 'satisfaction'))
-% write.csv(d, "satisfaction.csv", row.names=F)
-% library(plyr)
-% a$did_dropout = revalue(factor(a$did_dropout), c("0"="No", "1"="Yes"))
-% @
-
-
 % Use this command to override the default ACM copyright statement (e.g. for preprints). 
 % Consult the conference website for the camera-ready copyright statement.
-
 
 %% EXAMPLE BEGIN -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
 \toappear{%$^\ast$ All authors contributed equally. \\
@@ -146,7 +117,7 @@ breaklinks=true,
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-\title{Attrition in Online Learning: Understanding Persistence and Dropout in Massive Open Online Courses}
+\title{Attrition in Massive Open Online Courses: Inequalities, Dropout Reasons, and Psychological Factors}
 
 \numberofauthors{2}
 \author{
@@ -167,7 +138,7 @@ breaklinks=true,
 \maketitle
 
 \begin{abstract}
-Research on attrition has a long tradition in the field of education. Large-scale open learning environments prompted a shift away from a monolithic notion of success toward a more nuanced treatment that accounts for the diversity in motivation. A systematic analysis of predictors of and reported reasons for attrition in 17 massive open online courses suggested time to be a critical obstacle and [other important take-aways from Study 1] (Study 1; $N = XX,XXX$). A follow-up study with online learners who disengaged from the course (Study 2; $ N = 756$) found self-ascribed successful learners to report higher levels of goal striving, feelings of social belonging, and growth mindset. Iterative coding of open responses about challenges learners faced while taking the course reiterated the prevalence of having not enough time (reported by 84\%). A low capacity for volitional control was identified as a large contributor to this issue. A better understanding of why learners disengage from MOOCs allows for earlier recognition of impending attrition, which enables targeted interventions to help learners achieve their goals.
+Research on attrition has a long tradition in the field of education. Large-scale open learning environments prompted a shift away from a monolithic notion of success toward a more nuanced treatment that accounts for the diversity in motivation. A systematic analysis of predictors of and reported reasons for attrition in 17 massive open online courses revealed gender and geographic inequalities in persistence and performance (Study 1). Time was a critical obstacle for many learners, but satisfaction was only weakly related to persistence. A follow-up study with online learners who disengaged from the course (Study 2; $ N = 756$) found self-ascribed successful learners to report higher levels of goal striving, feelings of social belonging, and growth mindset. Iterative coding of open responses about challenges learners faced while taking the course reiterated the prevalence of having not enough time (reported by 84\%). A low capacity for volitional control was identified as a large contributor to this issue. A better understanding of why learners disengage from MOOCs allows for earlier recognition of impending attrition, which enables targeted interventions to help learners achieve their goals.
 \end{abstract}
 
 \keywords{Online learning, persistence, attrition, dropout, disengagement, massive open online courses, MOOC, psychological factors}
@@ -322,7 +293,7 @@ Learners who reported that they stopped participating were significantly 9\% les
 
 Research question $RQ3a$ about learners' reasons for dropping out of a MOOC is addressed by examining the proportion of learners who selected reasons for attrition from a pre-defined list. The distribution of proportions across fourteen MOOCs is illustrated in Figure \ref{fig:s1reason} with boxplots. Two reasons related to having too little time stand out because they were reported by about half of the respondents as influencing their decision to stop participating: the reasons were issues keeping up with deadlines, and the course demanding too much time. Other reasons for attrition were less prevalent, though still reported by around 10\% to 25\% of respondents. Notably, just under 20\% of respondents in a typical course (the median proportion) stopped participating because they had learned what they wanted to learn.
 
-To investigate the underlying factor structure of the reported reasons for disengaging, we conducted an exploratory factor analysis. The optimal number of factors was determined by the parallel analysis criterion and corresponding scree plot. The following five factors emerged: first, general time issues (course requires too much time; can't keep up with deadlines); second, late start (starting course late); third, difficulty (too advanced, exam too difficult); fourth, format and content (didn't enjoy online format, confusing videos, materials not explained well), and fifth, expectations (only exploring, learned all I wanted, not what I'm looking for, not challenging, credential not valuable). Only the technical difficulties item failed to load onto any factor.
+To investigate the underlying factor structure of the reported reasons for disengaging, we conducted an exploratory factor analysis. The optimal number of factors was determined by the parallel analysis criterion and corresponding scree plot. The following five factors emerged: first, {\em general time issues} (course requires too much time; can't keep up with deadlines); second, {\em late start} (starting course late); third, {\em  difficulty} (too advanced, exam too difficult); fourth, {\em format and content} (didn't enjoy online format, confusing videos, materials not explained well), and fifth, {\em expectations} (only exploring, learned all I wanted, not what I'm looking for, not challenging, credential not valuable). Only the technical difficulties item failed to load onto any factor.
 
 We expected reasons for disengaging from the course to vary by learner characteristics ($RQ3b$), such as learners' motivations for enrolling in the course. A correlation matrix of learners' enrollment intentions and their subsequent reasons for disengaging revealed a small number of notable associations. Taking the course with friends or colleagues was correlated with disengaging because the course is not challenging enough, the material is too advanced of the learner's background, and the credential is not valuable enough to the learner ($r=.24, .20, .16$, respectively). Not surprisingly, learners who enrolled to experience an online course tended to stop participating because they were only exploring the course ($r=.17$). Learners looking to improve their English tended to experience technical difficulties ($r=.17$), and those who enrolled for personal growth and enrichment tended to struggle to keep up with deadlines ($r=.16$).
 
@@ -334,6 +305,188 @@ We expected reasons for disengaging from the course to vary by learner character
 
 
 \end{knitrout}
+
+
+\subsection{Discussion}
+
+A number of striking findings emerged from the preceeding analyses. We found strong evidence for gender inequalities in attrition and, to some extent, performance. Women were less likely to persist, even when adding a number of other demographic, geographic, and preference indicators to the model, which highlights the robustness of the relationship. The MOOCs in our dataset were on diverse topics, including some on topics in the humanities and business with high rates of participation from women. Besides gender differences, attrition was substantially higher for learners from Africa, Asia, and South America, compared to North America, Oceania, and Europe, in terms of lectures watched. We also identified a large achievement gap in terms of grades between learners from these continents. The current generation of MOOCs is seemingly not immune to inequalities that have pervaded traditional educational settings. It remains unclear, however, to what extent these gaps result from differences in Internet access and language barriers, or potentially, from experiences of psychological threat to learners' identity or sense of social belonging \cite{walton2007question}.
+
+Levels of self-reported satisfaction were generally high and did not vary much by level of persistence, although learners who reportedly disengaged from the course tended to be less satisfied than those who reportedly persisted until the end. Learners' reasons for disengaging from the course clustered into five key factors: general time issues; problems due to starting the course late; course difficulty; issues with the course format or content, and a mismatch or fulfillment of expectations. General time issues were overall the most pronounced. 
+
+Learners may disengage from the course when they become too occupied by higher-priority tasks. Enrolling in a MOOC neither guarantees that a learner can or intends to allocate enough time to go through the course. According to expectancy-value theory, the learner is a rational agent who allocates time to different activities to maximize subjective gain. A low capacity for volitional control \cite{corno2001volitional} could lead learners misallocate time to lower-priority activities that promise nearer gratification, instead of allocating it to the next highest priority task. This implies that learners' general time issues may be a product of high-priority obligations as well as a result of a low capacity for volitional control.
+
+\section{Study 2: Understanding Disengagement}
+
+To gain a better understanding of the attrition patterns identified in Study 1, we designed a smaller, more focused follow-up study. In Study 2, we reached out to learners who were likely to drop out of a course and asked them to provide feedback. To this end, we developed a predictive model to identify at-risk learners and asked them to complete a survey. One goal of this study was to further investigate research question $RQ3a$ about reasons for attrition based on learners' own descriptions of the challenges they faced. Specifically, in Study 1, most learners reported that they disengaged due to a shortage of time. A variety of factors can influence the amount of time learners have at their disposal. Higher priority obligations, such as professional, academic, and personal committments, are presumably large contributors. Another critical factor, especially in the context of MOOCs as largely unguided learning environments, is learners' volitional control to engage in self-regulated learning \cite{corno2001volitional}. For instance, learners' ability to allocate time for the course in the presence of potential distractors of subjectively lower importance than taking the course (e.g., watching TV). We constructed the following hypotheses about the presence of these two factors for learners who report having not enough time:
+
+\begin{description}
+  \item[H4a] Learners who report having `not enough time' can be grouped into those with higher priority obligations (professional, academic, and personal) and those with low volitional control.
+  \item[H4b] Learners who do not report specific higher-priority obligations tend to exhibit lower volitional control than those who specify particular obligations.
+\end{description}  
+
+Another goal of Study 2 was to collect data to test hypotheses $H1, H2,$ and $H3$ on the role of goal striving, social belonging, and growth mindset in the success of MOOC learners. To this end, we included a self-report measures for each construct in the survey that was sent to at-risk learners.
+
+\subsection{Methods}
+
+The particular MOOC under observation was an undergraduate level course on an advanced topic in computer science. It was offered in 2014 through Coursera. There were  20,048 enrolled learners; 10,510 watched at least one video, and [N] attempted more than one assignment. The following subsections describe how disengaging learners were identified, which measures were included in the feedback survey, and how open responses were iteratively coded.
+
+\subsubsection{Predicting Disengagement}
+
+The objective was to build an `early warning' prediction model that could flag learners who are likely to drop out in the future. We defined the following three criteria by which to evaluate the performance of the model.
+
+\textit{Prediction accuracy}: Prediction recall (the fraction of correctly predicted dropouts) should be high to deliver the survey to as many future dropouts as possible. The false positive rate (the fraction of non-dropouts incorrectly predicted as droputs) should be low to avoid sending a survey to learners who do not experience challenges in the courses.
+
+\textit{Prediction lag}: The period between a learner's last site activity and the time they are flagged as being likely to drop out should be short. A shorter prediction lag improves the likelihood of successfully intervening to help the learner get back on track.
+
+\textit{Transferability}: Whether or not a learner drops out of the course can not be determined before the end of the course. We thus had to train the prediction model using data from previous courses. The performance of the prediction model should be adequate in courses other than those on which it was trained.
+
+The training set was composed of learners' interaction data (predictors) and dropout states (outcome) from 20 MOOCs. The large number of courses should improve model transferability by favoring features that are strongly predictive across different courses. Five hundred learners from each MOOC were included in the training set ($train$), and 500 other learners from the same MOOCs were selected for the first test set ($test_1$). A second test set of similar size was composed from 20 other MOOCs ($test_2$). Features extracted from the interaction data included different aspects of learners' video, assignment, and forum activity; their pace of viewing videos relative to the course pace, as well as various aspects of engagement time, such as the last time the learner interacted with the course (see \cite{halawa2014dropout}, for additional details on the prediction model). The model was fit by logistic regression. Table \ref{tab:drop_pred_rocs} provides information on the prediction performance, measured by the area under the ROC curve (AUC).
+
+\begin{table}[h!]
+\caption{Performance of the dropout prediction model}
+\label{tab:drop_pred_rocs}
+\small
+\center
+\begin{tabular}{lccc}
+\toprule
+ & $train$ & $test_1$ & $test_2$ \\
+\midrule
+AUC &  0.931 & 0.929 & 0.922  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two of the predictors in the fitted model are highly influential. The first is the number of days since the learner has last been active ($x_{1}$). The likelihood that the learner drops out increases substantially if the learner disengages for 14 days or more. However, the likelihood of such a learner re-engaging increases with the fraction of released videos the learner has viewed ($x_{2}$) prior to the absence; this is the second most influential feature in the model. Equation 1 is an approximation of the model with only these two predictors. A learner was flagged if their dropout probability exceeded a half:
+
+\begin{equation}
+Pr(\text{dropout}) = \frac{1}{1+e^{-0.431x_1 + 6.388x_2 + 1.626}} > 0.5
+\end{equation}
+
+Out of the 20,048 enrolled learners in the course, we only considered those 10,510 who watched at least one lecture video, and 6,074 of them were flagged as likely to drop out. The survey was sent out to 6,053 leaners (excluding 21 learners with invalid email addresses or duplicate accounts).
+
+
+\subsubsection{Feedback Survey}
+
+Every learner who was predicted to disengage from the course was sent an email kindly requesting their help: ``You are enrolled in [course name], but you've been less active recently. Could you help us understand why?'' A low response rate was expected for this subpopulation that was defined by low engagement. And yet, 756 out of 6,053 learners started the survey (12.5\% response rate), and 459 completed it (61\% completion rate). Missing values were multiply imputated by predictive mean matching using responses to all survey questions.\footnote{The $R$ mice package was used to perform multiple imputation and subsequent pooled analyses.} All estimates were pooled across ten imputations, with standard errors adjusted for added variance. The majority of respondents were male (85\%), 35.6 years old on average ($SD=12.5$), and 80\% had achieved a bachelors' or more advanced degree.
+
+Learners were asked to report how satisfied they were with their progress in the course, and whether they were using the course materials more, less, or exactly as much as they would have liked. These items served as measures of personal success. They were then asked to openly report ``what challenges, inside or outside of the course, [they] experienced while [they were] taking this course, if any?'' The instructions encouraged them to list all challenges they could think of. This question was deliberately asked prior to any survey questions that could suggest particular reasons for disengagement.
+
+Two research assistants independently developed codebooks for the resulting 448 non-empty open responses. Their codebooks were consolidated and applied on Amazon Mechanical Turk (AMT) in three iterations. The codebook was updated in each iteration to reliably fit the open response data. Specific updates to the initial codebook were informed by code frequency, code correlations, and inter-coder agreement. In the first iteration, 250 randomly selected responses were each coded by four `classification experts,' which is an AMT-specific qualification. In the second iteration, the remaining responses were coded in the same way. In the final iteration, all responses were coded by two classification experts (ties were resolved by two researchers).\footnote{For additional details on the coding procedure and codebooks, see [URL].} The iterative coding yielded 399 relevant coded responses, which were analyzed in combination with the remaining survey data.
+
+% Learners also rated the extent to which their progress was hindered by a number of obstacles. 
+Learners also rated their sense of social and academic fit \cite{walton2007question} (17 items, $M=4.66, SD=0.71, \alpha=0.86$); mindset (4 items on the nature of intelligence and talent\footnote{Items were adpated from the mindset questionnaire available at \url{http://mindsetonline.com/testyourmindset/}.}; $M=4.44, SD=0.92, \alpha=0.77$), goal striving (4 items on motivation, perceived importance, committment, and confidence; $M=3.12, SD=0.95, \alpha=0.82$), and capacity for volitional control (one item about lower-priority distractions hindering the learner's course progress; $M=2.73, SD=1.29$).
+
+\subsection{Results}
+
+We further investigated research question $RQ3a$ about reasons for disengaging from the course, and tested hypotheses $H4ab$ about volitional control. In a second set of analyses, we tested our hypotheses about the role of psychological factors in the self-ascribed success of MOOC learners.
+
+% \subsubsection{Predicting Likely Dropouts}
+
+% SHERIF TODO: Add results of prediction. How well did the prediction work? And who took the survey; how sure was the model that those who took the survey would actually drop out, relative to those who didn't take the survey?
+
+\subsubsection{Reasons for Dropout}
+
+The majority of survey respondents (550 of 756; 73\%) reported being only somewhat or less satisfied with their progress in the course. While many of them (66\%) were substantially held back by other committments that took up time they had planned to spend on the course, only one in four (25\%) indicated being hindered by distractions of lower priority than the course (i.e. exhibit lower volitional control). These two time-related measures, which only differ in the assigned level of priority, were not significantly correlated ($r=.05, t_{548}=1.3, p=.21$).
+
+Reasons for learner attrition were measured using iteratively coded open responses ($n=399$). Table \ref{tab:s2reas} provides each coded challenge and percentage of open responses that indicated it. A number of significant correlations between these challenges stood out: having not enough time was negatively associated with disliking the format or teaching style ($r=-.52$), needing additional course materials ($r=-.26$), finding the course uninteresting or not valuable ($r=-.45$), and facing technical difficulties ($r=-.29$). Hence, if a learner had not enough time, this tended to be the main challenge.
+
+\begin{table}[h!]
+\caption{Iteratively-Coded Reasons for Attrition}
+\label{tab:s2reas}
+\small
+\center
+\begin{tabular}{lr}
+\toprule
+What challenges have you experienced while taking this course?  & \% \\
+\midrule
+Not enough time for the course & 84 \\
+The course format or teaching style is not a good fit & 18 \\
+The level of the course is too advanced & 10 \\
+The course is not interesting or valuable enough & 7 \\
+Additional course materials needed to learn the topic & 4 \\
+Technical difficulties & 2 \\
+Language barrier & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}[ht]
+\caption{Descriptive and inferrential statistics for psychological measures by learner success}
+\label{tab:psych}
+\small
+\center
+\begin{tabular}{lcccc}
+\toprule
+ & $N$ & Goal Striving ($H1$) & Social Belonging ($H2$) & Growth Mindset ($H3$) \\
+\midrule
+\emph{Relative Progress} &  &  &  \\
+\quad Successful & 241 & 3.46 $(SD=0.91)$ & 4.70 $(SD=0.74)$ &  4.58 $(SD=0.99)$ \\
+\quad Unsuccessful & 515 & 2.96 $(SD=0.93)$ & 4.63 $(SD=0.70)$ & 4.38 $(SD=0.87)$ \\
+ &  & $t_{201}=6.3, p<.001, d=0.55$ & $t_{60}=1.0, p>.25, d=.09$ & $t_{152}=2.4, p=.017, d=0.21$ \\
+ \emph{Satisfaction} &  &  &  \\
+\quad Successful & 325 & 3.43 $(SD=0.83)$ & 4.76 $(SD=0.70)$ & 4.47 $(SD=0.93)$ \\
+\quad Unsuccessful & 431 & 2.88 $(SD=0.97)$ & 4.58 $(SD=0.71)$ & 4.42 $(SD=0.91)$ \\
+&  & $t_{166}=7.2, p<.001, d=0.59$ & $t_{158}=3.1, p=.002, d=.26$ & $t_{175}=0.6, p>.25, d=.05$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+To test hypotheses $H4a$ and $H4b$, we examined the 336 open responses that indicated having too little time. It revealed that no particular commitment was specified in about half of them (53\%). This distinction was a salient feature in the initial codebooks, but could not be coded with sufficient reliability across coders. Coders would have required additional training to avoid reading specific reasons into unspecific resposnes. We thus operationalized the distinction by string matching to capture professional, academic, and personal reasons for having not enough time.\footnote{Pattern: {\em work$|$job$|$school$|$university$|$college$|$family$|$kids$|$health}} Relative to those who specified a reason, learners who indicated too little time without specifying a reason also reported a significantly lower level of volitional control, i.e. their progress was more severely hindered by lower-prioirty distractions ($t_{331}=2.9, p=.003, d=.32$). However, the two groups did not significantly differ in how much they were held back by commitments that took up time they had planned to spend on the course ($t_{333}=-.75, p=.45$). These findings lend strong support to hypotheses $H4a$ and $H4b$: that is, while the large group of learners who report having not enough time generally faced higher-priority obligations, a substantial proportion suffered from low volitional control---and reporting no specific reasons for having not enough time was indicative thereof.
+
+\subsubsection{Psychological Factors}
+
+Hypotheses $H1$, $H2$, and $H3$ about goal striving, perceived social belonging, and mindset, respectively, were tested by comparing self-described successful with unsuccessful learners. Success was measured by relative progress, and satisfaction with progress: 68\% of respondents reported using the course materials less than they would have wanted, and 57\% reported not being satisfied with their progress in the course (18\% were very or extremely dissatisfied). The two measures of success were correlated, $r=.35, t_{754}=10, p<.001$; satisfied respondents were, however, equally likely to be successful and unsuccessful in terms of their progress. Table \ref{tab:psych} provides summary statistics for each psychological measure by these two success metrics. Successful learners exhibited higher levels of goal striving according to both progress and satisfaction measures. Social belonging was significantly higher for learners who were successful in terms of satisfaction but not progress. The pattern was reversed for growth mindset, with evidence for the hypothesized effect for progress but not satisfaction. Hence, the results fully support hypothesis $H1$, and partially support $H2$ and $H3$.
+
+
+
+\subsection{Discussion}
+
+Study 2 focused on reasons for attrition and psychological factors of learners who were likely to drop out of the course. Through iterative coding, we developed a set of challenges that were faced by a subset of learners in a particular MOOC (cf. Table \ref{tab:s2reas}). The large majority of learners who indicate that they had not enough time was found to be separable into two groups: those with higher priority obligations that take up too much time, and those who are challenged by low levels of volitional control ($H4a$). MOOCs are an environment that requires learners to be highly self-regulated to be successful. The present findings emphasize the critical role of their capacity for volitional control, a factor that warrants further investigation \cite{corno2001volitional}. Very few learners explicitly indicated issues with volitional control in their responses, potentially because it is not socially desirable to admit. The absence of specific reasons for their shortage of time was found indicative of issues with volitional control ($H4b$). This could be a useful proxy for volitional issues in future research.
+
+We investigated the extent to which personal success in MOOCs is associated with three established psychological factors: goal striving, social belonging, and growth mindset. Prior evidence found the absence of each factor to cause lower persistence and performance in more traditional achievement-oriented environments. The present findings highlight the critical role of these factors in MOOCs based on observational evidence. Learners with higher levels of goal striving, social belonging, and growth mindset also reported higher levels of personal success ($H1,H2,H3$). The subpopulation of learners in this study was a small and intentionally skewed subset. The observed differences are expected to be larger in the full population of learners, compared to this homogenous sample of learners who are unlikely to persist. Goal striving was most strongly associated with both measures of personal success. Success in terms of relative progress was associated with a stronger growth mindset, but not significantly with social belonging. In contrast, success in terms of satisfaction with progress was associated with stronger social belonging, but not significantly with growth mindset. Future work should examine if this pattern reflects a difference in the underlying process by which these psychological factors affect learner behavior and perception.
+
+The methodology used in this study can be extended to deliver timely and targeted interventions. The predictive model was successful in identifying a large number of leaners who were facing challenges with taking the course. The majority of them were unsuccessful in their own terms. All three psychological factors under investigation were found to distinguish self-ascribed successful from unsuccessful learners. Recent work on psychological interventions found lasting positive effects of brief interventions involving reading and writing tasks (e.g., \cite{walton2007question}).  Leveraging predictive models of persistence, brief interventions could be delivered online and targeted to learners who face particular challenges, such as low goal striving, a fixed mindset, or perceived threat to their identity or social belonging. 
+ 
+\section{General Discussion}
+
+
+
+\section{Acknowledgments}
+% We thank Elise Ogle and Ruth Bram for helping with the development of the codebook. 
+% Thank Emily for feedback and Andreas for feedback and data support.
+Omitted for blind review.
+
+% Balancing columns in a ref list is a bit of a pain because you
+% either use a hack like flushend or balance, or manually insert
+% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
+% multicols doesn't work because we're already in two-column mode,
+% and flushend isn't awesome, so I choose balance.  See this
+% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
+%
+% Note that in a perfect world balance wants to be in the first
+% column of the last page.
+%
+% If balance doesn't work for you, you can remove that and
+% hard-code a column break into the bbl file right before you
+% submit:
+%
+% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
+% in-an-ieee-paper-if-using-bibtex
+%
+% Or, just remove \balance and give up on balancing the last page.
+%
+\balance
+
+\bibliographystyle{acm-sigchi}
+\bibliography{dropout.bib}
+\end{document}
+
+
+% Learners drop out at different times during the course. To elicit feedback from likely dropouts, one possible approach is to send the follow-up survey to every learner in the course, and then exclude learners who persist from the analysis. However, learners can develop risk factors at different times in the course. The drawback of this approach is that it requires the survey to be delivered to every learner multiple times in order to capture feedback from learners who might develop risk factors at different times. Such increased survey load can increase attrition or dissatisfaction in the course.
+
+% An alternative approach is to employ a predictive model that red-flags a learner when they start exhibiting behaviors predictive of dropout, and sending the survey only to students who are newly red-flagged. This reduces survey burden while allowing us, ideally, to reach the whole population of interest (every learner who is at risk). Several MOOC instructors required minimization of the workload associated with taking the follow-up survey, which urged us to follow this approach.
+
 
 % \begin{table*}
 % \label{tab:s1reascor}
@@ -416,178 +569,29 @@ We expected reasons for disengaging from the course to vary by learner character
 % The two most commonly reported reasons for dropout are related to one's ability to commit time to the course. The correlation between the two reasons is $r=0.32$. A more detailed analysis we conditioned on responses to these two reasons revealed that 30\% of respondents who reported at least one of these two time reasons reported no other reasons for dropout, while 24\% reported one other reason and 46\% reported more than one. Difficulty of an assignment or exam was the third most reported reason for dropout. It is most positively correlated with reasons citing difficulties, including ``Too advanced for my background'' ($r=0.4$), ``Materials not explained properly'' ($r=0.37$), and ``Technical difficulties'' ($r=0.33$). The proportion of respondents who selected ``Technical difficulties'' exceeded 20\% in 10 out of the 17 courses. This reason, however, exhibits positive correlations stronger that 0.2 with 7 other reasons. [What might we like to study more about respondents who selected this reason?] In the median, 19\% of respondents reported they learned what they wanted in the course, and this reason was moderately positively correlated with reasons citing no or incomplete interest in the course, namely ``I was only exploring the course'' ($r=0.36$), ``The course is not challenging enough for me'' ($r=0.31$), and ``The course is not what I was looking for'' ($r=0.28$). Another set of interesting positive correlations exists between ``Course is not what I was looking for'' and other reasons citing the materials' level of difficulty/challenge, the value of the credentials to the respondent, and the extent to which she enjoyed the online course format, suggesting .... [TBC] The reason that exhibited the strongest positive correlations with other features was ``Videos were confusing''. it correlates most strongly with ``Materials not explained properly'' ($r=0.66$) and ``Did not enjoy online course format'' ($r=0.54$) Unlike correlations among reasons for disengagement, correlations of reasons for disengagement with enrollment intentions were mostly weak ($-0.14 < r < 0.24$). Among the strongest positive correlations were the cases listed in Table \ref{tab:rfd_ei_strongest_correlations}
 
 
-\subsection{Discussion}
-
-Even though study 1 accentuates ``time'' as a reported reason for dropout, interpreting what time means is not straight forward. Expectancy-value theory models the learner as a rational agent who allocates time to different activities to maximize subjective gain. In other words, a learner might disengage from the course if she gets occupied by other higher priority tasks. Because learners can join or leave MOOCs freely. Joining a MOOC does not necessarily imply that a learner is capable of allocating the time for it according to the rational framework that expectancy value theory predicts. Moreover, previous research on volitional control suggests that learners allocate time to the next highest priority task, but could rather get distracted by lower priority activities that promise nearer gratification. So what does lack of time for the course mean? In study 2, we attempt to investigate various possible dropout reasons that learners might report as ``lack of time".
-
-
-\section{Study 2: Understanding Disengagement}
-
-To gain a better understanding of the attrition patterns identified in Study 1, we designed a smaller, more focused follow-up study. In Study 2, we reached out to learners who were likely to drop out of a course and asked them to provide feedback. To this end, we developed a predictive model to identify at-risk learners and asked them to complete a survey. One goal of this study was to further investigate research question $RQ3a$ about reasons for attrition based on learners' own descriptions of the challenges they faced. Specifically, in Study 1, most learners reported that they disengaged due to a shortage of time. A variety of factors can influence the amount of time learners have at their disposal. Higher priority obligations, such as professional, academic, and personal committments, are presumably large contributors. Another critical factor, especially in the context of MOOCs as largely unguided learning environments, is learners' volitional control to engage in self-regulated learning \cite{corno2001volitional}. For instance, learners' ability to allocate time for the course in the presence of potential distractors of subjectively lower importance than taking the course (e.g., watching TV). We constructed the following hypotheses about the presence of these two factors for learners who report having not enough time:
-
-\begin{description}
-  \item[H4a] Learners who report having `not enough time' can be grouped into those with higher priority obligations (professional, academic, and personal) and those with low volitional control.
-  \item[H4b] Learners who do not report specific higher-priority obligations tend to exhibit lower volitional control than those who specify particular obligations.
-\end{description}  
-
-Another goal of Study 2 was to collect data to test hypotheses $H1, H2,$ and $H3$ on the role of goal striving, social belonging, and growth mindset in the success of MOOC learners. To this end, we included a self-report measures for each construct in the survey that was sent to at-risk learners.
-
-\subsection{Methods}
-
-The particular MOOC under observation was an undergraduate level course on an advanced topic in computer science. It was offered in 2014 through Coursera. There were  20,048 enrolled learners; 10,510 watched at least one video, and [N] attempted more than one assignment. The following subsections describe how disengaging learners were identified, which measures were included in the feedback survey, and how open responses were iteratively coded.
-
-\subsubsection{Predicting Disengagement}
-
-The objective was to build an `early warning' prediction model that could flag learners who are likely to drop out in the future. We defined the following three criteria by which to evaluate the performance of the model.
-
-\textit{Prediction accuracy}: Prediction recall (the fraction of correctly predicted dropouts) should be high to deliver the survey to as many future dropouts as possible. The false positive rate (the fraction of non-dropouts incorrectly predicted as droputs) should be low to avoid sending a survey to learners who do not experience challenges in the courses.
-
-\textit{Prediction lag}: The period between a learner's last site activity and the time they are flagged as being likely to drop out should be short. A shorter prediction lag improves the likelihood of successfully intervening to help the learner get back on track.
-
-\textit{Transferability}: Whether or not a learner drops out of the course can not be determined before the end of the course. We thus had to train the prediction model using data from previous courses. The performance of the prediction model should be adequate in courses other than those on which it was trained.
-
-The training set was composed of learners' interaction data (predictors) and dropout states (outcome) from 20 MOOCs. The large number of courses should improve model transferability by favoring features that are strongly predictive across different courses. Five hundred learners from each MOOC were included in the training set ($train$), and 500 other learners from the same MOOCs were selected for the first test set ($test_1$). A second test set of similar size was composed from 20 other MOOCs ($test_2$). Features extracted from the interaction data included different aspects of learners' video, assignment, and forum activity; their pace of viewing videos relative to the course pace, as well as various aspects of engagement time, such as the last time the learner interacted with the course (see \cite{halawa2014dropout}, for additional details on the prediction model). The model was fit by logistic regression. Table \ref{tab:drop_pred_rocs} provides information on the prediction performance, measured by the area under the ROC curve (AUC).
-
-\begin{table}[h!]
-\caption{Performance of the dropout prediction model}
-\label{tab:drop_pred_rocs}
-\small
-\center
-\begin{tabular}{lccc}
-\toprule
- & $train$ & $test_1$ & $test_2$ \\
-\midrule
-AUC &  0.931 & 0.929 & 0.922  \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Two of the predictors in the fitted model are highly influential. The first is the number of days since the learner has last been active ($x_{1}$). The likelihood that the learner drops out increases substantially if the learner disengages for 14 days or more. However, the likelihood of such a learner re-engaging increases with the fraction of released videos the learner has viewed ($x_{2}$) prior to the absence; this is the second most influential feature in the model. Equation 1 is an approximation of the model with only these two predictors. A learner was flagged if their dropout probability exceeded a half:
-
-\begin{equation}
-Pr(\text{dropout}) = \frac{1}{1+e^{-0.431x_1 + 6.388x_2 + 1.626}} > 0.5
-\end{equation}
-
-Out of the 20,048 enrolled learners in the course, we only considered those 10,510 who watched at least one lecture video, and 6,074 of them were flagged as likely to drop out. The survey was sent out to 6,053 leaners (excluding 21 learners with invalid email addresses or duplicate accounts).
-
-
-\subsubsection{Feedback Survey}
-
-Every learner who was predicted to disengage from the course was sent an email kindly requesting their help: ``You are enrolled in [course name], but you've been less active recently. Could you help us understand why?'' A low response rate was expected for this subpopulation that was defined by low engagement. And yet, 756 out of 6,053 learners started the survey (12.5\% response rate), and 459 completed it (61\% completion rate). Missing values were multiply imputated by predictive mean matching using responses to all survey questions.\footnote{The $R$ mice package was used to perform multiple imputation and subsequent pooled analyses.} All estimates were pooled across ten imputations, with standard errors adjusted for added variance. The majority of respondents were male (85\%), 35.6 years old on average ($SD=12.5$), and 80\% had achieved a bachelors' or more advanced degree.
-
-Learners were asked to report how satisfied they were with their progress in the course, and whether they were using the course materials more, less, or exactly as much as they would have liked. These items served as measures of personal success. They were then asked to openly report ``what challenges, inside or outside of the course, [they] experienced while [they were] taking this course, if any?'' The instructions encouraged them to list all challenges they could think of. This question was deliberately asked prior to any survey questions that could suggest particular reasons for disengagement.
-
-Two research assistants independently developed codebooks for the resulting 448 non-empty open responses. Their codebooks were consolidated and applied on Amazon Mechanical Turk (AMT) in three iterations. The codebook was updated in each iteration to reliably fit the open response data. Specific updates to the initial codebook were informed by code frequency, code correlations, and inter-coder agreement. In the first iteration, 250 randomly selected responses were each coded by four `classification experts,' which is an AMT-specific qualification. In the second iteration, the remaining responses were coded in the same way. In the final iteration, all responses were coded by two classification experts (ties were resolved by two researchers).\footnote{For additional details on the coding procedure and codebooks, see [URL].} The iterative coding yielded 399 relevant coded responses, which were analyzed in combination with the remaining survey data.
-
-% Learners also rated the extent to which their progress was hindered by a number of obstacles. 
-Learners also rated their sense of social and academic fit \cite{walton2007question} (17 items, $M=4.66, SD=0.71, \alpha=0.86$); mindset (4 items on the nature of intelligence and talent\footnote{Items were adpated from the mindset questionnaire available at \url{http://mindsetonline.com/testyourmindset/}.}; $M=4.44, SD=0.92, \alpha=0.77$), goal striving (4 items on motivation, perceived importance, committment, and confidence; $M=3.12, SD=0.95, \alpha=0.82$), and capacity for volitional control (one item about lower-priority distractions hindering the learner's course progress; $M=2.73, SD=1.29$).
-
-\subsection{Results}
-
-% \subsubsection{Predicting Likely Dropouts}
-
-% SHERIF TODO: Add results of prediction. How well did the prediction work? And who took the survey; how sure was the model that those who took the survey would actually drop out, relative to those who didn't take the survey?
-
-\subsubsection{Reasons for Dropout}
-
-The majority of survey respondents (550 of 756; 73\%) reported being only somewhat or less satisfied with their progress in the course. While many of them (66\%) were substantially held back by other committments that took up time they had planned to spend on the course, only one in four (25\%) indicated being hindered by distractions of lower priority than the course (i.e. exhibit lower volitional control). These two time-related measures, which only differ in the assigned level of priority, were not significantly correlated ($r=.05, t_{548}=1.3, p=.21$).
-
-Reasons for learner attrition were measured using iteratively coded open responses ($n=399$). Table \ref{tab:s2reas} provides each coded challenge and percentage of open responses that indicated it. A number of significant correlations between these challenges stood out: having not enough time was negatively associated with disliking the format or teaching style ($r=-.52$), needing additional course materials ($r=-.26$), finding the course uninteresting or not valuable ($r=-.45$), and facing technical difficulties ($r=-.29$). Hence, if a learner had not enough time, this tended to be the main challenge.
-
-\begin{table}[h!]
-\caption{Iteratively-Coded Reasons for Attrition}
-\label{tab:s2reas}
-\small
-\center
-\begin{tabular}{lr}
-\toprule
-What challenges have you experienced while taking this course?  & \% \\
-\midrule
-Not enough time for the course & 84 \\
-The course format or teaching style is not a good fit & 18 \\
-The level of the course is too advanced & 10 \\
-The course is not interesting or valuable enough & 7 \\
-Additional course materials needed to learn the topic & 4 \\
-Technical difficulties & 2 \\
-Language barrier & 1 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table*}[ht]
-\caption{Descriptive and inferrential statistics for psychological measures by learner success}
-\label{tab:psych}
-\small
-\center
-\begin{tabular}{lcccc}
-\toprule
- & $N$ & Goal Striving ($H1$) & Social Belonging ($H2$) & Growth Mindset ($H3$) \\
-\midrule
-\emph{Relative Progress} &  &  &  \\
-\quad Successful & 241 & 3.46 $(SD=0.91)$ & 4.70 $(SD=0.74)$ &  4.58 $(SD=0.99)$ \\
-\quad Unsuccessful & 515 & 2.96 $(SD=0.93)$ & 4.63 $(SD=0.70)$ & 4.38 $(SD=0.87)$ \\
- &  & $t_{201}=6.3, p<.001, d=0.55$ & $t_{60}=1.0, p>.25, d=.09$ & $t_{152}=2.4, p=.017, d=0.21$ \\
- \emph{Satisfaction} &  &  &  \\
-\quad Successful & 325 & 3.43 $(SD=0.83)$ & 4.76 $(SD=0.70)$ & 4.47 $(SD=0.93)$ \\
-\quad Unsuccessful & 431 & 2.88 $(SD=0.97)$ & 4.58 $(SD=0.71)$ & 4.42 $(SD=0.91)$ \\
-&  & $t_{166}=7.2, p<.001, d=0.59$ & $t_{158}=3.1, p=.002, d=.26$ & $t_{175}=0.6, p>.25, d=.05$ \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
-
-To test hypotheses $H4a$ and $H4b$, we examined the 336 open responses that indicated having too little time. It revealed that no particular commitment was specified in about half of them (53\%). This distinction was a salient feature in the initial codebooks, but could not be coded with sufficient reliability across coders. Coders would have required additional training to avoid reading specific reasons into unspecific resposnes. We thus operationalized the distinction by string matching to capture professional, academic, and personal reasons for having not enough time.\footnote{Pattern: {\em work$|$job$|$school$|$university$|$college$|$family$|$kids$|$health}} Relative to those who specified a reason, learners who indicated too little time without specifying a reason also reported a significantly lower level of volitional control, i.e. their progress was more severely hindered by lower-prioirty distractions ($t_{331}=2.9, p=.003, d=.32$). However, the two groups did not significantly differ in how much they were held back by commitments that took up time they had planned to spend on the course ($t_{333}=-.75, p=.45$). These findings lend strong support to hypotheses $H4a$ and $H4b$: that is, while the large group of learners who report having not enough time generally faced higher-priority obligations, a substantial proportion suffered from low volitional control---and reporting no specific reasons for having not enough time was indicative thereof.
-
-\subsubsection{Psychological Factors}
-
-Hypotheses $H1$, $H2$, and $H3$ about goal striving, perceived social belonging, and mindset, respectively, were tested by comparing self-described successful with unsuccessful learners. Success was measured by relative progress, and satisfaction with progress: 68\% of respondents reported using the course materials less than they would have wanted, and 57\% reported not being satisfied with their progress in the course (18\% were very or extremely dissatisfied). The two measures of success were correlated, $r=.35, t_{754}=10, p<.001$; satisfied respondents were, however, equally likely to be successful and unsuccessful in terms of their progress. Table \ref{tab:psych} provides summary statistics for each psychological measure by these two success metrics. Successful learners exhibited higher levels of goal striving according to both progress and satisfaction measures. Social belonging was significantly higher for learners who were successful in terms of satisfaction but not progress. The pattern was reversed for growth mindset, with evidence for the hypothesized effect for progress but not satisfaction. Hence, the results fully support hypothesis $H1$, and partially support $H2$ and $H3$.
-
-
-
-\subsection{Discussion}
-
-Study 2 focused on reasons for attrition and psychological factors of learners who were likely to drop out of the course. Through iterative coding, we developed a set of challenges that were faced by a subset of learners in a particular MOOC (cf. Table \ref{tab:s2reas}). The large majority of learners who indicate that they had not enough time was found to be separable into two groups: those with higher priority obligations that take up too much time, and those who are challenged by low levels of volitional control ($H4a$). MOOCs are an environment that requires learners to be highly self-regulated to be successful. The present findings emphasize the critical role of their capacity for volitional control, a factor that warrants further investigation \cite{corno2001volitional}. Very few learners explicitly indicated issues with volitional control in their responses, potentially because it is not socially desirable to admit. The absence of specific reasons for their shortage of time was found indicative of issues with volitional control ($H4b$). This could be a useful proxy for volitional issues in future research.
-
-We investigated the extent to which personal success in MOOCs is associated with three established psychological factors: goal striving, social belonging, and growth mindset. Prior evidence found the absence of each factor to cause lower persistence and performance in more traditional achievement-oriented environments. The present findings highlight the critical role of these factors in MOOCs based on observational evidence. Learners with higher levels of goal striving, social belonging, and growth mindset also reported higher levels of personal success ($H1,H2,H3$). The subpopulation of learners in this study was a small and intentionally skewed subset. The observed differences are expected to be larger in the full population of learners, compared to this homogenous sample of learners who are unlikely to persist. Goal striving was most strongly associated with both measures of personal success. Success in terms of relative progress was associated with a stronger growth mindset, but not significantly with social belonging. In contrast, success in terms of satisfaction with progress was associated with stronger social belonging, but not significantly with growth mindset. Future work should examine if this pattern reflects a difference in the underlying process by which these psychological factors affect learner behavior and perception.
-
-The methodology used in this study can be extended to deliver timely and targeted interventions. The predictive model was successful in identifying a large number of leaners who were facing challenges with taking the course. The majority of them were unsuccessful in their own terms. All three psychological factors under investigation were found to distinguish self-ascribed successful from unsuccessful learners. Recent work on psychological interventions found lasting positive effects of brief interventions involving reading and writing tasks (e.g., \cite{walton2007question}).  Leveraging predictive models of persistence, brief interventions could be delivered online and targeted to learners who face particular challenges, such as low goal striving, a fixed mindset, or perceived threat to their identity or social belonging. 
- 
-\section{General Discussion}
-
-
-
-\section{Acknowledgments}
-% We thank Elise Ogle and Ruth Bram for helping with the development of the codebook. 
-% Thank Emily for feedback and Andreas for feedback and data support.
-Omitted for blind review.
-
-% Learners drop out at different times during the course. To elicit feedback from likely dropouts, one possible approach is to send the follow-up survey to every learner in the course, and then exclude learners who persist from the analysis. However, learners can develop risk factors at different times in the course. The drawback of this approach is that it requires the survey to be delivered to every learner multiple times in order to capture feedback from learners who might develop risk factors at different times. Such increased survey load can increase attrition or dissatisfaction in the course.
-
-% An alternative approach is to employ a predictive model that red-flags a learner when they start exhibiting behaviors predictive of dropout, and sending the survey only to students who are newly red-flagged. This reduces survey burden while allowing us, ideally, to reach the whole population of interest (every learner who is at risk). Several MOOC instructors required minimization of the workload associated with taking the follow-up survey, which urged us to follow this approach.
-
-
-
-% Balancing columns in a ref list is a bit of a pain because you
-% either use a hack like flushend or balance, or manually insert
-% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
-% multicols doesn't work because we're already in two-column mode,
-% and flushend isn't awesome, so I choose balance.  See this
-% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
-%
-% Note that in a perfect world balance wants to be in the first
-% column of the last page.
-%
-% If balance doesn't work for you, you can remove that and
-% hard-code a column break into the bbl file right before you
-% submit:
-%
-% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
-% in-an-ieee-paper-if-using-bibtex
-%
-% Or, just remove \balance and give up on balancing the last page.
-%
-\balance
-
-\bibliographystyle{acm-sigchi}
-\bibliography{dropout.bib}
-\end{document}
+% 
+% <<loadcsv, echo=FALSE, warning=FALSE>>=
+% library(bitops)
+% library(RCurl)
+% data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
+% a = read.csv(text=data)
+% 
+% # Shift scores for satisfaction index components up to 1-N
+% a$qoe = a$qoe + 4
+% a$satis_amount_learnt = a$satis_amount_learnt + 4
+% a$satis_vs_time_spent = a$satis_vs_time_spent + 4
+% a$satis_time_mgmt = a$satis_time_mgmt + 4
+% a$how_met_expectations = a$how_met_expectations + 3
+% a$how_engaging_material_presentation = a$how_engaging_material_presentation + 1
+% 
+% satM = subset(a, select=c('qoe', 'satis_amount_learnt', 'satis_vs_time_spent', 'how_met_expectations', 'how_engaging_material_presentation'))
+% library(psych)
+% 
+% a$satisfaction = rowMeans(satM, na.rm=TRUE)
+% a$satisfaction[!is.finite(a$satisfaction)] = NA
+% a$sat
+% d=subset(a, select=c('course_id', 'num_videos_watched', 'did_dropout', 'satisfaction'))
+% write.csv(d, "satisfaction.csv", row.names=F)
+% library(plyr)
+% a$did_dropout = revalue(factor(a$did_dropout), c("0"="No", "1"="Yes"))
+% @
