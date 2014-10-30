@@ -1,10 +1,10 @@
 \documentclass{sigchi}
 
-<<loadcsv, echo=FALSE>>=
-#library(RCurl)
-#data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
-#a = read.csv(text=data)
-a = read.csv("C:/Research/Analytics/pycode/user_code/halawa/publications/LAS2015/data_masters/compiled_data_all_courses.csv")
+<<loadcsv, echo=FALSE, warning=FALSE>>=
+library(bitops)
+library(RCurl)
+data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
+a = read.csv(text=data)
 
 # Shift scores for satisfaction index components up to 1-N
 a$qoe = a$qoe + 4
@@ -266,15 +266,36 @@ TODO Rene adds these analyses here
 
 Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2).
 
-First, we compared the distributions of satisfaction scores for learners who reported they stopped participating and those who reported not to have stopped. As figure \ref{fig:study1_satis_si_score_dist_comparison} shows, the mean satisfaction score ($mean=4.70$) for learners who reported to have stopped is 0.64 points lower than the other group ($mean=5.34$). 
+First, we compared the distributions of satisfaction scores for learners who reported they stopped participating and those who reported not to have stopped. A significant difference was observed ($t_{1469}=20.7, p \ll .0001, d=0.7$). The mean satisfaction score in the group that reported stopped (no stopped) participation was 4.70 (5.34). 
 
-<<study1_satis_si_score_dist_comparison, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course'>>=
-y0 = a$satisfaction[a$did_dropout == "No"]
-y1 = a$satisfaction[a$did_dropout == "Yes"]
-b = a[!is.na(a$did_dropout),]
-ggplot(b) + geom_boxplot(aes(x=b$did_dropout,y=b$satisfaction)) + theme_bw() + labs(y="Satisfaction",x="Stopped participating?")
+<<study1_satis_si_score_dist_comparison, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=5, fig.cap='Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course'>>=
+#b = a[!is.na(a$did_dropout),]
+#ggplot(b) + geom_boxplot(aes(x=b$did_dropout,y=b$satisfaction)) + theme_bw() + labs(y="Satisfaction",x="Stopped participating?")
 @
 
+We also examined differences in satisfaction between learners grouped by certain behaviors. First, we classified learners into 4 groups based on the fraction of course videos they viewed. The box plots for the satisfaction scores in each group are shown in figure \ref{fig:study1_satsfaction_by_vid_groups}. The mean satisfaction score increases slightly as the number of videos viewed by the learners increases, with the exception of the scores reported by learners in the 0-25\% group. Possible reasons for this are learners who join only to view a small part of the course or learners who join merely to explore.
+
+<<study1_satsfaction_by_vid_groups, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course'>>=
+b = a[!is.na(a$did_dropout),]
+course_ids = unique(a$course_id)
+course_num_videos = list()
+for (cid in course_ids) {
+  course_num_videos[[cid]] = quantile(a$num_videos_watched[a$course_id == cid], 0.95, na.rm=TRUE)
+}
+for(i in 1:nrow(b)) {
+  x = b[i,]
+  f = x[['num_videos_watched']]/course_num_videos[[x[['course_id']]]]
+  if (is.na(f)) {level=NA}
+  else if (f <= 0.25) {level = "0-25%"}
+  else if  (f <= 0.50) {level = "25-50%"}
+  else if  (f <= 0.75) {level = "50-75%"}
+  else {level = "75-100%"}
+  b[i,"fraction_videos_watched"] = level
+}
+b$fraction_videos_watched = factor(b$fraction_videos_watched)
+c = b[!is.na(b$fraction_videos_watched),]
+ggplot(c) + geom_boxplot(aes(x=c$fraction_videos_watched,y=c$satisfaction)) + theme_bw() + labs(y="Satisfaction",x="Fraction videos watched")
+@
 
 \subsubsection{Reasons for Disengaging}
 % RQ3a: What reasons do learners report for disengaging from a MOOC?
