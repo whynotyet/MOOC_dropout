@@ -49,7 +49,32 @@
 
 \usepackage{alltt}
 
-
+% 
+% <<loadcsv, echo=FALSE, warning=FALSE>>=
+% library(bitops)
+% library(RCurl)
+% data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
+% a = read.csv(text=data)
+% 
+% # Shift scores for satisfaction index components up to 1-N
+% a$qoe = a$qoe + 4
+% a$satis_amount_learnt = a$satis_amount_learnt + 4
+% a$satis_vs_time_spent = a$satis_vs_time_spent + 4
+% a$satis_time_mgmt = a$satis_time_mgmt + 4
+% a$how_met_expectations = a$how_met_expectations + 3
+% a$how_engaging_material_presentation = a$how_engaging_material_presentation + 1
+% 
+% satM = subset(a, select=c('qoe', 'satis_amount_learnt', 'satis_vs_time_spent', 'how_met_expectations', 'how_engaging_material_presentation'))
+% library(psych)
+% 
+% a$satisfaction = rowMeans(satM, na.rm=TRUE)
+% a$satisfaction[!is.finite(a$satisfaction)] = NA
+% a$sat
+% d=subset(a, select=c('course_id', 'num_videos_watched', 'did_dropout', 'satisfaction'))
+% write.csv(d, "satisfaction.csv", row.names=F)
+% library(plyr)
+% a$did_dropout = revalue(factor(a$did_dropout), c("0"="No", "1"="Yes"))
+% @
 
 
 % Use this command to override the default ACM copyright statement (e.g. for preprints). 
@@ -193,7 +218,7 @@ C15 & Math \& Stats & 37,017 & 11,629 & 1,854 & N   & 20\%   & 35 (29,45) & 98\%
 C16 & Math \& Stats & 27,236 & 2,711 & 637   & N    & 82\%   & 43 (34,51) & n.a.       & 1\%  & 64\% & 36\% & 5\% \\
 C17 & Math \& Stats & 13,132 & 3,629 & 843   & N    & n.a.   & n.a.       & n.a.       & 5\%  & 70\% & 54\% & 14\% \\
 \bottomrule
-\multicolumn{13}{l}{$^1$ mean (SD)  $^2$ bachelors' or higher degree  $^3$ self-reported in the feedback survey}
+\multicolumn{13}{l}{$^1$ mean (upper, lower quartile)  $^2$ bachelors' or higher degree  $^3$ self-reported in the feedback survey}
 \end{tabular}
 \end{table*}
 
@@ -262,9 +287,11 @@ We address the research questions developed in the previous section in three par
 
 \subsubsection{Predictors of Attrition}
 
-We fit logistic mixed-effects (hierarchical) models to a number of binary persistence and performance metrics to estimate individual differences in prior learner characteristics, including demographic and geographic features. Correlations between predictors were low, which allows for simple interpretations of coefficients. The 14 MOOCs were modeled as a random effect, given our goal of generalizing to the population of similar MOOCs. Figure \ref{fig:s1coefs} illustrates regression coefficients with 95\% confidence intervals from each model. The coefficients represent changes from a baseline (intercept) population: male learners in North America, with an average age, who had not earned a bachelor's degree and had no prior experience with the topic or taken other MOOCs, not intending to complete the course, and prepared to spend only up to two hours per week on the course.
+We fit logistic mixed-effects (hierarchical) models to a number of binary persistence and performance metrics to estimate individual differences in prior learner characteristics, including demographic and geographic features. Correlations between predictors were low enough to allow for simple interpretation of coefficients. The 14 MOOCs in the dataset were modeled as a random effect, in order to generalize to the population of similar MOOCs. Figure \ref{fig:s1coefs} illustrates regression coefficients with 95\% confidence intervals from each model. The coefficients represent changes from a baseline (intercept) population: male learners in North America, with an average age, who had not earned a bachelor's degree and had no prior experience with the topic or taken other MOOCs, not intending to complete the course, and prepared to spend only up to two hours per week on the course.
 
-A number of significant and substantial individual differences emerged, some indicative of potential inequalities: Women were 10 to 15\% points less likely than men to persist with lectures and assessments. Women are also less likely to score a grade above the 60$^\text{th}$ percentile than men. Learners in Africa, Asia, and South America were 20 to 60\% points less likely to persist in video watching and achieved lower grades than learners in North America (N.A.). Learners in Europe exhibited 10 to 30\% points higher persistence with lectures and assessemnts than those in N.A.. While learners in Asia showed lower persistence with videos, they were more likely to attempt more assessments than learners from N.A.. Besides geography, the older the learner, the more likely they were to persist in lectures and assessments, but the lower their relative performance. More educated learners, those with a bachelor's or higher degree, were somewhat more likely to start assessments, compared to those with less education, but were less likely to perform highly on them. Not surprisingly, prior experience, intending to learn about all topics in the course, and being prepared to spend more hours in the course were strong predictors of persistance. Learners who took prior MOOCs, however, were less likely to persist, yet achieved higher grades.
+A number of significant and substantial individual differences emerged, some indicative of potential inequalities: Women were 10 to 15\% points less likely than men to persist with lectures and assessments. Women are also less likely to score a grade above the 60$^\text{th}$ percentile than men. Learners in Africa, Asia, and South America were 20 to 60\% points less likely to persist in video watching and achieved lower grades than learners in North America (N.A.). Learners in Europe exhibited 10 to 30\% points higher persistence with lectures and assessemnts than those in N.A.. While learners in Asia showed lower persistence with videos, they were more likely to attempt more assessments than learners from N.A.. 
+
+Besides gender and geography, the older the learner, the more likely they were to persist in lectures and assessments, but the lower their relative performance. More educated learners, those with a bachelor's or higher degree, were somewhat more likely to start assessments, compared to those with less education, but were less likely to perform highly on them. Not surprisingly, prior experience, intending to learn about all topics in the course, and being prepared to spend more hours in the course were strong predictors of persistance. Learners who took prior MOOCs, however, were less likely to persist, yet achieved higher grades.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure*}[ht]
@@ -279,21 +306,14 @@ A number of significant and substantial individual differences emerged, some ind
 % RQ2a: What proportion of learners who disengaged were satisfied with their achievements in the course?
 % RQ2b: How does learners' behavior in the MOOC vary by their level of satisfaction?
 
-Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2).
+Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated to what extent learners were satisfied with their achievements for those who reported to have stopped participating ($RQ2a$) and those who participanted to different degrees ($RQ2b$). To account for differences across courses, we compared satisfaction scores using mixed-effects models.
 
-First, we compared the distributions of satisfaction scores for learners who reported they stopped participating and those who reported not to have stopped. As figure \ref{fig:study1_satis_si_score_dist_comparison} shows, the mean satisfaction score ($mean=4.70$) for learners who reported to have stopped is 0.64 points lower than the other group ($mean=5.34$). 
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+Learners who reported that they stopped participating were significantly 9\% less satisfied than those who reported not to have stopped ($t_{15140}=18, p<.001$). Moreover, we examined if persistent learners, those who watched more lectures, were also more satisfied. While the the proportion of videos significantly predicted higher satisfaction ($t_{15700}=12, p<.001$), it was a relatively weak effect. Those who watched all videos were only around 3\% more satisfied than those who watched none, based on a linear fit.
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 4 rows containing non-finite values (stat\_boxplot).}}\end{kframe}\begin{figure*}[ht]
 
-\includegraphics[width=\maxwidth]{figure/study1_satis_si_score_dist_comparison} \caption[Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course]{Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course\label{fig:study1_satis_si_score_dist_comparison}}
-\end{figure*}
+% We also examined differences in satisfaction between learners grouped by certain behaviors. First, we classified learners into 4 groups based on the fraction of course videos they viewed. The box plots for the satisfaction scores in each group are shown in figure \ref{fig:study1_satsfaction_by_vid_groups}. The mean satisfaction score increases slightly as the number of videos viewed by the learners increases, with the exception of the scores reported by learners in the 0-25\% group. Possible reasons for this are learners who join only to view a small part of the course or learners who join merely to explore.
 
-
-\end{knitrout}
 
 
 \subsubsection{Reasons for Disengaging}

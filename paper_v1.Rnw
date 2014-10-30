@@ -1,27 +1,31 @@
 \documentclass{sigchi}
 
-
-<<loadcsv, echo=FALSE, warning=FALSE>>=
-library(bitops)
-library(RCurl)
-data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
-a = read.csv(text=data)
-
-# Shift scores for satisfaction index components up to 1-N
-a$qoe = a$qoe + 4
-a$satis_amount_learnt = a$satis_amount_learnt + 4
-a$satis_vs_time_spent = a$satis_vs_time_spent + 4
-a$satis_time_mgmt = a$satis_time_mgmt + 4
-a$how_met_expectations = a$how_met_expectations + 3
-a$how_engaging_material_presentation = a$how_engaging_material_presentation + 1
-
-satM = subset(a, select=c('qoe', 'satis_amount_learnt', 'satis_vs_time_spent', 'how_met_expectations', 'how_engaging_material_presentation'))
-a$satisfaction = rowMeans(satM, na.rm=TRUE)
-a$satisfaction[!is.finite(a$satisfaction)] = NA
-
-library(plyr)
-a$did_dropout = revalue(factor(a$did_dropout), c("0"="No", "1"="Yes"))
-@
+% 
+% <<loadcsv, echo=FALSE, warning=FALSE>>=
+% library(bitops)
+% library(RCurl)
+% data <- getURL("https://raw.githubusercontent.com/whynotyet/MOOC_dropout/master/compiled_data_all_courses.csv", ssl.verifypeer=0L, followlocation=1L)
+% a = read.csv(text=data)
+% 
+% # Shift scores for satisfaction index components up to 1-N
+% a$qoe = a$qoe + 4
+% a$satis_amount_learnt = a$satis_amount_learnt + 4
+% a$satis_vs_time_spent = a$satis_vs_time_spent + 4
+% a$satis_time_mgmt = a$satis_time_mgmt + 4
+% a$how_met_expectations = a$how_met_expectations + 3
+% a$how_engaging_material_presentation = a$how_engaging_material_presentation + 1
+% 
+% satM = subset(a, select=c('qoe', 'satis_amount_learnt', 'satis_vs_time_spent', 'how_met_expectations', 'how_engaging_material_presentation'))
+% library(psych)
+% 
+% a$satisfaction = rowMeans(satM, na.rm=TRUE)
+% a$satisfaction[!is.finite(a$satisfaction)] = NA
+% a$sat
+% d=subset(a, select=c('course_id', 'num_videos_watched', 'did_dropout', 'satisfaction'))
+% write.csv(d, "satisfaction.csv", row.names=F)
+% library(plyr)
+% a$did_dropout = revalue(factor(a$did_dropout), c("0"="No", "1"="Yes"))
+% @
 
 
 % Use this command to override the default ACM copyright statement (e.g. for preprints). 
@@ -165,7 +169,7 @@ C15 & Math \& Stats & 37,017 & 11,629 & 1,854 & N   & 20\%   & 35 (29,45) & 98\%
 C16 & Math \& Stats & 27,236 & 2,711 & 637   & N    & 82\%   & 43 (34,51) & n.a.       & 1\%  & 64\% & 36\% & 5\% \\
 C17 & Math \& Stats & 13,132 & 3,629 & 843   & N    & n.a.   & n.a.       & n.a.       & 5\%  & 70\% & 54\% & 14\% \\
 \bottomrule
-\multicolumn{13}{l}{$^1$ mean (SD)  $^2$ bachelors' or higher degree  $^3$ self-reported in the feedback survey}
+\multicolumn{13}{l}{$^1$ mean (upper, lower quartile)  $^2$ bachelors' or higher degree  $^3$ self-reported in the feedback survey}
 \end{tabular}
 \end{table*}
 
@@ -258,37 +262,33 @@ ggplot(subset(res, coef2!="Intercept"),
 % RQ2a: What proportion of learners who disengaged were satisfied with their achievements in the course?
 % RQ2b: How does learners' behavior in the MOOC vary by their level of satisfaction?
 
-Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated what proportion of learners who dropped out were satisfied with their achievements in the course (RQ2).
+Attrition can be a sign of success if a learner has achieved their personal goal. We therefore investigated to what extent learners were satisfied with their achievements for those who reported to have stopped participating ($RQ2a$) and those who participanted to different degrees ($RQ2b$). To account for differences across courses, we compared satisfaction scores using mixed-effects models.
 
-First, we compared the distributions of satisfaction scores for learners who reported they stopped participating and those who reported not to have stopped. A significant difference was observed ($t_{1469}=20.7, p \ll .0001, d=0.7$). The mean satisfaction score in the group that reported stopped (no stopped) participation was 4.70 (5.34). 
+Learners who reported that they stopped participating were significantly 9\% less satisfied than those who reported not to have stopped ($t_{15140}=18, p<.001$). Moreover, we examined if persistent learners, those who watched more lectures, were also more satisfied. While the the proportion of videos significantly predicted higher satisfaction ($t_{15700}=12, p<.001$), it was a relatively weak effect. Those who watched all videos were only around 3\% more satisfied than those who watched none, based on a linear fit.
 
 <<study1_satis_si_score_dist_comparison, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=5, fig.cap='Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course'>>=
 #b = a[!is.na(a$did_dropout),]
 #ggplot(b) + geom_boxplot(aes(x=b$did_dropout,y=b$satisfaction)) + theme_bw() + labs(y="Satisfaction",x="Stopped participating?")
 @
 
-We also examined differences in satisfaction between learners grouped by certain behaviors. First, we classified learners into 4 groups based on the fraction of course videos they viewed. The box plots for the satisfaction scores in each group are shown in figure \ref{fig:study1_satsfaction_by_vid_groups}. The mean satisfaction score increases slightly as the number of videos viewed by the learners increases, with the exception of the scores reported by learners in the 0-25\% group. Possible reasons for this are learners who join only to view a small part of the course or learners who join merely to explore.
+% We also examined differences in satisfaction between learners grouped by certain behaviors. First, we classified learners into 4 groups based on the fraction of course videos they viewed. The box plots for the satisfaction scores in each group are shown in figure \ref{fig:study1_satsfaction_by_vid_groups}. The mean satisfaction score increases slightly as the number of videos viewed by the learners increases, with the exception of the scores reported by learners in the 0-25\% group. Possible reasons for this are learners who join only to view a small part of the course or learners who join merely to explore.
 
-<<study1_satsfaction_by_vid_groups, echo=FALSE, fig.env='figure*', fig.pos='ht', fig.height=4, fig.width=9, fig.cap='Satisfaction index scores for learners who reported they stopped / did not stop participating before end of course'>>=
-b = a[!is.na(a$did_dropout),]
-course_ids = unique(a$course_id)
-course_num_videos = list()
-for (cid in course_ids) {
-  course_num_videos[[cid]] = quantile(a$num_videos_watched[a$course_id == cid], 0.95, na.rm=TRUE)
-}
-for(i in 1:nrow(b)) {
-  x = b[i,]
-  f = x[['num_videos_watched']]/course_num_videos[[x[['course_id']]]]
-  if (is.na(f)) {level=NA}
-  else if (f <= 0.25) {level = "0-25%"}
-  else if  (f <= 0.50) {level = "25-50%"}
-  else if  (f <= 0.75) {level = "50-75%"}
-  else {level = "75-100%"}
-  b[i,"fraction_videos_watched"] = level
-}
-b$fraction_videos_watched = factor(b$fraction_videos_watched)
-c = b[!is.na(b$fraction_videos_watched),]
-ggplot(c) + geom_boxplot(aes(x=c$fraction_videos_watched,y=c$satisfaction)) + theme_bw() + labs(y="Satisfaction",x="Fraction videos watched")
+<<echo=FALSE,eval=FALSE>>=
+library(dplyr)
+sat = read.csv("satisfaction.csv")
+sat$num_videos_watched[is.na(sat$num_videos_watched)] = 0
+sat = sat %>% group_by(course_id) %>% 
+  mutate(prop_vid = num_videos_watched / quantile(num_videos_watched[num_videos_watched!=0], .90))
+
+sat$prop_vid4 = cut(sat$prop_vid, breaks=c(-Inf, .25, .5, .75, Inf))
+
+require(lmerTest)
+summary(lmer(satisfaction~ did_dropout + (1|course_id), sat))
+5.170/(5.170-0.4456)
+
+summary(lmer(satisfaction~0+prop_vid4 + (1|course_id), sat))
+summary(lmer(satisfaction~prop_vid + (1|course_id), sat))
+(5.005+0.1679)/5.005
 @
 
 \subsubsection{Reasons for Disengaging}
