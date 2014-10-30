@@ -246,7 +246,7 @@ Seventeen MOOCs on topics in a variety of disciplines were selected for investig
 % Only those learners who completed the feedback survey were included in the analyses (some did not complete the initial course survey). 
 On the initial course surveys, learners reported their gender, age, prior experience, and enrollment intentions (on the OLEI scale \cite{kizilcec2015motivation}). On the feedback survey, learners reported their satisfaction with the course (N-item index, M=XX, SD=XX, $\alpha=.XX$), and whether they `stopped participating in the course before it ended' or `remained active until the end'. If they indicated that they stopped participating, learners reported `what influenced their decision to stop participating' using a grid of 14 binary-choice items (see Figure \ref{fig:s1reason}).\footnote{Instead of a select-all-that-apply question, we opted for binary-choice items to encourage learners to consider each reason in turn. The response options were ``Did influence my decision to stop" and ``Did NOT influence my decision to stop," which should reduce acquiescence bias relative to yes/no or true/false scales.}
 
-Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and three behavioral indicators for each course. The behavioral indicators represent course milestones: the proportions of learners who viewed over 30\%, 50\%, and 80\% of lecture videos in the course. The data illustrated in Figure \ref{fig:s1reason} reflect the proportions of learners who selected each reason relative to all learners who reportedly stopped participating in each course. The correlation matrixes in Tables \ref{tab:s1reascor} and \ref{tab:s1cor2} are a linear combination of correlation matrixes for each course, assigning equal weight to all courses to discount for considerable variation in sample sizes.
+Table \ref{tab:s1sum} provides summary statistics for enrollment, survey response rates, demographics, self-reported dropout, and three behavioral indicators for each course. The behavioral indicators represent course milestones: the proportions of learners who viewed over 30\%, 50\%, 80\% of lecture videos and attempted over 30\%, 50\%, 80\% of assessments in the course. In addition, to capture performance, we  The data illustrated in Figure \ref{fig:s1reason} reflect the proportions of learners who selected each reason relative to all learners who reportedly stopped participating in each course. The correlation matrixes in Tables \ref{tab:s1reascor} and \ref{tab:s1cor2} are a linear combination of correlation matrixes for each course, assigning equal weight to all courses to discount for considerable variation in sample sizes.
 
 TODO, update based on what we do here: We computed correlations between reported reasons for dropout and certain learner behaviors. Finally, for each learner, we computed the fraction of course videos visited (the learner started playing the video) and fraction watched (the learner stayed with the video for 3 minutes, or for the whole video duration if shorter than 3 minutes). We then computed the matrix of correlations between reasons for dropout and these variables for each course. These matrices were averaged and the result is shown in Table [TableToBeAdded].
 
@@ -257,6 +257,15 @@ TODO, update based on what we do here: We computed correlations between reported
 
 \subsubsection{Predictors of Attrition}
 % RQ1: How do prior learner characteristics (demographics, geographic location, enrollment intentions, and previous online courses) influence learners' likelihood of disengaging from a MOOC?
+
+<<>>=
+res = read.csv("pred_coefs.csv")
+ggplot(subset(res, coef2!="Intercept"), aes(coef2, est, ymin=est-1.96*se, ymax=est+1.96*se, color=factor(sign))) + 
+  geom_hline(xintercept=0) + geom_pointrange() + facet_wrap(~y, ncol=4) + coord_flip() + 
+  theme_minimal() + theme(legend.position="none",axis.title=element_text(vjust=0)) + 
+  scale_color_manual(values=c('red','grey30','darkgreen')) +
+  labs(y="Estimated change in probability (95% CIs)", x="")
+@
 
 TODO Rene adds these analyses here
 
