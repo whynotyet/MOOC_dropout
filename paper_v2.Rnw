@@ -211,7 +211,7 @@ We address the research questions developed in the previous section in three par
 
 We fit logistic mixed-effects (hierarchical) models to a number of binary persistence and performance metrics to estimate individual differences in prior learner characteristics, including demographic and geographic features. Correlations between predictors were low enough to allow for simple interpretation of coefficients. Fourteen MOOCs in the dataset were modeled as a random effect, in order to generalize to the population of similar MOOCs.\footnote{The required data for 3 of the 17 MOOCs could not be obtained in time for submission due to technical issues.} Figure \ref{fig:s1coefs} illustrates regression coefficients with 95\% confidence intervals from each model. The coefficients represent changes from a baseline (intercept) population: male learners in North America, with an average age, who had not earned a bachelor's degree and had no prior experience with the topic or taken other MOOCs, not intending to complete the course, and prepared to spend only up to two hours per week on the course.
 
-A number of significant and substantial individual differences emerged, some indicative of potential inequalities: Women were 10 to 15\% points less likely than men to persist with lectures and assessments. Women are also less likely to score a grade above the 60$^\text{th}$ percentile than men. Learners in Africa, Asia, and South America were 20 to 60\% points less likely to persist in video watching and achieved lower grades than learners in North America. Learners in Europe exhibited 10 to 30\% points higher persistence with lectures and assessemnts than those in North America. While learners in Asia showed lower persistence with videos, they were more likely to attempt more assessments than learners from North America. 
+A number of significant and substantial individual differences emerged, some indicative of potential inequalities: Women were 10 to 15\% less likely than men to persist with lectures and assessments. Women are also less likely to score a grade above the 60$^\text{th}$ percentile than men. Learners in Africa, Asia, and South America were 20 to 50\% less likely to persist in video watching and tended to achieve lower grades than learners in North America. In contrast, learners in Europe exhibited 20 to 50\% higher persistence with lectures and assessemnts than learners in North America. While learners in Asia exhibited lower persistence with videos, they were more likely to attempt more assessments than learners from North America. 
 
 Besides gender and geography, the older the learner, the more likely they were to persist in lectures and assessments, but the lower their relative performance. More educated learners, those with a bachelor's or higher degree, were somewhat more likely to start assessments, compared to those with less education, but were less likely to perform highly on them. Not surprisingly, prior experience, intending to learn about all topics in the course, and being prepared to spend more hours in the course were strong predictors of persistance. Learners who took prior MOOCs, however, were less likely to persist, yet achieved higher grades.
 
@@ -236,8 +236,10 @@ ggplot(subset(res, coef2!="Intercept"),
   geom_hline(yintercept=0) + geom_pointrange() + facet_wrap(~y, ncol=4) + coord_flip() + 
   theme_minimal() + theme(legend.position="none",axis.title=element_text(vjust=0)) + 
   scale_color_manual(values=c('red','grey30','green3')) +
+  scale_y_continuous(breaks=c(-60,-40,-20,0,20,40,60)) +
   labs(y="Predicted change in probability of achieving each `milestone` (95% CIs)", x="")
-# subset(res, coef2=="Intercept")  # should report these in the text of reference
+coefs = subset(res, coef2=="Intercept", select=c("est","y"))  # should report these in the text of reference
+coefs$exp_est = exp(coefs$est) # estimates seem high
 @
 
 \subsubsection{Learner Satisfaction}
