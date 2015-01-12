@@ -18,12 +18,6 @@ Breslow, L., Pritchard, D.~E., DeBoer, J., Stump, G.~S., Ho, A.~D., and Seaton,
   first mooc.
 \newblock {\em Research \& Practice in Assessment 8\/} (2013), 13--25.
 
-\bibitem{cambre2014talkabout}
-Cambre, J., Kulkarni, C., Bernstein, M.~S., and Klemmer, S.~R.
-\newblock Talkabout: small-group discussions in massive global classes.
-\newblock In {\em Proceedings of the first ACM conference on Learning@ scale
-  conference}, ACM (2014), 161--162.
-
 \bibitem{clow2013moocs}
 Clow, D.
 \newblock Moocs and the funnel of participation.
@@ -42,6 +36,11 @@ Corno, L., and Kanfer, R.
 \newblock The role of volition in learning and performance.
 \newblock {\em Review of research in education\/} (1993), 301--341.
 
+\bibitem{dweck2006mindset}
+Dweck, C.
+\newblock {\em Mindset: The new psychology of success}.
+\newblock Random House LLC, 2006.
+
 \bibitem{fishbein1975belief}
 Fishbein, M., and Ajzen, I.
 \newblock {\em Belief, attitude, intention and behavior: An introduction to
@@ -54,11 +53,6 @@ Goldrick-Rab, S.
   success.
 \newblock {\em Review of Educational Research 80}, 3 (2010), 437--469.
 
-\bibitem{guthrie2013moocs}
-Guthrie, D.
-\newblock Moocs are toast or at least should be.
-\newblock {\em Forbes\/} (2013, July).
-
 \bibitem{gutl2014attrition}
 G{\"u}tl, C., Rizzardini, R.~H., Chang, V., and Morales, M.
 \newblock Attrition in mooc: Lessons learned from drop-out students.
@@ -69,11 +63,6 @@ G{\"u}tl, C., Rizzardini, R.~H., Chang, V., and Morales, M.
 Halawa, S., Greene, D., and Mitchell, J.
 \newblock Dropout prediction in moocs using learner activity features.
 \newblock {\em eLearning Papers\/} (2014), 1--10.
-
-\bibitem{kember1989longitudinal}
-Kember, D.
-\newblock A longitudinal-process model of drop-out from distance education.
-\newblock {\em The Journal of Higher Education\/} (1989), 278--301.
 
 \bibitem{khalil2014moocs}
 Khalil, H., and Ebner, M.
@@ -95,13 +84,6 @@ Kizilcec, R.~F., and Schneider, E.
   data-driven design with the olei scale.
 \newblock {\em ACM Transactions on Computer-Human Interaction (TOCHI) 22}, 2
   (in press), 24.
-
-\bibitem{kulkarni2013peer}
-Kulkarni, C., Wei, K.~P., Le, H., Chia, D., Papadopoulos, K., Cheng, J.,
-  Koller, D., and Klemmer, S.~R.
-\newblock Peer and self assessment in massive online classes.
-\newblock {\em ACM Transactions on Computer-Human Interaction (TOCHI) 20}, 6
-  (2013), 33.
 
 \bibitem{lewin2013after}
 Lewin, T.

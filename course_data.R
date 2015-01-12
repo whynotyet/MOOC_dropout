@@ -4,8 +4,8 @@ library(psych)
 library(foreach)
 library(ggplot2)
 
-### Analysis of correlations between OLEI and dropout reasons
-setwd("~/Dropbox/r-code/dropout_reasons/data_masters/")
+### Analysis of correlations between dropout reasons
+setwd("~/Dropbox/r-code/dropout_reasons/data_all_pre3/")
 files = dir()
 Mcor = list()
 i = 1
@@ -14,9 +14,10 @@ N = 0
 for(f in files){
   print(f)
   dat = read.csv(f)
-  n = sum(!is.na(dat[,7]))
+  n = sum(!is.na(dat[,12]))
+  print(n)
   if(n > 30) {
-    m = data.frame(cor(dat[,7:20], use="pair"))
+    m = data.frame(cor(dat[,12:25], use="pair"))
     m[is.na(m)] = 0
     Mcor[[i]] = m
     N = N + n
@@ -31,6 +32,59 @@ fa.diagram(fa(CombMcor, 5, n.obs=N))
 fa(CombMcor, 5, n.obs=N)
 plot(princomp(CombMcor, cor=T))
 summary(princomp(CombMcor, cor=T))
+
+
+### Analysis of correlations between demographics/geo and dropout reasons
+library(foreach)
+setwd("~/Dropbox/r-code/dropout_reasons/data_all_pre3/")
+files = dir()
+
+dat = foreach(f=files, .combine=rbind) %do% {
+  dat = read.csv(f)
+  temp = dat[,c(4,6,12:25,30,33)]
+  temp$course = f
+  subset(temp, did_dropout==1)
+}  
+
+# Geolocation
+dat$ip_address = as.character(dat$ip_address)
+# write.table(dat$ip_address, file="../../ip_lookup/ips.csv", col.names=F, row.names=F, sep=",", quote=F)
+ips = read.csv("../../ip_lookup/ips_geo.csv")
+ips$continent = as.character(ips$continent)
+ips[is.na(ips$continent),]$continent = "NAmerica"
+ips[ips$continent=="SA",]$continent = "SAmerica"
+ips[ips$continent%in%c("--","unk"),]$continent = NA
+plot(ips$longitude,ips$latitude, col=as.numeric(factor(ips$continent)))
+dat$country = ips$country_name
+dat$continent = ips$continent
+dat$continent = factor(dat$continent, levels=c("NAmerica","EU","OC","AF","AS","SAmerica"))
+rm(ips)
+
+a = dat %>% filter(!is.na(continent) & (is.na(gender)|gender<2)) %>% group_by(continent=continent%in%c("NAmerica","EU","OC")) %>% summarise(
+  exam_diff = mean(rfd.asn_exam_too_difficult, na.rm=T),
+  deadline = mean(rfd.cant_keep_up_deadlines, na.rm=T),
+  cred_val = mean(rfd.credentials_value , na.rm=T),
+  format = mean(rfd.didnt_enjoy_online_format, na.rm=T),
+  explore = mean(rfd.exploring_only, na.rm=T),
+  all_done = mean(rfd.learned_all_i_wanted, na.rm=T),
+  explain = mean(rfd.material_explanation, na.rm=T),
+  no_chal = mean(rfd.not_challenging, na.rm=T),
+  no_fit = mean(rfd.not_what_im_looking_for, na.rm=T),
+  time = mean(rfd.requires_too_much_time, na.rm=T),
+  late = mean(rfd.started_late, na.rm=T),
+  tech = mean(rfd.tech_difficulties, na.rm=T),
+  advanced = mean(rfd.too_advanced, na.rm=T),
+  confused = mean(rfd.videos_confusing, na.rm=T)
+)
+
+ggplot(melt(a, id.vars="gender"), aes(factor(gender), value)) + geom_bar(stat="identity") + facet_wrap(~variable, scales="free")
+ggplot(melt(a, id.vars="continent"), aes(continent, value)) + geom_bar(stat="identity") + facet_wrap(~variable)
+
+# 4 ip
+# 6 did dropout
+# 12:25 rfd
+# 30 age
+# 33 gender
 
 
 ################################################
@@ -101,7 +155,7 @@ table(dat$courses_started3)
 dat$isFemale = as.numeric(dat$gender==1)
 dat$ageNorm = as.numeric(scale(ifelse(dat$age>90, 85, dat$age)))
 dat$eduBachlorHigher = ifelse(is.na(dat$highest_degree), NA, as.numeric(dat$highest_degree%in%(5:9)))
-dat$hours3 =cut_number(dat$planned_weekly_hours, 3)
+dat$hours3 = cut_number(dat$planned_weekly_hours, 3)
 dat$hasPriorExp = as.numeric(dat$prior_experience==1)
 dat$intentAll = as.numeric(dat$intentions==4)
 
@@ -124,7 +178,18 @@ keep_for_imp = apply(is.na(subset(dat, select=continent:intentAll)), 1, sum) <= 
 imp = mice(dat[keep_for_imp,], m=3)
 # save(imp, file="../sub_pre_imp.Rdata")
 
+# check covariate correlations
+imp$data$continent
+with(imp, round(cor(cbind(isFemale, ageNorm, eduBachlorHigher, hasPriorExp, intentAll, hours3, courses_started3)),2))
+
+# fit the models
+
 library(lme4)
+
+# imp$data %>% group_by(course) %>% summarise(mean(isFemale, na.rm=T)>.4)
+# fewWomen = imp$data$course %in% c("Engineering_CVX101_Winter2014.csv","Engineering_Nano_Summer2014.csv","Engineering_Networking_Winter2014.csv","Engineering_Solar_Fall2013.csv","automata-002.csv")
+# manyWomen = imp$data$course %in% c("GlobalHealth_IWHHR_Summer2014.csv","GlobalHealth_WomensHealth_Winter2014.csv","HumanitiesSciences_EP101_Environmental_Physiology.csv","HumanitiesSciences_NCP101_Winter2014.csv","organalysis-002.csv","organalysis-003.csv")
+# femaleInstructor = imp$data$course %in% c("")
 
 m_w30 = with(imp, glmer(watched30 ~ isFemale + ageNorm + eduBachlorHigher + hasPriorExp + intentAll + hours3 + courses_started3 + continent + (1|course), family=binomial))
 m_w50 = with(imp, glmer(watched50 ~ isFemale + ageNorm + eduBachlorHigher + hasPriorExp + intentAll + hours3 + courses_started3 + continent + (1|course), family=binomial))
@@ -171,10 +236,11 @@ library(ggplot2)
 
 write.csv(res, file="../paper/pred_coefs.csv", row.names=F)
 
-ggplot(subset(res, coef2!="Intercept"), aes(coef2, est, ymin=est-1.96*se, ymax=est+1.96*se, color=factor(sign))) + 
+ggplot(subset(res, coef2!="Intercept"), aes(coef2, exp(est), 
+      ymin=exp(est-1.96*se), ymax=exp(est+1.96*se), color=factor(sign))) + 
   geom_hline(xintercept=0) + geom_pointrange() + facet_wrap(~y, ncol=4) + coord_flip() + 
   theme_minimal() + theme(legend.position="none",axis.title=element_text(vjust=0)) + 
-  scale_color_manual(values=c('red','grey30','darkgreen')) +
+  scale_color_manual(values=c('red','grey40','darkgreen')) +
   labs(y="Estimated change in probability (95% CIs)", x="")
 
 
