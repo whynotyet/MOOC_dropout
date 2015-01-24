@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  16 JAN 2015 23:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  23 JAN 2015 22:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**paper_v2.tex
-(./paper_v2.tex
+**paper_v3.tex
+(./paper_v3.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (./sigchi.cls (/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/epsfig.sty
@@ -326,17 +326,21 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count119
-\c@Item=\count120
-\c@Hfootnote=\count121
+
+
+Package hyperref Warning: Option `pdfpagelabels' is turned off
+(hyperref)                because \thepage is undefined.
+
+\c@Item=\count119
+\c@Hfootnote=\count120
 )
 
 Package hyperref Message: Driver: hpdftex.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count122
-\c@bookmark@seq@number=\count123
+\Fld@listcount=\count121
+\c@bookmark@seq@number=\count122
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -345,10 +349,10 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 110.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 100.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 110.
-Package hyperref Info: Option `breaklinks' set `true' on input line 110.
+Package hyperref Info: Option `colorlinks' set `true' on input line 100.
+Package hyperref Info: Option `breaklinks' set `true' on input line 100.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
@@ -435,31 +439,31 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ))
-(./paper_v2.aux)
-\openout1 = `paper_v2.aux'.
+(./paper_v3.aux)
+\openout1 = `paper_v3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 118.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 118.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 111.
 
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 118.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 111.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1ptm.fd
@@ -467,16 +471,16 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
+\scratchcounter=\count123
 \scratchdimen=\dimen145
 \scratchbox=\box30
-\nofMPsegments=\count125
-\nofMParguments=\count126
+\nofMPsegments=\count124
+\nofMParguments=\count125
 \everyMPshowfont=\toks37
-\MPscratchCnt=\count127
+\MPscratchCnt=\count126
 \MPscratchDim=\dimen146
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
+\MPnumerator=\count127
+\makeMPintoPDFobject=\count128
 \everyMPtoPDFconversion=\toks38
 ) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -494,7 +498,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring ON on input line 118.
+Package hyperref Info: Link coloring ON on input line 111.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -502,32 +506,35 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count130
+\c@section@level=\count129
 )
-LaTeX Info: Redefining \ref on input line 118.
-LaTeX Info: Redefining \pageref on input line 118.
-LaTeX Info: Redefining \nameref on input line 118.
+LaTeX Info: Redefining \ref on input line 111.
+LaTeX Info: Redefining \pageref on input line 111.
+LaTeX Info: Redefining \nameref on input line 111.
 
-(./paper_v2.out) (./paper_v2.out)
+(./paper_v3.out) (./paper_v3.out)
 \@outlinefile=\write3
-\openout3 = `paper_v2.out'.
+\openout3 = `paper_v3.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 135.
+LaTeX Font Info:    Try loading font information for U+msa on input line 128.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 135.
+LaTeX Font Info:    Try loading font information for U+msb on input line 128.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 135.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 128.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 135.
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ¦ in font ptmr7t!
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 128.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ts1ptm.fd
@@ -542,82 +549,138 @@ Non-PDF special ignored!
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 207.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 198.
 
-Underfull \hbox (badness 2020) in paragraph at lines 213--214
-[]\OT1/ptm/m/n/10 How do prior char-ac-ter-is-tics (de-mo-graph-ics, ge-o-
+Underfull \hbox (badness 1454) in paragraph at lines 204--205
+[]\OT1/ptm/m/n/10 How are prior char-ac-ter-is-tics (de-mo-graph-ics, ge-o-
  []
 
-[2] [3]
-Package color Info: Redefining color shadecolor on input line 264.
- <figure/s1coefs.pdf, id=188, 722.7pt x 433.62pt>
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.222 
+       [2]
+Package color Info: Redefining color shadecolor on input line 233.
+ <figure/s1coefs.pdf, id=162, 722.7pt x 433.62pt>
 File: figure/s1coefs.pdf Graphic file (type pdf)
 
 <use figure/s1coefs.pdf>
-Package pdftex.def Info: figure/s1coefs.pdf used on input line 266.
+Package pdftex.def Info: figure/s1coefs.pdf used on input line 235.
 (pdftex.def)             Requested size: 512.1496pt x 307.2901pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.250 
+       [3]
+Underfull \vbox (badness 2359) has occurred while \output is active []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.263 
+       [4 <./figure/s1coefs.pdf>]
+Package color Info: Redefining color shadecolor on input line 267.
 
- [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./figure/s1coefs.pdf>]
-Package color Info: Redefining color shadecolor on input line 290.
- <figure/s1reason.pdf, id=215, 722.7pt x 289.08pt>
+<figure/s1reason.pdf, id=202, 722.7pt x 289.08pt>
 File: figure/s1reason.pdf Graphic file (type pdf)
-
-<use figure/s1reason.pdf>
-Package pdftex.def Info: figure/s1reason.pdf used on input line 292.
+ <use figure/s1reason.pdf>
+Package pdftex.def Info: figure/s1reason.pdf used on input line 269.
 (pdftex.def)             Requested size: 512.1496pt x 204.86006pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.290 
+       [5]
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
 []\OT1/ptm/m/n/10 The par-tic-u-lar MOOC un-der ob-ser-va-tion was an
  []
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.310 
+       [6 <./figure/s1reason.pdf>]
+Underfull \vbox (badness 6188) has occurred while \output is active []
 
+
+Underfull \hbox (badness 2318) in paragraph at lines 351--353
+[]\OT1/ptm/m/n/10 We fur-ther in-ves-ti-gated re-search ques-tion $\OML/cmm/m/i
+t/10 RQ\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 a$ \OT1/ptm/m/n/10 about
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--353
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.353 \subsubsection{Psychological Factors}
+                                            [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
-[7 <./figure/s1reason.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
-Underfull \hbox (badness 1320) in paragraph at lines 402--403
+Underfull \vbox (badness 8019) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.366 
+       [8]
+Underfull \hbox (badness 1320) in paragraph at lines 393--394
 []\OT1/ptm/m/n/10 In ad-dress-ing re-search ques-tions and test-ing hy-pothe-se
 s
  []
 
-(./paper_v2.bbl
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.400 
+       [9] (./paper_v3.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
 
+Overfull \vbox (15.7092pt too high) has occurred while \output is active []
 
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-[9])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 433.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 433.
- (./paper_v2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 433.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 433.
-Package rerunfilecheck Info: File `paper_v2.out' has not changed.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.405 \end{document}
+                     [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
+ (./paper_v3.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 405.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
+Package rerunfilecheck Info: File `paper_v3.out' has not changed.
 (rerunfilecheck)             Checksum: B8E1BCC465239F80AFEA1F9E7BAA1D65;1346.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 433.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 405.
  ) 
 Here is how much of TeX's memory you used:
- 7075 strings out of 493315
- 101941 string characters out of 6137904
- 204522 words of memory out of 5000000
- 10302 multiletter control sequences out of 15000+600000
- 42402 words of font info for 88 fonts, out of 8000000 for 9000
+ 7037 strings out of 493315
+ 101496 string characters out of 6137904
+ 207226 words of memory out of 5000000
+ 10274 multiletter control sequences out of 15000+600000
+ 41266 words of font info for 87 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,11n,30p,1830b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,30p,1830b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{section*.24} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -655,10 +718,10 @@ ts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/
 times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper_v2.pdf (10 pages, 241304 bytes).
+Output written on paper_v3.pdf (10 pages, 236803 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 304 compressed objects within 4 object streams
- 83 named destinations out of 1000 (max. 500000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
  179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
